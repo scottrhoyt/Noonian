@@ -6,13 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		3BBD8B5E1DC823AF00EB7A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B5D1DC823AF00EB7A35 /* AppDelegate.swift */; };
-		3BBD8B601DC823AF00EB7A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BBD8B5F1DC823AF00EB7A35 /* Assets.xcassets */; };
-		3BBD8B631DC823AF00EB7A35 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBD8B611DC823AF00EB7A35 /* MainMenu.xib */; };
-		3BBD8B6E1DC823AF00EB7A35 /* noonianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B6D1DC823AF00EB7A35 /* noonianTests.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXContainerItemProxy section */
 		3BBD8B6A1DC823AF00EB7A35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -25,12 +18,8 @@
 
 /* Begin PBXFileReference section */
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BBD8B5D1DC823AF00EB7A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BBD8B5F1DC823AF00EB7A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3BBD8B621DC823AF00EB7A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* noonianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noonianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BBD8B6D1DC823AF00EB7A35 /* noonianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noonianTests.swift; sourceTree = "<group>"; };
 		3BBD8B6F1DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,9 +62,6 @@
 		3BBD8B5C1DC823AF00EB7A35 /* noonian */ = {
 			isa = PBXGroup;
 			children = (
-				3BBD8B5D1DC823AF00EB7A35 /* AppDelegate.swift */,
-				3BBD8B5F1DC823AF00EB7A35 /* Assets.xcassets */,
-				3BBD8B611DC823AF00EB7A35 /* MainMenu.xib */,
 				3BBD8B641DC823AF00EB7A35 /* Info.plist */,
 			);
 			path = noonian;
@@ -84,7 +70,6 @@
 		3BBD8B6C1DC823AF00EB7A35 /* noonianTests */ = {
 			isa = PBXGroup;
 			children = (
-				3BBD8B6D1DC823AF00EB7A35 /* noonianTests.swift */,
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
 			);
 			path = noonianTests;
@@ -173,8 +158,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBD8B601DC823AF00EB7A35 /* Assets.xcassets in Resources */,
-				3BBD8B631DC823AF00EB7A35 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +175,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBD8B5E1DC823AF00EB7A35 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +182,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BBD8B6E1DC823AF00EB7A35 /* noonianTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,17 +194,6 @@
 			targetProxy = 3BBD8B6A1DC823AF00EB7A35 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3BBD8B611DC823AF00EB7A35 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3BBD8B621DC823AF00EB7A35 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3BBD8B701DC823AF00EB7A35 /* Debug */ = {
@@ -345,7 +315,6 @@
 		3BBD8B761DC823AF00EB7A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = noonianTests/Info.plist;
@@ -360,7 +329,6 @@
 		3BBD8B771DC823AF00EB7A35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = noonianTests/Info.plist;
