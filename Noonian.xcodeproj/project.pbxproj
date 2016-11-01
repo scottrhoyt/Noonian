@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3BBD8B691DC823AF00EB7A35 /* noonianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = noonianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBD8B691DC823AF00EB7A35 /* NoonianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B6F1DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B781DC8250600EB7A35 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingTests.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBD8B5C1DC823AF00EB7A35 /* noonian */,
-				3BBD8B6C1DC823AF00EB7A35 /* noonianTests */,
+				3BBD8B6C1DC823AF00EB7A35 /* NoonianTests */,
 				3BBD8B5B1DC823AF00EB7A35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBD8B5A1DC823AF00EB7A35 /* noonian.app */,
-				3BBD8B691DC823AF00EB7A35 /* noonianTests.xctest */,
+				3BBD8B691DC823AF00EB7A35 /* NoonianTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,13 +75,13 @@
 			path = noonian;
 			sourceTree = "<group>";
 		};
-		3BBD8B6C1DC823AF00EB7A35 /* noonianTests */ = {
+		3BBD8B6C1DC823AF00EB7A35 /* NoonianTests */ = {
 			isa = PBXGroup;
 			children = (
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
 				3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */,
 			);
-			path = noonianTests;
+			path = NoonianTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,9 +104,9 @@
 			productReference = 3BBD8B5A1DC823AF00EB7A35 /* noonian.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3BBD8B681DC823AF00EB7A35 /* noonianTests */ = {
+		3BBD8B681DC823AF00EB7A35 /* NoonianTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BBD8B751DC823AF00EB7A35 /* Build configuration list for PBXNativeTarget "noonianTests" */;
+			buildConfigurationList = 3BBD8B751DC823AF00EB7A35 /* Build configuration list for PBXNativeTarget "NoonianTests" */;
 			buildPhases = (
 				3BBD8B651DC823AF00EB7A35 /* Sources */,
 				3BBD8B661DC823AF00EB7A35 /* Frameworks */,
@@ -117,9 +117,9 @@
 			dependencies = (
 				3BBD8B6B1DC823AF00EB7A35 /* PBXTargetDependency */,
 			);
-			name = noonianTests;
+			name = NoonianTests;
 			productName = noonianTests;
-			productReference = 3BBD8B691DC823AF00EB7A35 /* noonianTests.xctest */;
+			productReference = 3BBD8B691DC823AF00EB7A35 /* NoonianTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -144,7 +144,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3BBD8B551DC823AF00EB7A35 /* Build configuration list for PBXProject "noonian" */;
+			buildConfigurationList = 3BBD8B551DC823AF00EB7A35 /* Build configuration list for PBXProject "Noonian" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -158,7 +158,7 @@
 			projectRoot = "";
 			targets = (
 				3BBD8B591DC823AF00EB7A35 /* noonian */,
-				3BBD8B681DC823AF00EB7A35 /* noonianTests */,
+				3BBD8B681DC823AF00EB7A35 /* NoonianTests */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +357,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3BBD8B551DC823AF00EB7A35 /* Build configuration list for PBXProject "noonian" */ = {
+		3BBD8B551DC823AF00EB7A35 /* Build configuration list for PBXProject "Noonian" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BBD8B701DC823AF00EB7A35 /* Debug */,
@@ -375,7 +375,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BBD8B751DC823AF00EB7A35 /* Build configuration list for PBXNativeTarget "noonianTests" */ = {
+		3BBD8B751DC823AF00EB7A35 /* Build configuration list for PBXNativeTarget "NoonianTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BBD8B761DC823AF00EB7A35 /* Debug */,
