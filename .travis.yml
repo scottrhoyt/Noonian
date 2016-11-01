@@ -19,16 +19,12 @@ matrix:
 #        - carthage build --no-skip-current
 #        - carthage archive $FRAMEWORK_NAME
     - script:
-        - TOOLCHAINS=swift swift build
-        - TOOLCHAINS=swift swift test
+        - swift build
+        - swift test
       env: JOB=SPM
       os: osx
       osx_image: xcode8
       language: objective-c
-      before_install:
-        - export SWIFT_SNAPSHOT=swift-DEVELOPMENT-SNAPSHOT-2016-09-07-a
-        - curl https://swift.org/builds/development/xcode/$SWIFT_SNAPSHOT/$SWIFT_SNAPSHOT-osx.pkg -o swift.pkg
-        - sudo installer -pkg swift.pkg -target /
     - script:
         - swift build
         - swift test
