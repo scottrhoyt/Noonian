@@ -12,3 +12,11 @@ import XCTest
 class NothingTests: XCTestCase {
     func testAlwaysPasses() { }
 }
+
+#if os(Linux)
+extension NothingTests {
+    static var allTests = [
+        ("testAlwaysPasses", testAlwaysPasses)
+    ]
+}
+#endif

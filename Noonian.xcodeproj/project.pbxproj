@@ -28,6 +28,7 @@
 		3BBD8B6F1DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B781DC8250600EB7A35 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingTests.swift; sourceTree = "<group>"; };
+		3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +80,7 @@
 		3BBD8B6C1DC823AF00EB7A35 /* NoonianTests */ = {
 			isa = PBXGroup;
 			children = (
+				3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */,
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
 				3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */,
 			);
