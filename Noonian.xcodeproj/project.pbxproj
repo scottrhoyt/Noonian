@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
+		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
 		3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +24,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
+		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* NoonianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */,
+				3B4114951DCAAD7100709803 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,9 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B4114961DCAAD7600709803 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B4114921DCAAD7100709803 /* Commandant.framework */,
+				3B4114931DCAAD7100709803 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3BBD8B511DC823AF00EB7A35 = {
 			isa = PBXGroup;
 			children = (
+				3B4114961DCAAD7600709803 /* Frameworks */,
 				3BBD8B5C1DC823AF00EB7A35 /* noonian */,
 				3BBD8B6C1DC823AF00EB7A35 /* NoonianTests */,
 				3BBD8B5B1DC823AF00EB7A35 /* Products */,
@@ -99,6 +115,7 @@
 				3BBD8B571DC823AF00EB7A35 /* Frameworks */,
 				3BBD8BA81DC84DD000EB7A35 /* Swiftlint */,
 				3BBD8B581DC823AF00EB7A35 /* Resources */,
+				3B4114981DCAADB800709803 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +203,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3B4114981DCAADB800709803 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/Result.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Commandant.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		3BBD8BA81DC84DD000EB7A35 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +358,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
@@ -339,6 +376,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
