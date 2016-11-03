@@ -8,6 +8,14 @@
 
 import Foundation
 
+enum ConfigurationError: Error {
+    case unknownConfiguration
+}
+
 protocol Task {
-    func run()
+    var name: String { get }
+}
+
+protocol ConfigurableTask: Task {
+    init(configuration: Any) throws
 }

@@ -12,8 +12,8 @@
 		3B41149A1DCB0A3F00709803 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3B41149D1DCB123A00709803 /* .noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B41149C1DCB123A00709803 /* .noonian.yml */; };
 		3B4114A01DCB12D400709803 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
-		3B4114A21DCB133C00709803 /* BeforeBuildTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* BeforeBuildTask.swift */; };
-		3B4114A51DCB142800709803 /* BeforeBuildTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* BeforeBuildTaskTests.swift */; };
+		3B4114A21DCB133C00709803 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* CommandTask.swift */; };
+		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
 		3B4114AF1DCB993000709803 /* NoonianKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B4114AD1DCB993000709803 /* NoonianKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -59,8 +59,8 @@
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
 		3B41149C1DCB123A00709803 /* .noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .noonian.yml; sourceTree = "<group>"; };
 		3B41149F1DCB12D400709803 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		3B4114A11DCB133C00709803 /* BeforeBuildTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeBuildTask.swift; sourceTree = "<group>"; };
-		3B4114A41DCB142800709803 /* BeforeBuildTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeBuildTaskTests.swift; sourceTree = "<group>"; };
+		3B4114A11DCB133C00709803 /* CommandTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTask.swift; sourceTree = "<group>"; };
+		3B4114A41DCB142800709803 /* CommandTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTaskTests.swift; sourceTree = "<group>"; };
 		3B4114AB1DCB993000709803 /* NoonianKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoonianKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4114AD1DCB993000709803 /* NoonianKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoonianKit.h; sourceTree = "<group>"; };
 		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				3B41149F1DCB12D400709803 /* Task.swift */,
-				3B4114A11DCB133C00709803 /* BeforeBuildTask.swift */,
+				3B4114A11DCB133C00709803 /* CommandTask.swift */,
 			);
 			name = Tasks;
 			path = Sources/NoonianKit/Tasks;
@@ -134,7 +134,7 @@
 		3B4114A31DCB140000709803 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
-				3B4114A41DCB142800709803 /* BeforeBuildTaskTests.swift */,
+				3B4114A41DCB142800709803 /* CommandTaskTests.swift */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -390,9 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B4114A21DCB133C00709803 /* BeforeBuildTask.swift in Sources */,
+				3B4114A21DCB133C00709803 /* CommandTask.swift in Sources */,
 				3B4114A01DCB12D400709803 /* Task.swift in Sources */,
-				3B4114A51DCB142800709803 /* BeforeBuildTaskTests.swift in Sources */,
+				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
 				3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

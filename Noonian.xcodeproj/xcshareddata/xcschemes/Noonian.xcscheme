@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Noonian.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3B4114AA1DCB993000709803"
+               BuildableName = "NoonianKit.framework"
+               BlueprintName = "NoonianKit"
+               ReferencedContainer = "container:Noonian.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
