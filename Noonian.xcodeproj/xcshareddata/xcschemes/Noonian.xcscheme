@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BBD8B681DC823AF00EB7A35"
-               BuildableName = "NoonianTests.xctest"
-               BlueprintName = "NoonianTests"
+               BuildableName = "NoonianKitTests.xctest"
+               BlueprintName = "NoonianKitTests"
                ReferencedContainer = "container:Noonian.xcodeproj">
             </BuildableReference>
          </TestableReference>
