@@ -6,7 +6,7 @@ script: placeholder # workaround for https://github.com/travis-ci/travis-ci/issu
 matrix:
   include:
     - script:
-        - carthage bootstrap 
+        - carthage bootstrap --no-use-binaries --platform mac 
         - set -o pipefail && xcodebuild -scheme Noonian -project Noonian.xcodeproj clean build test | xcpretty
       env: JOB=Xcode
       os: osx
