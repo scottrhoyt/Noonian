@@ -14,11 +14,22 @@
 		3B4114A01DCB12D400709803 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
 		3B4114A21DCB133C00709803 /* BeforeBuildTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* BeforeBuildTask.swift */; };
 		3B4114A51DCB142800709803 /* BeforeBuildTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* BeforeBuildTaskTests.swift */; };
+		3B4114AF1DCB993000709803 /* NoonianKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B4114AD1DCB993000709803 /* NoonianKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
+		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
 		3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3B4114B01DCB993000709803 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BBD8B521DC823AF00EB7A35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B4114AA1DCB993000709803;
+			remoteInfo = NoonianKit;
+		};
 		3BBD8B6A1DC823AF00EB7A35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3BBD8B521DC823AF00EB7A35 /* Project object */;
@@ -28,6 +39,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3B4114B71DCB993000709803 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -36,6 +61,9 @@
 		3B41149F1DCB12D400709803 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3B4114A11DCB133C00709803 /* BeforeBuildTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeBuildTask.swift; sourceTree = "<group>"; };
 		3B4114A41DCB142800709803 /* BeforeBuildTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeforeBuildTaskTests.swift; sourceTree = "<group>"; };
+		3B4114AB1DCB993000709803 /* NoonianKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoonianKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B4114AD1DCB993000709803 /* NoonianKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoonianKit.h; sourceTree = "<group>"; };
+		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* NoonianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,12 +74,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3B4114A71DCB993000709803 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BBD8B571DC823AF00EB7A35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */,
 				3B4114951DCAAD7100709803 /* Result.framework in Frameworks */,
+				3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */,
 				3B41149A1DCB0A3F00709803 /* Yaml.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +128,7 @@
 				3B4114A11DCB133C00709803 /* BeforeBuildTask.swift */,
 			);
 			name = Tasks;
-			path = Sources/noonian/Tasks;
+			path = Sources/NoonianKit/Tasks;
 			sourceTree = SOURCE_ROOT;
 		};
 		3B4114A31DCB140000709803 /* Tasks */ = {
@@ -102,9 +139,21 @@
 			path = Tasks;
 			sourceTree = "<group>";
 		};
+		3B4114AC1DCB993000709803 /* NoonianKit */ = {
+			isa = PBXGroup;
+			children = (
+				3B41149E1DCB12BB00709803 /* Tasks */,
+				3B4114AD1DCB993000709803 /* NoonianKit.h */,
+				3B4114AE1DCB993000709803 /* Info.plist */,
+			);
+			name = NoonianKit;
+			path = Sources/NoonianKit;
+			sourceTree = "<group>";
+		};
 		3BBD8B511DC823AF00EB7A35 = {
 			isa = PBXGroup;
 			children = (
+				3B4114AC1DCB993000709803 /* NoonianKit */,
 				3B4114961DCAAD7600709803 /* Frameworks */,
 				3BBD8B5C1DC823AF00EB7A35 /* noonian */,
 				3BBD8B6C1DC823AF00EB7A35 /* NoonianTests */,
@@ -117,6 +166,7 @@
 			children = (
 				3BBD8B5A1DC823AF00EB7A35 /* noonian.app */,
 				3BBD8B691DC823AF00EB7A35 /* NoonianTests.xctest */,
+				3B4114AB1DCB993000709803 /* NoonianKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,7 +174,6 @@
 		3BBD8B5C1DC823AF00EB7A35 /* noonian */ = {
 			isa = PBXGroup;
 			children = (
-				3B41149E1DCB12BB00709803 /* Tasks */,
 				3BBD8B641DC823AF00EB7A35 /* Info.plist */,
 				3BBD8B781DC8250600EB7A35 /* main.swift */,
 			);
@@ -147,7 +196,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3B4114A81DCB993000709803 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B4114AF1DCB993000709803 /* NoonianKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		3B4114AA1DCB993000709803 /* NoonianKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B4114B41DCB993000709803 /* Build configuration list for PBXNativeTarget "NoonianKit" */;
+			buildPhases = (
+				3B4114A61DCB993000709803 /* Sources */,
+				3B4114A71DCB993000709803 /* Frameworks */,
+				3B4114A81DCB993000709803 /* Headers */,
+				3B4114A91DCB993000709803 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoonianKit;
+			productName = NoonianKit;
+			productReference = 3B4114AB1DCB993000709803 /* NoonianKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		3BBD8B591DC823AF00EB7A35 /* noonian */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3BBD8B721DC823AF00EB7A35 /* Build configuration list for PBXNativeTarget "noonian" */;
@@ -157,10 +235,12 @@
 				3BBD8BA81DC84DD000EB7A35 /* Swiftlint */,
 				3BBD8B581DC823AF00EB7A35 /* Resources */,
 				3B4114981DCAADB800709803 /* Carthage Copy Frameworks */,
+				3B4114B71DCB993000709803 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3B4114B11DCB993000709803 /* PBXTargetDependency */,
 			);
 			name = noonian;
 			productName = noonian;
@@ -195,6 +275,10 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Scott Hoyt";
 				TargetAttributes = {
+					3B4114AA1DCB993000709803 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
 					3BBD8B591DC823AF00EB7A35 = {
 						CreatedOnToolsVersion = 8.1;
 						LastSwiftMigration = 0810;
@@ -222,11 +306,19 @@
 			targets = (
 				3BBD8B591DC823AF00EB7A35 /* noonian */,
 				3BBD8B681DC823AF00EB7A35 /* NoonianTests */,
+				3B4114AA1DCB993000709803 /* NoonianKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3B4114A91DCB993000709803 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BBD8B581DC823AF00EB7A35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +371,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3B4114A61DCB993000709803 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3BBD8B561DC823AF00EB7A35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +400,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3B4114B11DCB993000709803 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B4114AA1DCB993000709803 /* NoonianKit */;
+			targetProxy = 3B4114B01DCB993000709803 /* PBXContainerItemProxy */;
+		};
 		3BBD8B6B1DC823AF00EB7A35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3BBD8B591DC823AF00EB7A35 /* noonian */;
@@ -309,6 +413,54 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		3B4114B51DCB993000709803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/NoonianKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.NoonianKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3B4114B61DCB993000709803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/NoonianKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.NoonianKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		3BBD8B701DC823AF00EB7A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -410,6 +562,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -428,6 +581,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -466,6 +620,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3B4114B41DCB993000709803 /* Build configuration list for PBXNativeTarget "NoonianKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B4114B51DCB993000709803 /* Debug */,
+				3B4114B61DCB993000709803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3BBD8B551DC823AF00EB7A35 /* Build configuration list for PBXProject "Noonian" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

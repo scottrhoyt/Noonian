@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import noonian
+@testable import NoonianKit
 
 class BeforeBuildTaskTests: XCTestCase {
     func testInitWithCommands() {

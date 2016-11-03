@@ -3,7 +3,11 @@ import PackageDescription
 let package = Package(
   name: "noonian",
   targets: [
-    Target(name: "noonian"),
+    Target(name: "NoonianKit"),
+    Target(
+      name: "noonian",
+      dependencies: ["NoonianKit"]
+    ),
   ],
   dependencies: [
     .Package(url: "https://github.com/Carthage/Commandant.git", majorVersion: 0),
