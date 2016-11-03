@@ -1,7 +1,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "noonian",
+  name: "Noonian",
   targets: [
     Target(name: "NoonianKit"),
     Target(
