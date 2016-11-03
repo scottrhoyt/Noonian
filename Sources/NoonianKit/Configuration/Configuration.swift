@@ -10,28 +10,34 @@ import Foundation
 
 enum ConfigurationItem: String {
     case beforeBuild = "before_build"
-
-    static var allItems: Set<ConfigurationItem> {
-        return [.beforeBuild]
-    }
 }
 
 struct Configuration {
     let tasks: [CommandTask]
 
     init(configuration: [String: Any]) throws {
-        try Configuration.checkAllKeysAllowed(keys: Set(configuration.keys))
+        let mapped = try Configuration.validateAndMap(configuration: configuration)
         var tasks = [CommandTask]()
-        for (key, value) in configuration {
-            tasks.append(try CommandTask(name: key, configuration: value))
+        for (key, value) in mapped {
+            tasks.append(try CommandTask(name: key.rawValue, configuration: value))
         }
         self.tasks = tasks
     }
 
-    static func checkAllKeysAllowed(keys: Set<String>) throws {
-        let unknownKeys = keys.subtracting(ConfigurationItem.allItems.map { $0.rawValue })
-        if !unknownKeys.isEmpty {
-            throw NoonianError.unknownConfigurationItems(items: unknownKeys)
+    static func validateAndMap(configuration: [String: Any]) throws -> [ConfigurationItem: Any] {
+        var mapped = [ConfigurationItem: Any]()
+        var unknownKeys = [String]()
+
+        for (key, value) in configuration {
+            if let item = ConfigurationItem(rawValue: key) {
+                mapped[item] = value
+            } else {
+                unknownKeys.append(key)
+            }
         }
+
+        if !unknownKeys.isEmpty { throw NoonianError.unknownConfigurationItems(items: unknownKeys) }
+
+        return mapped
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 enum NoonianError: Error {
-    case unknownConfigurationItems(items: Set<String>)
+    case duplicateConfigurations(items: [String])
+    case unknownConfigurationItems(items: [String])
     case unknownConfigurationOption(item: String, Option: Any)
 }

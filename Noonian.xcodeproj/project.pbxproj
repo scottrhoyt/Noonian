@@ -17,7 +17,6 @@
 		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
-		3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */; };
 		3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF579A1DCBCCC700ADE595 /* Configuration.swift */; };
 		3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
 		3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* CommandTask.swift */; };
@@ -72,7 +71,6 @@
 		3BBD8B691DC823AF00EB7A35 /* NoonianKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B6F1DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B781DC8250600EB7A35 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingTests.swift; sourceTree = "<group>"; };
 		3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 		3BDF579A1DCBCCC700ADE595 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianError.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				3B4114A31DCB140000709803 /* Tasks */,
 				3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */,
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
-				3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */,
 			);
 			name = NoonianKitTests;
 			path = Tests/NoonianKitTests;
@@ -428,7 +425,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
-				3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */,
 				3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

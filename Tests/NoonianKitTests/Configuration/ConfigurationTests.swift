@@ -11,18 +11,15 @@ import XCTest
 
 class ConfigurationTests: XCTestCase {
     func testBadConfigurationItemsThrows() {
-        let badItem1 = "badItem1"
-        let badItem2 = "badItem2"
-        let badItems = Set([badItem1, badItem2])
         let badConfig = [
-            badItem1: 1,
-            badItem2: 2
+            "badItem1": 1,
+            "badItem2": 2
         ]
 
         do {
             _ = try Configuration(configuration: badConfig)
         } catch NoonianError.unknownConfigurationItems(items: let items) {
-            XCTAssertEqual(items, badItems)
+            XCTAssertEqual(items, Array(badConfig.keys))
             return
         } catch {
             XCTFail(
@@ -54,6 +51,7 @@ class ConfigurationTests: XCTestCase {
     extension ConfigurationTests {
         static var allTests = [
             ("testBadConfigurationItemsThrows", testBadConfigurationItemsThrows),
+            ("testBeforeBuildConfig", testBeforeBuildConfig)
         ]
     }
 #endif
