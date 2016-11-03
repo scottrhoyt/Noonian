@@ -1,2 +1,2 @@
 github "Carthage/Commandant"
-github "behrang/YamlSwift" ~> 3.0
+github "scottrhoyt/YamlSwift" ~> 3.0
