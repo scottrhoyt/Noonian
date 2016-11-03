@@ -153,9 +153,9 @@
 		3BBD8B511DC823AF00EB7A35 = {
 			isa = PBXGroup;
 			children = (
-				3B4114AC1DCB993000709803 /* NoonianKit */,
 				3B4114961DCAAD7600709803 /* Frameworks */,
 				3BBD8B5C1DC823AF00EB7A35 /* noonian */,
+				3B4114AC1DCB993000709803 /* NoonianKit */,
 				3BBD8B6C1DC823AF00EB7A35 /* NoonianKitTests */,
 				3BBD8B5B1DC823AF00EB7A35 /* Products */,
 			);
