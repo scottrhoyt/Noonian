@@ -5,7 +5,9 @@
 script: placeholder # workaround for https://github.com/travis-ci/travis-ci/issues/4681
 matrix:
   include:
-    - script: set -o pipefail && xcodebuild -scheme Noonian -project Noonian.xcodeproj clean build test | xcpretty
+    - script:
+        - carthage bootstrap --no-use-binaries --platform mac 
+        - set -o pipefail && xcodebuild -scheme Noonian -project Noonian.xcodeproj clean build test | xcpretty
       env: JOB=Xcode
       os: osx
       osx_image: xcode8
