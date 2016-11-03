@@ -1,7 +1,7 @@
 #if os(Linux)
 import XCTest
 
-@testable import NoonianTests
+@testable import NoonianKitTests
 
 XCTMain([
   testCase(NothingTests.allTests),
