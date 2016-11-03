@@ -11,8 +11,6 @@
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B41149A1DCB0A3F00709803 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3B41149D1DCB123A00709803 /* .noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B41149C1DCB123A00709803 /* .noonian.yml */; };
-		3B4114A01DCB12D400709803 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
-		3B4114A21DCB133C00709803 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* CommandTask.swift */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
 		3B4114AF1DCB993000709803 /* NoonianKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B4114AD1DCB993000709803 /* NoonianKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
@@ -20,6 +18,11 @@
 		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
 		3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */; };
+		3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF579A1DCBCCC700ADE595 /* Configuration.swift */; };
+		3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
+		3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* CommandTask.swift */; };
+		3BDF57A11DCBD3A000ADE595 /* NoonianError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */; };
+		3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		3BBD8B781DC8250600EB7A35 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3BBD8B9F1DC8308B00EB7A35 /* NothingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingTests.swift; sourceTree = "<group>"; };
 		3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
+		3BDF579A1DCBCCC700ADE595 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianError.swift; sourceTree = "<group>"; };
+		3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,8 @@
 		3B4114AC1DCB993000709803 /* NoonianKit */ = {
 			isa = PBXGroup;
 			children = (
+				3BDF579F1DCBD37E00ADE595 /* Common */,
+				3BDF57991DCBCCBB00ADE595 /* Configuration */,
 				3B41149E1DCB12BB00709803 /* Tasks */,
 				3B4114AD1DCB993000709803 /* NoonianKit.h */,
 				3B4114AE1DCB993000709803 /* Info.plist */,
@@ -185,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				3B41149B1DCB123A00709803 /* Fixtures */,
+				3BDF57A21DCBD5D200ADE595 /* Configuration */,
 				3B4114A31DCB140000709803 /* Tasks */,
 				3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */,
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
@@ -192,6 +201,30 @@
 			);
 			name = NoonianKitTests;
 			path = Tests/NoonianKitTests;
+			sourceTree = "<group>";
+		};
+		3BDF57991DCBCCBB00ADE595 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3BDF579A1DCBCCC700ADE595 /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3BDF579F1DCBD37E00ADE595 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3BDF57A21DCBD5D200ADE595 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +408,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */,
+				3BDF57A11DCBD3A000ADE595 /* NoonianError.swift in Sources */,
+				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,
+				3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,10 +427,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B4114A21DCB133C00709803 /* CommandTask.swift in Sources */,
-				3B4114A01DCB12D400709803 /* Task.swift in Sources */,
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
 				3BBD8BA01DC8308B00EB7A35 /* NothingTests.swift in Sources */,
+				3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +590,7 @@
 		3BBD8B731DC823AF00EB7A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -573,6 +610,7 @@
 		3BBD8B741DC823AF00EB7A35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (

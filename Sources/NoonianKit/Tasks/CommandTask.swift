@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CommandTask: Task {
+struct CommandTask: Task, Equatable {
     let name: String
     let commands: [String]
 
@@ -26,9 +26,16 @@ struct CommandTask: Task {
         } else if let arrayCommands = configuration as? [String] {
             commands += arrayCommands
         } else {
-            throw ConfigurationError.unknownConfiguration
+            throw NoonianError.unknownConfigurationOption(item: name, Option: configuration)
         }
 
         self.init(name: name, commands: commands)
     }
+}
+
+// MARK: - CommandTask: Equatable
+
+func == (lhs: CommandTask, rhs: CommandTask) -> Bool {
+    return lhs.name == rhs.name &&
+        lhs.commands == rhs.commands
 }

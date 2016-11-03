@@ -4,7 +4,7 @@ import XCTest
 @testable import NoonianKitTests
 
 XCTMain([
-  testCase(NothingTests.allTests),
-  testCase(BeforeBuildTaskTests.allTests)
+  testCase(CommandTaskTests.allTests),
+  testCase(ConfigurationTests.allTests)
 ])
 #endif

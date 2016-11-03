@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum ConfigurationError: Error {
-    case unknownConfiguration
-}
-
 protocol Task {
     var name: String { get }
 }
