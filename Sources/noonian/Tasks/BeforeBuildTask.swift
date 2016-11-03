@@ -9,6 +9,12 @@
 import Foundation
 
 struct BeforeBuildTask: Task {
+    let commands: [String]
+
+    init(commands: [String]) {
+        self.commands = commands
+    }
+
     func run() {
         fatalError()
     }

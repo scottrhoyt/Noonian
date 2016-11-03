@@ -5,5 +5,6 @@ import XCTest
 
 XCTMain([
   testCase(NothingTests.allTests),
+  testCase(BeforeBuildTaskTests.allTests)
 ])
 #endif
