@@ -1,2 +1,3 @@
 github "antitypical/Result" "3.0.0"
+github "behrang/YamlSwift" "3.0.0"
 github "Carthage/Commandant" "0.11.2"
