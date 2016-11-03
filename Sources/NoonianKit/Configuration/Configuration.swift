@@ -8,19 +8,28 @@
 
 import Foundation
 
+enum ConfigurationItem: String {
+    case beforeBuild = "before_build"
+
+    static var allItems: Set<ConfigurationItem> {
+        return [.beforeBuild]
+    }
+}
+
 struct Configuration {
-    static let allowedItems: Set<String> = [
-        "before_build"
-    ]
     let tasks: [CommandTask]
 
     init(configuration: [String: Any]) throws {
         try Configuration.checkAllKeysAllowed(keys: Set(configuration.keys))
-        tasks = [try CommandTask(name: "before_build", configuration: configuration["before_build"]!)]
+        var tasks = [CommandTask]()
+        for (key, value) in configuration {
+            tasks.append(try CommandTask(name: key, configuration: value))
+        }
+        self.tasks = tasks
     }
 
     static func checkAllKeysAllowed(keys: Set<String>) throws {
-        let unknownKeys = keys.subtracting(allowedItems)
+        let unknownKeys = keys.subtracting(ConfigurationItem.allItems.map { $0.rawValue })
         if !unknownKeys.isEmpty {
             throw NoonianError.unknownConfigurationItems(items: unknownKeys)
         }
