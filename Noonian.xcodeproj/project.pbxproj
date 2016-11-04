@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */; };
-		3B36F33E1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */; };
+		3B36F33E1DCC54C900C0C3C1 /* String+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */; };
 		3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */; };
 		3B36F3421DCC670500C0C3C1 /* Yaml+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */; };
 		3B36F3461DCC680100C0C3C1 /* test.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B36F3451DCC680100C0C3C1 /* test.yml */; };
@@ -101,7 +101,7 @@
 
 /* Begin PBXFileReference section */
 		3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
-		3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+NoonianKitTests.swift"; sourceTree = "<group>"; };
+		3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 		3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Yaml+Noonian.swift"; sourceTree = "<group>"; };
 		3B36F3451DCC680100C0C3C1 /* test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.yml; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */,
-				3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */,
+				3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -530,7 +530,7 @@
 			files = (
 				3BACDF0D1DCC38D50045A49A /* YamlParserTests.swift in Sources */,
 				3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */,
-				3B36F33E1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift in Sources */,
+				3B36F33E1DCC54C900C0C3C1 /* String+NoonianKitTests.swift in Sources */,
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
 				3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */,
 				3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */,

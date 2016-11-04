@@ -8,11 +8,18 @@
 
 import Foundation
 
-extension NSString {
+extension String {
+    var isAbsolutePath: Bool {
+        return characters.first == "/"
+    }
+
     public func absolutePathRepresentation(rootDirectory: String = FileManager.default.currentDirectoryPath) -> String {
         if isAbsolutePath {
             return self as String
         }
-        return (NSString.path(withComponents: [rootDirectory, self as String]) as NSString).standardizingPath
+
+        //let rootUrl = URL(fileURLWithPath: rootDirectory, isDirectory: true)
+        //return URL(fileURLWithPath: self, relativeTo: rootUrl).absoluteString
+        return rootDirectory + "/" + self
     }
 }
