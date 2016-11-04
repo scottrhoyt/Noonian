@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
-		3B41149D1DCB123A00709803 /* .noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B41149C1DCB123A00709803 /* .noonian.yml */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
 		3B4114AF1DCB993000709803 /* NoonianKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B4114AD1DCB993000709803 /* NoonianKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
+		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
 		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -23,6 +22,15 @@
 		3BACDEFD1DCC32BF0045A49A /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3BACDEFE1DCC32BF0045A49A /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3BACDEFF1DCC32BF0045A49A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
+		3BACDF091DCC38C30045A49A /* duplicate.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF061DCC38C30045A49A /* duplicate.noonian.yml */; };
+		3BACDF0A1DCC38C30045A49A /* good.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF071DCC38C30045A49A /* good.noonian.yml */; };
+		3BACDF0B1DCC38C30045A49A /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF081DCC38C30045A49A /* test.txt */; };
+		3BACDF0D1DCC38D50045A49A /* YamlConfigurationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0C1DCC38D50045A49A /* YamlConfigurationParserTests.swift */; };
+		3BACDF101DCC38EF0045A49A /* ConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0E1DCC38EF0045A49A /* ConfigurationParser.swift */; };
+		3BACDF111DCC38EF0045A49A /* YamlConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0F1DCC38EF0045A49A /* YamlConfigurationParser.swift */; };
+		3BACDF161DCC437E0045A49A /* Yaml.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3BACDF171DCC437E0045A49A /* Commandant.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3BACDF181DCC437E0045A49A /* Result.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
 		3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF579A1DCBCCC700ADE595 /* Configuration.swift */; };
 		3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
@@ -39,12 +47,12 @@
 			remoteGlobalIDString = 3B4114AA1DCB993000709803;
 			remoteInfo = NoonianKit;
 		};
-		3BBD8B6A1DC823AF00EB7A35 /* PBXContainerItemProxy */ = {
+		3BACDF131DCC3FAB0045A49A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3BBD8B521DC823AF00EB7A35 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3BBD8B591DC823AF00EB7A35;
-			remoteInfo = noonian;
+			remoteGlobalIDString = 3B4114AA1DCB993000709803;
+			remoteInfo = NoonianKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,6 +81,19 @@
 			name = "Embed Frameworks in NoonianKit";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3BACDF151DCC43710045A49A /* Copy Carthage Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3BACDF161DCC437E0045A49A /* Yaml.framework in Copy Carthage Frameworks */,
+				3BACDF171DCC437E0045A49A /* Commandant.framework in Copy Carthage Frameworks */,
+				3BACDF181DCC437E0045A49A /* Result.framework in Copy Carthage Frameworks */,
+			);
+			name = "Copy Carthage Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +109,12 @@
 		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
+		3BACDF061DCC38C30045A49A /* duplicate.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = duplicate.noonian.yml; sourceTree = "<group>"; };
+		3BACDF071DCC38C30045A49A /* good.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = good.noonian.yml; sourceTree = "<group>"; };
+		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		3BACDF0C1DCC38D50045A49A /* YamlConfigurationParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlConfigurationParserTests.swift; sourceTree = "<group>"; };
+		3BACDF0E1DCC38EF0045A49A /* ConfigurationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationParser.swift; sourceTree = "<group>"; };
+		3BACDF0F1DCC38EF0045A49A /* YamlConfigurationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlConfigurationParser.swift; sourceTree = "<group>"; };
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* NoonianKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +171,9 @@
 		3B41149B1DCB123A00709803 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				3BACDF061DCC38C30045A49A /* duplicate.noonian.yml */,
+				3BACDF071DCC38C30045A49A /* good.noonian.yml */,
+				3BACDF081DCC38C30045A49A /* test.txt */,
 				3B41149C1DCB123A00709803 /* .noonian.yml */,
 			);
 			path = Fixtures;
@@ -247,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				3BDF579A1DCBCCC700ADE595 /* Configuration.swift */,
+				3BACDF0E1DCC38EF0045A49A /* ConfigurationParser.swift */,
+				3BACDF0F1DCC38EF0045A49A /* YamlConfigurationParser.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -262,6 +294,7 @@
 		3BDF57A21DCBD5D200ADE595 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				3BACDF0C1DCC38D50045A49A /* YamlConfigurationParserTests.swift */,
 				3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */,
 			);
 			path = Configuration;
@@ -327,12 +360,13 @@
 			buildPhases = (
 				3BBD8B651DC823AF00EB7A35 /* Sources */,
 				3BBD8B661DC823AF00EB7A35 /* Frameworks */,
+				3BACDF151DCC43710045A49A /* Copy Carthage Frameworks */,
 				3BBD8B671DC823AF00EB7A35 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3BBD8B6B1DC823AF00EB7A35 /* PBXTargetDependency */,
+				3BACDF141DCC3FAB0045A49A /* PBXTargetDependency */,
 			);
 			name = NoonianKitTests;
 			productName = noonianTests;
@@ -397,7 +431,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B41149D1DCB123A00709803 /* .noonian.yml in Resources */,
+				3BACDF0A1DCC38C30045A49A /* good.noonian.yml in Resources */,
+				3BACDF091DCC38C30045A49A /* duplicate.noonian.yml in Resources */,
+				3BACDF0B1DCC38C30045A49A /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +496,8 @@
 				3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */,
 				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,
 				3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */,
+				3BACDF111DCC38EF0045A49A /* YamlConfigurationParser.swift in Sources */,
+				3BACDF101DCC38EF0045A49A /* ConfigurationParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BACDF0D1DCC38D50045A49A /* YamlConfigurationParserTests.swift in Sources */,
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
 				3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */,
 				3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */,
@@ -489,10 +528,10 @@
 			target = 3B4114AA1DCB993000709803 /* NoonianKit */;
 			targetProxy = 3B4114B01DCB993000709803 /* PBXContainerItemProxy */;
 		};
-		3BBD8B6B1DC823AF00EB7A35 /* PBXTargetDependency */ = {
+		3BACDF141DCC3FAB0045A49A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3BBD8B591DC823AF00EB7A35 /* noonian */;
-			targetProxy = 3BBD8B6A1DC823AF00EB7A35 /* PBXContainerItemProxy */;
+			target = 3B4114AA1DCB993000709803 /* NoonianKit */;
+			targetProxy = 3BACDF131DCC3FAB0045A49A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -654,7 +693,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -674,7 +713,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -688,8 +727,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/NoonianKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.NoonianTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -703,8 +743,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/NoonianKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.NoonianTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

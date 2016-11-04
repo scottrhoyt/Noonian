@@ -1,0 +1,2 @@
+# This is a valid test configuration file for Noonian
+before_build: cp foo.bar foo.baz
