@@ -19,6 +19,7 @@
 		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		3B74A21F1DCD21CE00205C17 /* InitCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A21E1DCD21CE00205C17 /* InitCommand.swift */; };
 		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
 		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -114,6 +115,7 @@
 		3B4114AB1DCB993000709803 /* NoonianKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoonianKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4114AD1DCB993000709803 /* NoonianKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoonianKit.h; sourceTree = "<group>"; };
 		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B74A21E1DCD21CE00205C17 /* InitCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitCommand.swift; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 			path = Sources/NoonianKit;
 			sourceTree = "<group>";
 		};
+		3B74A21D1DCD21BD00205C17 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				3B74A21E1DCD21CE00205C17 /* InitCommand.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
 		3BACDEDD1DCBFE4D0045A49A /* Runner */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +274,7 @@
 		3BBD8B5C1DC823AF00EB7A35 /* noonian */ = {
 			isa = PBXGroup;
 			children = (
+				3B74A21D1DCD21BD00205C17 /* Commands */,
 				3BBD8B641DC823AF00EB7A35 /* Info.plist */,
 				3BBD8B781DC8250600EB7A35 /* main.swift */,
 			);
@@ -521,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBD8B791DC8250600EB7A35 /* main.swift in Sources */,
+				3B74A21F1DCD21CE00205C17 /* InitCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
