@@ -5,6 +5,7 @@ import XCTest
 
 XCTMain([
   testCase(CommandTaskTests.allTests),
-  testCase(ConfigurationTests.allTests)
+  testCase(ConfigurationTests.allTests),
+  testCase(RunnerTests.allTests),
 ])
 #endif

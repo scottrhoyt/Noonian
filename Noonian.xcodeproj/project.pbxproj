@@ -16,6 +16,8 @@
 		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
+		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
+		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
 		3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF579A1DCBCCC700ADE595 /* Configuration.swift */; };
 		3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
@@ -66,6 +68,8 @@
 		3B4114AB1DCB993000709803 /* NoonianKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoonianKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4114AD1DCB993000709803 /* NoonianKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoonianKit.h; sourceTree = "<group>"; };
 		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* NoonianKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,7 @@
 			children = (
 				3BDF579F1DCBD37E00ADE595 /* Common */,
 				3BDF57991DCBCCBB00ADE595 /* Configuration */,
+				3BACDEDE1DCBFE670045A49A /* Runner */,
 				3B41149E1DCB12BB00709803 /* Tasks */,
 				3B4114AD1DCB993000709803 /* NoonianKit.h */,
 				3B4114AE1DCB993000709803 /* Info.plist */,
@@ -155,6 +160,23 @@
 			name = NoonianKit;
 			path = Sources/NoonianKit;
 			sourceTree = "<group>";
+		};
+		3BACDEDD1DCBFE4D0045A49A /* Runner */ = {
+			isa = PBXGroup;
+			children = (
+				3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */,
+			);
+			path = Runner;
+			sourceTree = "<group>";
+		};
+		3BACDEDE1DCBFE670045A49A /* Runner */ = {
+			isa = PBXGroup;
+			children = (
+				3BACDEDF1DCBFE810045A49A /* Runner.swift */,
+			);
+			name = Runner;
+			path = Sources/NoonianKit/Runner;
+			sourceTree = SOURCE_ROOT;
 		};
 		3BBD8B511DC823AF00EB7A35 = {
 			isa = PBXGroup;
@@ -192,6 +214,7 @@
 			children = (
 				3B41149B1DCB123A00709803 /* Fixtures */,
 				3BDF57A21DCBD5D200ADE595 /* Configuration */,
+				3BACDEDD1DCBFE4D0045A49A /* Runner */,
 				3B4114A31DCB140000709803 /* Tasks */,
 				3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */,
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
@@ -407,6 +430,7 @@
 			files = (
 				3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */,
 				3BDF57A11DCBD3A000ADE595 /* NoonianError.swift in Sources */,
+				3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */,
 				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,
 				3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */,
 			);
@@ -425,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
+				3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */,
 				3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

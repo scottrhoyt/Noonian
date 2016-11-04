@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO: Task protocol serves no purpose right now
 protocol Task {
     var name: String { get }
 }
