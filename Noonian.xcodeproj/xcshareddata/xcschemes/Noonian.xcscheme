@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Noonian.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3B4114AA1DCB993000709803"
+               BuildableName = "NoonianKit.framework"
+               BlueprintName = "NoonianKit"
+               ReferencedContainer = "container:Noonian.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -34,8 +48,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3BBD8B681DC823AF00EB7A35"
-               BuildableName = "NoonianTests.xctest"
-               BlueprintName = "NoonianTests"
+               BuildableName = "NoonianKitTests.xctest"
+               BlueprintName = "NoonianKitTests"
                ReferencedContainer = "container:Noonian.xcodeproj">
             </BuildableReference>
          </TestableReference>
