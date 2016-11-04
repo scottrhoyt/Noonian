@@ -9,6 +9,8 @@
 import Foundation
 
 enum NoonianError: Error {
+    case invalidConfiguration
+    case configurationParsing
     case duplicateConfigurations(items: [String])
     case unknownConfigurationItems(items: [String])
     case unknownConfigurationOption(item: String, Option: Any)

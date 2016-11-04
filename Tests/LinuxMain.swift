@@ -7,5 +7,7 @@ XCTMain([
   testCase(CommandTaskTests.allTests),
   testCase(ConfigurationTests.allTests),
   testCase(RunnerTests.allTests),
+  testCase(ParserTests.allTests),
+  testCase(YamlParserTests.allTests),
 ])
 #endif
