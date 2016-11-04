@@ -9,5 +9,6 @@ XCTMain([
   testCase(RunnerTests.allTests),
   testCase(ParserTests.allTests),
   testCase(YamlParserTests.allTests),
+  testCase(EnvironmentTests.allTests),
 ])
 #endif
