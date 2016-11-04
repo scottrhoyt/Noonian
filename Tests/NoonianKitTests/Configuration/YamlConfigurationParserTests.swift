@@ -14,14 +14,8 @@ class YamlConfigurationParserTests: XCTestCase {
     let parser = YamlConfigurationParser()
 
     func testLoadFile() {
-
-    }
-}
-
-extension XCTestCase {
-    func pathToFixtures() -> String {
-        let fileManager = FileManager.default
-        let workingDir = fileManager.currentDirectoryPath
-        return workingDir + "Tests/NoonianKitTests/Fixtures"
+        let contents = loadFixture(named: "test.txt")
+        let comp = "hello\nworld\n"
+        XCTAssertEqual(contents, comp)
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */; };
+		3B36F33E1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
@@ -97,6 +99,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
+		3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B36F33A1DCC549C00C0C3C1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */,
+				3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		3B4114961DCAAD7600709803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +275,7 @@
 		3BBD8B6C1DC823AF00EB7A35 /* NoonianKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				3B36F33A1DCC549C00C0C3C1 /* Common */,
 				3B41149B1DCB123A00709803 /* Fixtures */,
 				3BDF57A21DCBD5D200ADE595 /* Configuration */,
 				3BACDEDD1DCBFE4D0045A49A /* Runner */,
@@ -514,7 +528,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BACDF0D1DCC38D50045A49A /* YamlConfigurationParserTests.swift in Sources */,
+				3B36F33E1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift in Sources */,
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
+				3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */,
 				3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */,
 				3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */,
 			);
