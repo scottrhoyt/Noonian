@@ -18,9 +18,12 @@ extension XCTestCase {
         #endif
     }
 
+    func pathForFixture(named: String) -> String {
+        return fixturesPath + "/" + named
+    }
+
     func loadFixture(named: String) -> String {
-        let path = fixturesPath + "/" + named
         // swiftlint:disable:next force_try
-        return try! String(contentsOfFile: path, encoding: .utf8)
+        return try! String(contentsOfFile: pathForFixture(named: named), encoding: .utf8)
     }
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */; };
 		3B36F33E1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */; };
+		3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */; };
+		3B36F3421DCC670500C0C3C1 /* Yaml+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */; };
+		3B36F3461DCC680100C0C3C1 /* test.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B36F3451DCC680100C0C3C1 /* test.yml */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
@@ -24,12 +27,10 @@
 		3BACDEFD1DCC32BF0045A49A /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3BACDEFE1DCC32BF0045A49A /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3BACDEFF1DCC32BF0045A49A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
-		3BACDF091DCC38C30045A49A /* duplicate.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF061DCC38C30045A49A /* duplicate.noonian.yml */; };
-		3BACDF0A1DCC38C30045A49A /* good.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF071DCC38C30045A49A /* good.noonian.yml */; };
 		3BACDF0B1DCC38C30045A49A /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF081DCC38C30045A49A /* test.txt */; };
-		3BACDF0D1DCC38D50045A49A /* YamlConfigurationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0C1DCC38D50045A49A /* YamlConfigurationParserTests.swift */; };
-		3BACDF101DCC38EF0045A49A /* ConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0E1DCC38EF0045A49A /* ConfigurationParser.swift */; };
-		3BACDF111DCC38EF0045A49A /* YamlConfigurationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0F1DCC38EF0045A49A /* YamlConfigurationParser.swift */; };
+		3BACDF0D1DCC38D50045A49A /* YamlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0C1DCC38D50045A49A /* YamlParserTests.swift */; };
+		3BACDF101DCC38EF0045A49A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0E1DCC38EF0045A49A /* Parser.swift */; };
+		3BACDF111DCC38EF0045A49A /* YamlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0F1DCC38EF0045A49A /* YamlParser.swift */; };
 		3BACDF161DCC437E0045A49A /* Yaml.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDF171DCC437E0045A49A /* Commandant.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDF181DCC437E0045A49A /* Result.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,10 +102,12 @@
 /* Begin PBXFileReference section */
 		3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3B36F33D1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+NoonianKitTests.swift"; sourceTree = "<group>"; };
+		3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Yaml+Noonian.swift"; sourceTree = "<group>"; };
+		3B36F3451DCC680100C0C3C1 /* test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.yml; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
-		3B41149C1DCB123A00709803 /* .noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .noonian.yml; sourceTree = "<group>"; };
 		3B41149F1DCB12D400709803 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3B4114A11DCB133C00709803 /* CommandTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTask.swift; sourceTree = "<group>"; };
 		3B4114A41DCB142800709803 /* CommandTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTaskTests.swift; sourceTree = "<group>"; };
@@ -113,12 +116,10 @@
 		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
-		3BACDF061DCC38C30045A49A /* duplicate.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = duplicate.noonian.yml; sourceTree = "<group>"; };
-		3BACDF071DCC38C30045A49A /* good.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = good.noonian.yml; sourceTree = "<group>"; };
 		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
-		3BACDF0C1DCC38D50045A49A /* YamlConfigurationParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlConfigurationParserTests.swift; sourceTree = "<group>"; };
-		3BACDF0E1DCC38EF0045A49A /* ConfigurationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationParser.swift; sourceTree = "<group>"; };
-		3BACDF0F1DCC38EF0045A49A /* YamlConfigurationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlConfigurationParser.swift; sourceTree = "<group>"; };
+		3BACDF0C1DCC38D50045A49A /* YamlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParserTests.swift; sourceTree = "<group>"; };
+		3BACDF0E1DCC38EF0045A49A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		3BACDF0F1DCC38EF0045A49A /* YamlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParser.swift; sourceTree = "<group>"; };
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* NoonianKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,10 +185,8 @@
 		3B41149B1DCB123A00709803 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				3BACDF061DCC38C30045A49A /* duplicate.noonian.yml */,
-				3BACDF071DCC38C30045A49A /* good.noonian.yml */,
 				3BACDF081DCC38C30045A49A /* test.txt */,
-				3B41149C1DCB123A00709803 /* .noonian.yml */,
+				3B36F3451DCC680100C0C3C1 /* test.yml */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -291,8 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				3BDF579A1DCBCCC700ADE595 /* Configuration.swift */,
-				3BACDF0E1DCC38EF0045A49A /* ConfigurationParser.swift */,
-				3BACDF0F1DCC38EF0045A49A /* YamlConfigurationParser.swift */,
+				3BACDF0E1DCC38EF0045A49A /* Parser.swift */,
+				3BACDF0F1DCC38EF0045A49A /* YamlParser.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -301,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */,
+				3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -308,8 +308,9 @@
 		3BDF57A21DCBD5D200ADE595 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				3BACDF0C1DCC38D50045A49A /* YamlConfigurationParserTests.swift */,
+				3BACDF0C1DCC38D50045A49A /* YamlParserTests.swift */,
 				3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */,
+				3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -445,8 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BACDF0A1DCC38C30045A49A /* good.noonian.yml in Resources */,
-				3BACDF091DCC38C30045A49A /* duplicate.noonian.yml in Resources */,
+				3B36F3461DCC680100C0C3C1 /* test.yml in Resources */,
 				3BACDF0B1DCC38C30045A49A /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,8 +510,9 @@
 				3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */,
 				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,
 				3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */,
-				3BACDF111DCC38EF0045A49A /* YamlConfigurationParser.swift in Sources */,
-				3BACDF101DCC38EF0045A49A /* ConfigurationParser.swift in Sources */,
+				3B36F3421DCC670500C0C3C1 /* Yaml+Noonian.swift in Sources */,
+				3BACDF111DCC38EF0045A49A /* YamlParser.swift in Sources */,
+				3BACDF101DCC38EF0045A49A /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +528,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BACDF0D1DCC38D50045A49A /* YamlConfigurationParserTests.swift in Sources */,
+				3BACDF0D1DCC38D50045A49A /* YamlParserTests.swift in Sources */,
+				3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */,
 				3B36F33E1DCC54C900C0C3C1 /* NSString+NoonianKitTests.swift in Sources */,
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
 				3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */,

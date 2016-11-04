@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol ConfigurationParser {
+protocol Parser {
     func parse(contents: String) throws -> [String: Any]
 }
 
-extension ConfigurationParser {
+extension Parser {
     func loadFile(at path: String) throws -> String {
-        return ""
+        return try String(contentsOfFile: path, encoding: .utf8)
     }
 
     func parseFile(at path: String) throws -> [String: Any] {
