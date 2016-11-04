@@ -8,6 +8,10 @@
 
 import Foundation
 
+#if os(Linux)
+typealias Process = Foundation.Task
+#endif
+
 struct Runner {
     let out: Pipe?
     let error: Pipe?
