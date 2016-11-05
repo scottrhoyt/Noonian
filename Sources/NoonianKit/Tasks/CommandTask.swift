@@ -9,7 +9,7 @@
 import Foundation
 
 public typealias Arguement = (flag: String, value: String?)
-public typealias CommandArgumentsPair = (command: String, arguments: [Arguement])
+public typealias CommandWithArguments = (command: String, arguments: [Arguement])
 
 public struct CommandTask: ConfigurableTask, Equatable {
     let name: String
@@ -21,7 +21,7 @@ public struct CommandTask: ConfigurableTask, Equatable {
     }
 
     // FIXME: Rewite this to be more functional
-    public init(name: String, commandsWithArgs: [CommandArgumentsPair]) {
+    public init(name: String, commandsWithArgs: [CommandWithArguments]) {
         var builtCommands = [String]()
         for (command, arguements) in commandsWithArgs {
             var builtCommand = command

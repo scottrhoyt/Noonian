@@ -26,7 +26,7 @@ struct InitCommand: AndroidCommand {
         let projectArg = Arguement(flag: "-n", value: options.projectName)
         let args = [verbArg, activityArg, pathArg, targetArg, packageArg, projectArg]
 
-        let task = CommandTask(name: "init", commandsWithArgs: [CommandArgumentsPair(command: command, arguments: args)])
+        let task = CommandTask(name: "init", commandsWithArgs: [CommandWithArguments(command: command, arguments: args)])
         let runner = Runner()
         runner.run(task: task)
         print("I still don't do anything")
