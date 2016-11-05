@@ -35,15 +35,15 @@ class ConfigurationTests: XCTestCase {
         let config = [
             "before_build": ["foo", "bar"]
         ]
-        do {
-            let configuration = try Configuration(configuration: config)
-            let task = CommandTask(name: "before_build", commands: ["foo", "bar"])
-            XCTAssertEqual(configuration.tasks.count, 1)
-            XCTAssertEqual(configuration.tasks.first, task)
 
-        } catch {
-            XCTFail("Should not have thrown error: \(error)")
+        guard let configuration = try? Configuration(configuration: config) else {
+            XCTFail("Should not have thrown error.")
+            return
         }
+
+        let task = CommandTask(name: "before_build", commands: ["foo", "bar"])
+        XCTAssertEqual(configuration.tasks.count, 1)
+        XCTAssertEqual(configuration.tasks.first, task)
     }
 }
 

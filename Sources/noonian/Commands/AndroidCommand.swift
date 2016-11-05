@@ -12,13 +12,13 @@ import Commandant
 protocol AndroidCommand: CommandProtocol { }
 
 extension AndroidCommand {
-    var androidCommand: String {
+    private var androidCommand: String {
         return "tools/android"
     }
 
     func getAndroidCommand(androidHome: String?) -> String {
         if let androidHome = androidHome {
-            return androidHome.characters.last == "/" ? androidHome + androidCommand : androidHome + "/" + androidCommand
+            return androidHome.pathByAdding(component: androidCommand)
         } else {
             return androidCommand
         }

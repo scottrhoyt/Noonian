@@ -47,12 +47,8 @@ class YamlParserTests: XCTestCase {
     }
 
     func testParseYaml() {
-        var parsed: [String: Any]
-
-        do {
-            parsed = try parser.parse(contents: loadFixture(named: "test.yml"))
-        } catch {
-            XCTFail("\(error)")
+        guard let parsed = try? parser.parse(contents: loadFixture(named: "test.yml")) else {
+            XCTFail("Error Thrown")
             return
         }
 

@@ -8,9 +8,6 @@
 
 import Foundation
 
-public typealias Arguement = (flag: String, value: String?)
-public typealias CommandArgumentsPair = (command: String, arguments: [Arguement])
-
 public struct CommandTask: ConfigurableTask, Equatable {
     let name: String
     let commands: [String]
@@ -20,21 +17,8 @@ public struct CommandTask: ConfigurableTask, Equatable {
         self.commands = commands
     }
 
-    // FIXME: Rewite this to be more functional
-    public init(name: String, commandsWithArgs: [CommandArgumentsPair]) {
-        var builtCommands = [String]()
-        for (command, arguements) in commandsWithArgs {
-            var builtCommand = command
-            for (flag, value) in arguements {
-                if let value = value {
-                    builtCommand += " " + flag + " " + value
-                } else {
-                    builtCommand += " " + flag
-                }
-            }
-            builtCommands.append(builtCommand)
-        }
-        self.init(name: name, commands: builtCommands)
+    public init(name: String, commands: [Command]) {
+        self.init(name: name, commands: commands.map(assemble))
     }
 }
 
@@ -43,4 +27,18 @@ public struct CommandTask: ConfigurableTask, Equatable {
 public func == (lhs: CommandTask, rhs: CommandTask) -> Bool {
     return lhs.name == rhs.name &&
         lhs.commands == rhs.commands
+}
+
+// MARK: - Command
+
+// TODO: Might want to rename these to not be too similar to Commandant (e.g. ShellCommand)
+public typealias CommandArgument = (flag: String, value: String?)
+public typealias Command = (command: String, arguments: [CommandArgument])
+
+fileprivate func join(argument: CommandArgument) -> String {
+    return [argument.flag, argument.value].flatMap { $0 }.joined(separator: " ")
+}
+
+fileprivate func assemble(command: Command) -> String {
+    return command.command + " " + command.arguments.map(join).joined(separator: " ")
 }
