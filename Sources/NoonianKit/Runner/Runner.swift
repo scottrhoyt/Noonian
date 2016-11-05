@@ -16,7 +16,12 @@ public struct Runner {
     let out: Pipe?
     let error: Pipe?
 
-    public init(out: Pipe? = nil, error: Pipe? = nil) {
+    public init() {
+        self.init(out: nil, error: nil)
+    }
+
+    // This is only for testing purposes
+    internal init(out: Pipe? = nil, error: Pipe? = nil) {
         self.out = out
         self.error = error
     }
@@ -36,19 +41,26 @@ public struct Runner {
     private func newProcess(command: String) -> Process {
         let process = Process()
 
-        if let out = out {
-            process.standardOutput = out
-        }
-
-        if let error = error {
-            process.standardError = error
-        }
-
+        process.standardOutput = out ?? pipe() { print($0, terminator: "") }
+        process.standardError = error ?? pipe() { print($0, terminator: "") }
         process.launchPath = "/bin/sh"
+
         process.arguments = [
             "-c",
             command
         ]
+
         return process
+    }
+
+    private func pipe(printer: ((String) -> Void)?) -> Pipe {
+        let pipe = Pipe()
+        pipe.fileHandleForReading.readabilityHandler = {
+            handle in
+            if let contents = String(data: handle.availableData, encoding: .utf8) {
+                printer?(contents)
+            }
+        }
+        return pipe
     }
 }
