@@ -13,8 +13,8 @@ typealias Process = Foundation.Task
 #endif
 
 public struct Runner {
-    let out: Pipe?
-    let error: Pipe?
+    private weak var externalOut: Pipe? = nil
+    private weak var externalError: Pipe? = nil
 
     public init() {
         self.init(out: nil, error: nil)
@@ -22,14 +22,19 @@ public struct Runner {
 
     // This is only for testing purposes
     internal init(out: Pipe? = nil, error: Pipe? = nil) {
-        self.out = out
-        self.error = error
+        self.externalOut = out
+        self.externalError = error
     }
 
     public func run(task: CommandTask) throws {
         for command in task.commands {
             let process = newProcess(command: command)
+            let (internalOut, internalError) = setPipes(process: process)
             process.launch()
+
+            if let out = internalOut { handlePipe(pipe: out) { print($0, terminator: "") } }
+            if let error = internalError { handlePipe(pipe: error) { print($0, terminator: "") } }
+
             process.waitUntilExit()
 
             if process.terminationStatus != 0 {
@@ -40,9 +45,6 @@ public struct Runner {
 
     private func newProcess(command: String) -> Process {
         let process = Process()
-
-        process.standardOutput = out ?? pipe() { print($0, terminator: "") }
-        process.standardError = error ?? pipe() { print($0, terminator: "") }
         process.launchPath = "/bin/sh"
 
         process.arguments = [
@@ -53,14 +55,34 @@ public struct Runner {
         return process
     }
 
-    private func pipe(printer: ((String) -> Void)?) -> Pipe {
-        let pipe = Pipe()
-        pipe.fileHandleForReading.readabilityHandler = {
-            handle in
-            if let contents = String(data: handle.availableData, encoding: .utf8) {
+    // Sets the pipes for the process. Returns internal pipes if needed.
+    private func setPipes(process: Process) -> (out: Pipe?, error: Pipe?) {
+        let internalOut = Pipe()
+        let internalError = Pipe()
+        process.standardOutput = externalOut ?? internalOut
+        process.standardError = externalError ?? internalError
+        return (
+            out: externalOut == nil ? internalOut : nil,
+            error: externalError == nil ? internalError : nil
+        )
+    }
+
+    private func handlePipe(pipe: Pipe, printer: ((String) -> Void)?) {
+        // OS X has libdispatch which allows us to read the output asynchronously.
+        // Since libdispatch is not included in Swift for linux as of yet, we have
+        // to read synchronously.
+        #if !os(Linux)
+            pipe.fileHandleForReading.readabilityHandler = {
+                handle in
+                if let contents = String(data: handle.availableData, encoding: .utf8) {
+                    printer?(contents)
+                }
+            }
+        #else
+            let outData = pipe.fileHandleForReading.readDataToEndOfFile()
+            if let contents = String(data: outData, encoding: .utf8) {
                 printer?(contents)
             }
-        }
-        return pipe
+        #endif
     }
 }
