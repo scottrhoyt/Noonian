@@ -1,8 +1,11 @@
 excluded:
   - Carthage
   - Packages
-line_length: 140
+
 disabled_rules:
   - type_name
+
+line_length: 140
+function_parameter_count: 6
 variable_name:
   excluded: m

@@ -10,6 +10,7 @@ import Foundation
 import Commandant
 import Result
 import NoonianKit
+import Curry
 
 struct InitCommand: AndroidCommand {
     let verb = "init"
@@ -43,51 +44,41 @@ struct InitOptions: OptionsProtocol {
     let package: String
     let projectName: String
 
-    static func create(_ androidHome: String?)
-        -> (_ path: String?)
-        -> (_ activity: String)
-        -> (_ target: String)
-        -> (_ package: String?)
-        -> (_ projectName: String)
-        -> InitOptions {
-            return { path in { activity in { target in { package in { projectName in {
-                let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)
-                let packageName = package ?? "com.example." + projectName
-                return self.init(
-                    androidHome: androidHome,
-                    path: fullPath,
-                    activity: activity,
-                    target: target,
-                    package: packageName,
-                    projectName: projectName
-                )
-            }() } }}}}
+    init(androidHome: String?, path: String?, activity: String, target: String, package: String?, projectName: String) {
+        let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)
+        let packageName = package ?? "com.example." + projectName
+
+        self.androidHome = androidHome
+        self.path = fullPath
+        self.activity = activity
+        self.target = target
+        self.package = packageName
+        self.projectName = projectName
     }
 
-    // TODO: Rewrite with Curry (create function that takes the optionals and converts them)
     static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianError>> {
-        return create
+        return curry(InitOptions.init)
             <*> m <| androidHomeOption
             <*> m <| Option(
                                 key: "path",
                                 defaultValue: nil,
                                 usage: "The directory to create the project in. Defaults to <Project Name> in the current directory."
-                    )
+                     )
             <*> m <| Option(
                                 key: "activity",
                                 defaultValue: "Main",
                                 usage: "The name of the activity. Defaults to Main."
-                    )
+                     )
             <*> m <| Option(
                                 key: "target",
                                 defaultValue: "18",
                                 usage: "The target to build for. Defaults to Android 7.0."
-                    )
+                     )
             <*> m <| Option<String?>(
                                 key: "package",
                                 defaultValue: nil,
                                 usage: "The package name. Defaults to com.example.<project>."
-                    )
+                     )
             <*> m <| Argument(usage: "the project name")
     }
 }
