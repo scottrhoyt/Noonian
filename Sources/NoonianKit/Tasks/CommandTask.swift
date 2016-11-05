@@ -8,6 +8,9 @@
 
 import Foundation
 
+public typealias Arguement = (flag: String, value: String?)
+public typealias CommandArgumentsPair = (command: String, arguments: [Arguement])
+
 struct CommandTask: ConfigurableTask, Equatable {
     let name: String
     let commands: [String]
@@ -15,6 +18,23 @@ struct CommandTask: ConfigurableTask, Equatable {
     init(name: String, commands: [String]) {
         self.name = name
         self.commands = commands
+    }
+
+    // FIXME: Rewite this to be more functional
+    init(name: String, commandsWithArgs: [CommandArgumentsPair]) {
+        var builtCommands = [String]()
+        for (command, arguements) in commandsWithArgs {
+            var builtCommand = command
+            for (flag, value) in arguements {
+                if let value = value {
+                    builtCommand += " " + flag + " " + value
+                } else {
+                    builtCommand += " " + flag
+                }
+            }
+            builtCommands.append(builtCommand)
+        }
+        self.init(name: name, commands: builtCommands)
     }
 }
 
