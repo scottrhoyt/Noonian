@@ -1,3 +1,4 @@
 github "scottrhoyt/Commandant"
 github "behrang/YamlSwift" ~> 3.0
 github "thoughtbot/Curry" ~> 3.0
+github "onevcat/Rainbow" ~> 2.0

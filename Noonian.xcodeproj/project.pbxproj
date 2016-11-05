@@ -49,6 +49,10 @@
 		3B74A22F1DCD9EE400205C17 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; };
 		3B74A2311DCD9EFF00205C17 /* Curry.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B74A2321DCD9F1100205C17 /* Curry.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B74A2341DCDCE3D00205C17 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; };
+		3B74A2351DCDCE5200205C17 /* Rainbow.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B74A2361DCDCE5E00205C17 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; };
+		3B74A2371DCDCE7000205C17 /* Rainbow.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
 		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -107,6 +111,7 @@
 			dstPath = NoonianKit.framework/Versions/Current/Frameworks;
 			dstSubfolderSpec = 10;
 			files = (
+				3B74A2371DCDCE7000205C17 /* Rainbow.framework in Embed Frameworks in NoonianKit */,
 				3B74A2311DCD9EFF00205C17 /* Curry.framework in Embed Frameworks in NoonianKit */,
 				3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */,
 				3BACDEFA1DCC31010045A49A /* Commandant.framework in Embed Frameworks in NoonianKit */,
@@ -121,6 +126,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3B74A2351DCDCE5200205C17 /* Rainbow.framework in Copy Carthage Frameworks */,
 				3B74A2321DCD9F1100205C17 /* Curry.framework in Copy Carthage Frameworks */,
 				3BACDF161DCC437E0045A49A /* Yaml.framework in Copy Carthage Frameworks */,
 				3BACDF171DCC437E0045A49A /* Commandant.framework in Copy Carthage Frameworks */,
@@ -169,6 +175,7 @@
 		3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
 		3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKit.swift"; sourceTree = "<group>"; };
 		3B74A22D1DCD9ED500205C17 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
+		3B74A2331DCDCE3D00205C17 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = Carthage/Build/Mac/Rainbow.framework; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
@@ -194,6 +201,7 @@
 				3B74A22E1DCD9ED500205C17 /* Curry.framework in Frameworks */,
 				3BACDEFD1DCC32BF0045A49A /* Yaml.framework in Frameworks */,
 				3BACDEFE1DCC32BF0045A49A /* Commandant.framework in Frameworks */,
+				3B74A2341DCDCE3D00205C17 /* Rainbow.framework in Frameworks */,
 				3BACDEFF1DCC32BF0045A49A /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B74A2361DCDCE5E00205C17 /* Rainbow.framework in Frameworks */,
 				3B74A22F1DCD9EE400205C17 /* Curry.framework in Frameworks */,
 				3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */,
 				3B4114951DCAAD7100709803 /* Result.framework in Frameworks */,
@@ -316,6 +325,7 @@
 		3B4114961DCAAD7600709803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B74A2331DCDCE3D00205C17 /* Rainbow.framework */,
 				3B74A22D1DCD9ED500205C17 /* Curry.framework */,
 				3B4114991DCB0A3F00709803 /* Yaml.framework */,
 				3B4114921DCAAD7100709803 /* Commandant.framework */,
@@ -759,7 +769,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/NoonianKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.NoonianKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -787,7 +797,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/NoonianKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.NoonianKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -837,7 +847,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -880,7 +890,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -899,7 +909,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -919,7 +929,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/noonian/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks/NoonianKit.framework/Versions/Current/Frameworks /Library/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scotthoyt.noonian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Rainbow
 
 #if os(Linux)
 typealias Process = Foundation.Task
@@ -28,6 +29,7 @@ public struct Runner {
 
     public func run(task: CommandTask) throws {
         for command in task.commands {
+            print("***".lightCyan + " " + "Running: \(task.name)".bold)
             let process = newProcess(command: command)
             let (internalOut, internalError) = setPipes(process: process)
             process.launch()
