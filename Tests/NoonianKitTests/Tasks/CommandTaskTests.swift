@@ -74,6 +74,7 @@ class CommandTaskTests: XCTestCase {
             ("testInitWithStringConfiguration", testInitWithStringConfiguration),
             ("testInitWithArrayConfiguration", testInitWithArrayConfiguration),
             ("testInitWithBadConfigurationThrows", testInitWithBadConfigurationThrows),
+            ("testBuildCommandsWithArguements", testBuildCommandsWithArguements),
         ]
     }
 #endif
