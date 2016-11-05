@@ -10,7 +10,7 @@
 		3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */; };
 		3B36F33E1DCC54C900C0C3C1 /* String+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */; };
 		3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */; };
-		3B36F3421DCC670500C0C3C1 /* Yaml+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */; };
+		3B36F3421DCC670500C0C3C1 /* Yaml+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */; };
 		3B36F3461DCC680100C0C3C1 /* test.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B36F3451DCC680100C0C3C1 /* test.yml */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
@@ -24,6 +24,7 @@
 		3B74A2251DCD3E9000205C17 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */; };
 		3B74A2271DCD5F7300205C17 /* OptionsProtocol+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */; };
 		3B74A2291DCD8A8100205C17 /* AndroidCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */; };
+		3B74A22C1DCD8FC200205C17 /* String+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */; };
 		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
 		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -108,7 +109,7 @@
 		3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
-		3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Yaml+Noonian.swift"; sourceTree = "<group>"; };
+		3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Yaml+NoonianKit.swift"; sourceTree = "<group>"; };
 		3B36F3451DCC680100C0C3C1 /* test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.yml; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
 		3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OptionsProtocol+Noonian.swift"; sourceTree = "<group>"; };
 		3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommand.swift; sourceTree = "<group>"; };
+		3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKit.swift"; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
@@ -339,7 +341,8 @@
 			isa = PBXGroup;
 			children = (
 				3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */,
-				3B36F3411DCC670500C0C3C1 /* Yaml+Noonian.swift */,
+				3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */,
+				3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -550,8 +553,9 @@
 				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,
 				3B74A2221DCD332300205C17 /* Environment.swift in Sources */,
 				3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */,
-				3B36F3421DCC670500C0C3C1 /* Yaml+Noonian.swift in Sources */,
+				3B36F3421DCC670500C0C3C1 /* Yaml+NoonianKit.swift in Sources */,
 				3BACDF111DCC38EF0045A49A /* YamlParser.swift in Sources */,
+				3B74A22C1DCD8FC200205C17 /* String+NoonianKit.swift in Sources */,
 				3BACDF101DCC38EF0045A49A /* Parser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

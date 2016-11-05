@@ -19,7 +19,7 @@ extension XCTestCase {
     }
 
     func pathForFixture(named: String) -> String {
-        return fixturesPath + "/" + named
+        return fixturesPath.pathByAdding(component: named)
     }
 
     func loadFixture(named: String) -> String {

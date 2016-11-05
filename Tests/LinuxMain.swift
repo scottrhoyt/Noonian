@@ -10,5 +10,6 @@ XCTMain([
   testCase(ParserTests.allTests),
   testCase(YamlParserTests.allTests),
   testCase(EnvironmentTests.allTests),
+  testCase(StringNoonianKitTests.allTests),
 ])
 #endif

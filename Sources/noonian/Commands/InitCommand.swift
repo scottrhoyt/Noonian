@@ -51,12 +51,11 @@ struct InitOptions: OptionsProtocol {
         -> (_ projectName: String)
         -> InitOptions {
             return { path in { activity in { target in { package in { projectName in {
-                // TODO create a string extension to add paths together
-                let correctedPath = path ?? FileManager.default.currentDirectoryPath + "/" + projectName
+                let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)
                 let packageName = package ?? "com.example." + projectName
                 return self.init(
                     androidHome: androidHome,
-                    path: correctedPath,
+                    path: fullPath,
                     activity: activity,
                     target: target,
                     package: packageName,

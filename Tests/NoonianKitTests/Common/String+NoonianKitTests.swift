@@ -7,19 +7,34 @@
 //
 
 import Foundation
+import XCTest
+import NoonianKit
 
-extension String {
-    var isAbsolutePath: Bool {
-        return characters.first == "/"
+class StringNoonianKitTests: XCTestCase {
+    func testAbsolutionPath() {
+        XCTAssertTrue("/home".isAbsolutePath)
+        XCTAssertFalse("home".isAbsolutePath)
     }
 
-    public func absolutePathRepresentation(rootDirectory: String = FileManager.default.currentDirectoryPath) -> String {
-        if isAbsolutePath {
-            return self as String
-        }
+    func testAddPathComponent() {
+        XCTAssertEqual("/home/noonian", "/home".pathByAdding(component: "noonian"))
+        XCTAssertEqual("/home/noonian", "/home".pathByAdding(component: "/noonian"))
+        XCTAssertEqual("/home/noonian", "/home/".pathByAdding(component: "/noonian"))
+    }
 
-        //let rootUrl = URL(fileURLWithPath: rootDirectory, isDirectory: true)
-        //return URL(fileURLWithPath: self, relativeTo: rootUrl).absoluteString
-        return rootDirectory + "/" + self
+    func testAbsolutePath() {
+        let currentDir = FileManager.default.currentDirectoryPath
+        XCTAssertEqual("/home".absolutePathRepresentation(), "/home")
+        XCTAssertEqual("home".absolutePathRepresentation(), currentDir.pathByAdding(component: "home"))
     }
 }
+
+#if os(Linux)
+    extension StringNoonianKitTests {
+        static var allTests = [
+            ("testAbsolutionPath", testAbsolutionPath),
+            ("testAddPathComponent", testAddPathComponent),
+            ("testAbsolutePath", testAbsolutePath),
+        ]
+    }
+#endif

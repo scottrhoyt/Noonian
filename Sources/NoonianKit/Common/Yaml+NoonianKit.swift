@@ -1,5 +1,5 @@
 //
-//  Yaml+Noonian.swift
+//  Yaml+NoonianKit.swift
 //  SwiftLint
 //
 //  Created by Scott Hoyt on 12/28/15.
