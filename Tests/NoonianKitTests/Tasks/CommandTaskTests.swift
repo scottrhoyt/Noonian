@@ -56,6 +56,15 @@ class CommandTaskTests: XCTestCase {
         }
         XCTFail("Should have caught an error")
     }
+
+    func testBuildCommandsWithArguements() {
+        let arg1: Arguement = (flag: "-a", value: nil)
+        let arg2: Arguement = (flag: "-b", value: "c")
+        let commandAndArgs: CommandArgumentsPair = (command: "cp", arguments: [arg1, arg2])
+        let task = CommandTask(name: commandName, commandsWithArgs: [commandAndArgs])
+        XCTAssertEqual(task.name, commandName)
+        XCTAssertEqual(task.commands, ["cp -a -b c"])
+    }
 }
 
 #if os(Linux)

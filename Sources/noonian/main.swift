@@ -12,27 +12,15 @@ import Result
 
 enum NoonianError: Error { }
 
-struct InitCommand: CommandProtocol {
-    let verb = "init"
-    let function = "Initialize a new Android project."
-
-    func run(_ options: InitOptions) -> Result<(), NoonianError> {
-        print("I still don't do anything")
-        return .success()
-    }
-}
-
-struct InitOptions: OptionsProtocol {
-    static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianError>> {
-        return .success(InitOptions())
-    }
-}
-
+// Create registry and add commands
 let registry = CommandRegistry<NoonianError>()
 registry.register(InitCommand())
-registry.register(HelpCommand(registry: registry))
 
-registry.main(defaultVerb: InitCommand().verb, errorHandler: {
+// Add help command
+let helpCommand = HelpCommand(registry: registry)
+registry.register(helpCommand)
+
+registry.main(defaultVerb: helpCommand.verb, errorHandler: {
     error in
     print(error)
 })
