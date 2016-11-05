@@ -58,10 +58,10 @@ class CommandTaskTests: XCTestCase {
     }
 
     func testBuildCommandsWithArguements() {
-        let arg1: Arguement = (flag: "-a", value: nil)
-        let arg2: Arguement = (flag: "-b", value: "c")
-        let commandAndArgs: CommandWithArguments = (command: "cp", arguments: [arg1, arg2])
-        let task = CommandTask(name: commandName, commandsWithArgs: [commandAndArgs])
+        let arg1 = CommandArgument(flag: "-a", value: nil)
+        let arg2 = CommandArgument(flag: "-b", value: "c")
+        let command = Command(command: "cp", arguments: [arg1, arg2])
+        let task = CommandTask(name: commandName, commands: [command])
         XCTAssertEqual(task.name, commandName)
         XCTAssertEqual(task.commands, ["cp -a -b c"])
     }

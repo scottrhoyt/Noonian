@@ -19,19 +19,19 @@ struct InitCommand: AndroidCommand {
     func run(_ options: InitOptions) -> Result<(), NoonianError> {
         let command = getAndroidCommand(androidHome: options.androidHome)
 
-        let verbArg = Arguement(flag: "create", value: "project")
-        let activityArg = Arguement(flag: "-a", value: "Main")
-        let pathArg = Arguement(flag: "-p", value: options.path)
-        let targetArg = Arguement(flag: "-t", value: options.target)
-        let packageArg = Arguement(flag: "-k", value: options.package)
-        let projectArg = Arguement(flag: "-n", value: options.projectName)
+        let verbArg = CommandArgument(flag: "create", value: "project")
+        let activityArg = CommandArgument(flag: "-a", value: "Main")
+        let pathArg = CommandArgument(flag: "-p", value: options.path)
+        let targetArg = CommandArgument(flag: "-t", value: options.target)
+        let packageArg = CommandArgument(flag: "-k", value: options.package)
+        let projectArg = CommandArgument(flag: "-n", value: options.projectName)
         let args = [verbArg, activityArg, pathArg, targetArg, packageArg, projectArg]
 
-        let task = CommandTask(name: "init", commandsWithArgs: [CommandWithArguments(command: command, arguments: args)])
+        let task = CommandTask(name: "init", commands: [Command(command: command, arguments: args)])
         let runner = Runner()
         runner.run(task: task)
-        print("I still don't do anything")
-        print(options)
+
+        // TODO: Need to copy example configuration
         return .success()
     }
 }
