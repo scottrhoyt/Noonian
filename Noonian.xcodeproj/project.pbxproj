@@ -23,6 +23,7 @@
 		3B74A2221DCD332300205C17 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2211DCD332300205C17 /* Environment.swift */; };
 		3B74A2251DCD3E9000205C17 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */; };
 		3B74A2271DCD5F7300205C17 /* OptionsProtocol+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */; };
+		3B74A2291DCD8A8100205C17 /* AndroidCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */; };
 		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
 		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -122,6 +123,7 @@
 		3B74A2211DCD332300205C17 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
 		3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OptionsProtocol+Noonian.swift"; sourceTree = "<group>"; };
+		3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommand.swift; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		3B74A21D1DCD21BD00205C17 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
+				3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */,
 				3B74A21E1DCD21CE00205C17 /* InitCommand.swift */,
 				3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */,
 			);
@@ -560,6 +563,7 @@
 				3BBD8B791DC8250600EB7A35 /* main.swift in Sources */,
 				3B74A2271DCD5F7300205C17 /* OptionsProtocol+Noonian.swift in Sources */,
 				3B74A21F1DCD21CE00205C17 /* InitCommand.swift in Sources */,
+				3B74A2291DCD8A8100205C17 /* AndroidCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

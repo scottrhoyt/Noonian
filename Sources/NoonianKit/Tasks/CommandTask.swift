@@ -11,17 +11,17 @@ import Foundation
 public typealias Arguement = (flag: String, value: String?)
 public typealias CommandArgumentsPair = (command: String, arguments: [Arguement])
 
-struct CommandTask: ConfigurableTask, Equatable {
+public struct CommandTask: ConfigurableTask, Equatable {
     let name: String
     let commands: [String]
 
-    init(name: String, commands: [String]) {
+    public init(name: String, commands: [String]) {
         self.name = name
         self.commands = commands
     }
 
     // FIXME: Rewite this to be more functional
-    init(name: String, commandsWithArgs: [CommandArgumentsPair]) {
+    public init(name: String, commandsWithArgs: [CommandArgumentsPair]) {
         var builtCommands = [String]()
         for (command, arguements) in commandsWithArgs {
             var builtCommand = command
@@ -40,7 +40,7 @@ struct CommandTask: ConfigurableTask, Equatable {
 
 // MARK: - CommandTask: Equatable
 
-func == (lhs: CommandTask, rhs: CommandTask) -> Bool {
+public func == (lhs: CommandTask, rhs: CommandTask) -> Bool {
     return lhs.name == rhs.name &&
         lhs.commands == rhs.commands
 }

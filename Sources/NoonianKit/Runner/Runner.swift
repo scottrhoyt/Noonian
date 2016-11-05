@@ -12,16 +12,16 @@ import Foundation
 typealias Process = Foundation.Task
 #endif
 
-struct Runner {
+public struct Runner {
     let out: Pipe?
     let error: Pipe?
 
-    init(out: Pipe? = nil, error: Pipe? = nil) {
+    public init(out: Pipe? = nil, error: Pipe? = nil) {
         self.out = out
         self.error = error
     }
 
-    func run(task: CommandTask) {
+    public func run(task: CommandTask) {
         for command in task.commands {
             let process = newProcess(command: command)
             process.launch()
