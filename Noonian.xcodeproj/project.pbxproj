@@ -25,6 +25,10 @@
 		3B74A2271DCD5F7300205C17 /* OptionsProtocol+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */; };
 		3B74A2291DCD8A8100205C17 /* AndroidCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */; };
 		3B74A22C1DCD8FC200205C17 /* String+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */; };
+		3B74A22E1DCD9ED500205C17 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; };
+		3B74A22F1DCD9EE400205C17 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; };
+		3B74A2311DCD9EFF00205C17 /* Curry.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3B74A2321DCD9F1100205C17 /* Curry.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
 		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -83,6 +87,7 @@
 			dstPath = NoonianKit.framework/Versions/Current/Frameworks;
 			dstSubfolderSpec = 10;
 			files = (
+				3B74A2311DCD9EFF00205C17 /* Curry.framework in Embed Frameworks in NoonianKit */,
 				3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */,
 				3BACDEFA1DCC31010045A49A /* Commandant.framework in Embed Frameworks in NoonianKit */,
 				3BACDEFB1DCC31010045A49A /* Result.framework in Embed Frameworks in NoonianKit */,
@@ -96,6 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3B74A2321DCD9F1100205C17 /* Curry.framework in Copy Carthage Frameworks */,
 				3BACDF161DCC437E0045A49A /* Yaml.framework in Copy Carthage Frameworks */,
 				3BACDF171DCC437E0045A49A /* Commandant.framework in Copy Carthage Frameworks */,
 				3BACDF181DCC437E0045A49A /* Result.framework in Copy Carthage Frameworks */,
@@ -126,6 +132,7 @@
 		3B74A2261DCD5F7300205C17 /* OptionsProtocol+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OptionsProtocol+Noonian.swift"; sourceTree = "<group>"; };
 		3B74A2281DCD8A8100205C17 /* AndroidCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommand.swift; sourceTree = "<group>"; };
 		3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKit.swift"; sourceTree = "<group>"; };
+		3B74A22D1DCD9ED500205C17 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
 		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
@@ -148,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B74A22E1DCD9ED500205C17 /* Curry.framework in Frameworks */,
 				3BACDEFD1DCC32BF0045A49A /* Yaml.framework in Frameworks */,
 				3BACDEFE1DCC32BF0045A49A /* Commandant.framework in Frameworks */,
 				3BACDEFF1DCC32BF0045A49A /* Result.framework in Frameworks */,
@@ -158,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B74A22F1DCD9EE400205C17 /* Curry.framework in Frameworks */,
 				3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */,
 				3B4114951DCAAD7100709803 /* Result.framework in Frameworks */,
 				3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */,
@@ -187,6 +196,7 @@
 		3B4114961DCAAD7600709803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B74A22D1DCD9ED500205C17 /* Curry.framework */,
 				3B4114991DCB0A3F00709803 /* Yaml.framework */,
 				3B4114921DCAAD7100709803 /* Commandant.framework */,
 				3B4114931DCAAD7100709803 /* Result.framework */,
