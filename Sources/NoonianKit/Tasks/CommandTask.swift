@@ -18,7 +18,7 @@ public struct CommandTask: ConfigurableTask, Equatable {
     }
 
     public init(name: String, commands: [Command]) {
-        self.init(name: name, commands: commands.map(join))
+        self.init(name: name, commands: commands.map(assemble))
     }
 }
 
@@ -39,6 +39,6 @@ fileprivate func join(argument: CommandArgument) -> String {
     return [argument.flag, argument.value].flatMap { $0 }.joined(separator: " ")
 }
 
-fileprivate func join(command: Command) -> String {
+fileprivate func assemble(command: Command) -> String {
     return command.command + " " + command.arguments.map(join).joined(separator: " ")
 }
