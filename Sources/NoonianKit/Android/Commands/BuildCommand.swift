@@ -33,8 +33,7 @@ public struct BuildCommand: AndroidCommand {
         runner.run(task: task)
     }
 
-    private func commandToPackageResources(buildTools: String, target: String) throws -> ShellCommand {
-        // TODO: Rename these arguements
+    func commandToPackageResources(buildTools: String, target: String) throws -> ShellCommand {
         var arguments = [ShellArgument]()
 
         arguments.append(ShellArgument("package"))
@@ -49,7 +48,7 @@ public struct BuildCommand: AndroidCommand {
         return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: arguments)
     }
 
-    private func commandToCompile(buildTools: String, target: String) throws -> ShellCommand {
+    func commandToCompile(buildTools: String, target: String) throws -> ShellCommand {
         var arguments = [ShellArgument]()
 
         arguments.append(ShellArgument("--verbose", "info"))

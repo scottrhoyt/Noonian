@@ -20,8 +20,10 @@ public struct InitCommand: AndroidCommand {
     public init() { }
 
     func run(_ options: InitOptions) throws {
-        let command = try androidCommand()
-        let task = commandTask(options: options, command: command)
+        let androidTool = try androidToolPath()
+        let creationCommand = commandForProjectCreation(androidTool: androidTool, options: options)
+
+        let task = CommandTask(name: "init", commands: [creationCommand])
 
         let runner = Runner()
         runner.run(task: task)
@@ -29,18 +31,17 @@ public struct InitCommand: AndroidCommand {
         // TODO: Need to copy example configuration
     }
 
-    private func commandTask(options: InitOptions, command: String) -> CommandTask {
+    func commandForProjectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
         var arguments = [ShellArgument]()
 
         arguments.append(ShellArgument("create", "project"))
-        arguments.append(ShellArgument("-a", "Main"))
+        arguments.append(ShellArgument("-a", options.activity))
         arguments.append(ShellArgument("-p", options.path))
         arguments.append(ShellArgument("-t", options.target))
         arguments.append(ShellArgument("-k", options.package))
         arguments.append(ShellArgument("-n", options.projectName))
 
-        let task = CommandTask(name: "init", commands: [ShellCommand(command: command, arguments: arguments)])
-        return task
+        return ShellCommand(command: androidTool, arguments: arguments)
     }
 }
 
@@ -51,10 +52,10 @@ public struct InitOptions: OptionsProtocol {
     let package: String
     let projectName: String
 
-    init(path: String?, activity: String, target: String, package: String?, projectName: String) {
+    init(path: String?, activity: String?, target: String?, package: String?, projectName: String) {
         self.path = path ?? projectName
-        self.activity = activity
-        self.target = target
+        self.activity = activity ?? "Main"
+        self.target = target ?? "android-25"
         self.package = package ?? "com.example." + projectName
         self.projectName = projectName
     }
@@ -66,14 +67,14 @@ public struct InitOptions: OptionsProtocol {
                                 defaultValue: nil,
                                 usage: "The directory to create the project in. Defaults to <Project Name> in the current directory."
                      )
-            <*> m <| Option(
+            <*> m <| Option<String?>(
                                 key: "activity",
-                                defaultValue: "Main",
+                                defaultValue: nil,
                                 usage: "The name of the activity. Defaults to Main."
                      )
-            <*> m <| Option(
+            <*> m <| Option<String?>(
                                 key: "target",
-                                defaultValue: "android-25",
+                                defaultValue: nil,
                                 usage: "The target to build for. Specify by target name and not ID. Defaults to android-25 (7.1)."
                      )
             <*> m <| Option<String?>(

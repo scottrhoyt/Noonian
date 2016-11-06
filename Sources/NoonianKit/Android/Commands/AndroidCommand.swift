@@ -39,7 +39,7 @@ extension AndroidCommand {
         return (try androidHome()).pathByAdding(component: SDKPaths.buildTools.rawValue)
     }
 
-    func androidCommand() throws -> String {
+    func androidToolPath() throws -> String {
         return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
     }
 
