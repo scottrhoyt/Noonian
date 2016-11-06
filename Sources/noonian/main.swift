@@ -10,8 +10,6 @@ import Foundation
 import Commandant
 import Result
 
-enum NoonianError: Error { }
-
 // Create registry and add commands
 let registry = CommandRegistry<NoonianError>()
 registry.register(InitCommand())
