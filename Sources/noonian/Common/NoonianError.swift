@@ -9,5 +9,15 @@
 import Foundation
 
 enum NoonianError: Error {
+    case unknown
     case androidHomeNotDefined
+
+    var description: String {
+        switch self {
+        case .unknown:
+            return "An unknown error has occurred."
+        case .androidHomeNotDefined:
+            return "\(EnvironmentKeys.androidHome.rawValue) is not defined"
+        }
+    }
 }

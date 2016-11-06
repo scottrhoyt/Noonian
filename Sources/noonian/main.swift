@@ -20,5 +20,5 @@ registry.register(helpCommand)
 
 registry.main(defaultVerb: helpCommand.verb, errorHandler: {
     error in
-    print(error)
+    print("ERROR: " + error.description)
 })

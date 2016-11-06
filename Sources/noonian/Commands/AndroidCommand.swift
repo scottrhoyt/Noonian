@@ -8,21 +8,23 @@
 
 import Foundation
 import Commandant
+import NoonianKit
 
 protocol AndroidCommand: CommandProtocol { }
 
 extension AndroidCommand {
-    private var androidCommand: String {
+    private var android: String {
         return "tools/android"
     }
 
-    
-
-    func getAndroidCommand(androidHome: String?) -> String {
-        if let androidHome = androidHome {
-            return androidHome.pathByAdding(component: androidCommand)
-        } else {
-            return androidCommand
+    func androidHome() throws -> String {
+        guard let androidHome = Environment().stringValue(for: EnvironmentKeys.androidHome.rawValue) else {
+            throw NoonianError.androidHomeNotDefined
         }
+        return androidHome
+    }
+
+    func androidCommand() throws -> String {
+        return (try androidHome()).pathByAdding(component: android)
     }
 }
