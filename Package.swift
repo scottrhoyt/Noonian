@@ -10,8 +10,8 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .Package(url: "https://github.com/Carthage/Commandant.git", majorVersion: 0),
-    .Package(url: "https://github.com/scottrhoyt/YamlSwift.git", majorVersion: 3),
+    .Package(url: "https://github.com/scottrhoyt/Commandant.git", majorVersion: 0),
+    .Package(url: "https://github.com/behrang/YamlSwift.git", majorVersion: 3),
     .Package(url: "https://github.com/thoughtbot/Curry.git", majorVersion: 3),
   ]
 )
