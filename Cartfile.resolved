@@ -1,0 +1,4 @@
+github "thoughtbot/Curry" "v3.0.0"
+github "antitypical/Result" "3.0.0"
+github "behrang/YamlSwift" "3.1.0"
+github "scottrhoyt/Commandant" "0.11.3"
