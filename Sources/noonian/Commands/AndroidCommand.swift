@@ -21,11 +21,9 @@ fileprivate enum SDKPaths: String {
 }
 
 protocol AndroidCommand: CommandProtocol {
-    associatedtype _Options
     typealias ClientError = NoonianError
-    typealias Options = _Options
 
-    func run(_ options: _Options) throws
+    func run(_ options: Self.Options) throws
 }
 
 extension AndroidCommand {
@@ -44,7 +42,7 @@ extension AndroidCommand {
         return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
     }
 
-    func run(_ options: _Options) -> Result<(), NoonianError> {
+    func run(_ options: Self.Options) -> Result<(), NoonianError> {
         do {
             try run(options)
             return .success()

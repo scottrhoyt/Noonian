@@ -13,6 +13,8 @@ import NoonianKit
 import Curry
 
 struct BuildCommand: AndroidCommand {
+    typealias Options = BuildOptions
+
     let verb = "build"
     let function = "Build, package, and sign the app."
 

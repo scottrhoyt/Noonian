@@ -13,6 +13,8 @@ import NoonianKit
 import Curry
 
 struct InitCommand: AndroidCommand {
+    typealias Options = InitOptions // TODO: Hopefully we can find a way to infer this
+
     let verb = "init"
     let function = "Initialize a new Android project"
 
