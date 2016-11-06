@@ -13,6 +13,7 @@ import Result
 // Create registry and add commands
 let registry = CommandRegistry<NoonianError>()
 registry.register(InitCommand())
+registry.register(BuildCommand())
 
 // Add help command
 let helpCommand = HelpCommand(registry: registry)
