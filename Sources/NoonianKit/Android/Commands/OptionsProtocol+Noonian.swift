@@ -8,7 +8,6 @@
 
 import Foundation
 import Commandant
-import NoonianKit
 
 enum EnvironmentKeys: String {
     case androidHome = "ANDROID_HOME"

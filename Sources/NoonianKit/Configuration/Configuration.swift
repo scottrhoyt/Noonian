@@ -36,7 +36,7 @@ struct Configuration {
             }
         }
 
-        if !unknownKeys.isEmpty { throw NoonianError.unknownConfigurationItems(items: unknownKeys) }
+        if !unknownKeys.isEmpty { throw NoonianKitError.unknownConfigurationItems(items: unknownKeys) }
 
         return mapped
     }

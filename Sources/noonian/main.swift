@@ -9,12 +9,12 @@
 import Foundation
 import Commandant
 import Result
-
-enum NoonianError: Error { }
+import NoonianKit
 
 // Create registry and add commands
 let registry = CommandRegistry<NoonianError>()
 registry.register(InitCommand())
+registry.register(BuildCommand())
 
 // Add help command
 let helpCommand = HelpCommand(registry: registry)
@@ -22,5 +22,5 @@ registry.register(helpCommand)
 
 registry.main(defaultVerb: helpCommand.verb, errorHandler: {
     error in
-    print(error)
+    print("ERROR: " + error.description)
 })

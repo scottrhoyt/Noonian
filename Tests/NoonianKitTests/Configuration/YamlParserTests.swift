@@ -18,7 +18,7 @@ class YamlParserTests: XCTestCase {
                        "item1: value"
         do {
             _ = try parser.parse(contents: contents)
-        } catch NoonianError.configurationParsing {
+        } catch NoonianKitError.configurationParsing {
             return
         } catch {
             // TODO: Need to refactor error functions
@@ -34,7 +34,7 @@ class YamlParserTests: XCTestCase {
         let contents = "2"
         do {
             _ = try parser.parse(contents: contents)
-        } catch NoonianError.invalidConfiguration {
+        } catch NoonianKitError.invalidConfiguration {
             return
         } catch {
             // TODO: Need to refactor error functions

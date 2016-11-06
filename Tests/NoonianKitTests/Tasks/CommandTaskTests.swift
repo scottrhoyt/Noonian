@@ -47,7 +47,7 @@ class CommandTaskTests: XCTestCase {
         let badConfig = 1
         do {
             _ = try CommandTask(name: commandName, configuration: badConfig)
-        } catch NoonianError.unknownConfigurationOption(let name, let option) {
+        } catch NoonianKitError.unknownConfigurationOption(let name, let option) {
             XCTAssertEqual(commandName, name)
             XCTAssertEqual(badConfig, option as? Int)
             return
@@ -58,12 +58,13 @@ class CommandTaskTests: XCTestCase {
     }
 
     func testBuildCommandsWithArguements() {
-        let arg1 = CommandArgument(flag: "-a", value: nil)
-        let arg2 = CommandArgument(flag: "-b", value: "c")
-        let command = Command(command: "cp", arguments: [arg1, arg2])
+        let arg1 = ShellArgument("action")
+        let arg2 = ShellArgument("-b", "c")
+        let arg3 = ShellArgument("-d", "e", "f")
+        let command = ShellCommand(command: "command", arguments: [arg1, arg2, arg3])
         let task = CommandTask(name: commandName, commands: [command])
         XCTAssertEqual(task.name, commandName)
-        XCTAssertEqual(task.commands, ["cp -a -b c"])
+        XCTAssertEqual(task.commands, ["command action -b c -d e f"])
     }
 }
 
