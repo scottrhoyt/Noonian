@@ -23,10 +23,12 @@ struct BuildCommand: AndroidCommand {
 
         // TODO: Need to derive the target from the configuration file
         let target = "android-25"
-        let command = try commandToPackageResources(buildTools: buildTools, target: target)
+        let packageCommand = try commandToPackageResources(buildTools: buildTools, target: target)
+        let compileCommand = try commandToCompile(buildTools: buildTools, target: target)
 
-        let task = CommandTask(name: "build", commands: [command])
-        print(assemble(command: command))
+        let task = CommandTask(name: "build", commands: [packageCommand, compileCommand])
+        print(assemble(command: packageCommand))
+        print(assemble(command: compileCommand))
 
         let runner = Runner()
         runner.run(task: task)
@@ -43,6 +45,14 @@ struct BuildCommand: AndroidCommand {
         let arg6 = ShellArgument(flag: "-M", value: "AndroidManifest.xml")
         let arg7 = ShellArgument(flag: "-I", value: try includeFor(target: target))
         return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7])
+    }
+
+    private func commandToCompile(buildTools: String, target: String) throws -> ShellCommand {
+        let arg0 = ShellArgument(flag: "--verbose", value: "info")
+        let arg1 = ShellArgument(flag: "-cp", value: try includeFor(target: target))
+        let arg2 = ShellArgument(flag: "--output-dex", value: "bin")
+        let arg3 = ShellArgument(flag: "src", value: nil)
+        return ShellCommand(command: jackToolCommand(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3])
     }
 }
 

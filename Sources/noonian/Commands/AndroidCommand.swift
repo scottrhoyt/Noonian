@@ -18,6 +18,7 @@ fileprivate enum SDKPaths: String {
     case platformTools = "platform-tools"
     case platforms = "platforms"
     case packageTool = "aapt" // TODO: Need to come up with a better format for paths and tools
+    case jackTool = "jack.jar"
 }
 
 protocol AndroidCommand: CommandProtocol {
@@ -78,5 +79,11 @@ extension AndroidCommand {
 
     func packageToolPath(buildTools: String) -> String {
         return buildTools.pathByAdding(component: SDKPaths.packageTool.rawValue)
+    }
+
+    func jackToolCommand(buildTools: String) -> String {
+        let jackPath = buildTools.pathByAdding(component: SDKPaths.jackTool.rawValue)
+        let command = "java -jar " + jackPath
+        return command
     }
 }
