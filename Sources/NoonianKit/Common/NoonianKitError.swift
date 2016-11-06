@@ -1,5 +1,5 @@
 //
-//  NoonianError.swift
+//  NoonianKitError.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/3/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NoonianError: Error {
+public enum NoonianKitError: Error {
     case invalidConfiguration
     case configurationParsing
     case duplicateConfigurations(items: [String])

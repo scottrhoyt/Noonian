@@ -47,7 +47,7 @@ class CommandTaskTests: XCTestCase {
         let badConfig = 1
         do {
             _ = try CommandTask(name: commandName, configuration: badConfig)
-        } catch NoonianError.unknownConfigurationOption(let name, let option) {
+        } catch NoonianKitError.unknownConfigurationOption(let name, let option) {
             XCTAssertEqual(commandName, name)
             XCTAssertEqual(badConfig, option as? Int)
             return

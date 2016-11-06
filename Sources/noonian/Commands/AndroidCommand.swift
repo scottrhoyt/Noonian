@@ -16,6 +16,8 @@ extension AndroidCommand {
         return "tools/android"
     }
 
+    
+
     func getAndroidCommand(androidHome: String?) -> String {
         if let androidHome = androidHome {
             return androidHome.pathByAdding(component: androidCommand)

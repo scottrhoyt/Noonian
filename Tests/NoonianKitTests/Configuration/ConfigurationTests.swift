@@ -18,7 +18,7 @@ class ConfigurationTests: XCTestCase {
 
         do {
             _ = try Configuration(configuration: badConfig)
-        } catch NoonianError.unknownConfigurationItems(items: let items) {
+        } catch NoonianKitError.unknownConfigurationItems(items: let items) {
             XCTAssertEqual(items, Array(badConfig.keys))
             return
         } catch {

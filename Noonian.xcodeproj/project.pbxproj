@@ -48,7 +48,7 @@
 		3BDF579C1DCBCD1D00ADE595 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF579A1DCBCCC700ADE595 /* Configuration.swift */; };
 		3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* Task.swift */; };
 		3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* CommandTask.swift */; };
-		3BDF57A11DCBD3A000ADE595 /* NoonianError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */; };
+		3BDF57A11DCBD3A000ADE595 /* NoonianKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF57A01DCBD3A000ADE595 /* NoonianKitError.swift */; };
 		3BDF57A41DCBD5E100ADE595 /* ConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,7 +146,7 @@
 		3BBD8B781DC8250600EB7A35 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
 		3BDF579A1DCBCCC700ADE595 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianError.swift; sourceTree = "<group>"; };
+		3BDF57A01DCBD3A000ADE595 /* NoonianKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianKitError.swift; sourceTree = "<group>"; };
 		3BDF57A31DCBD5E100ADE595 /* ConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,7 +350,7 @@
 		3BDF579F1DCBD37E00ADE595 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3BDF57A01DCBD3A000ADE595 /* NoonianError.swift */,
+				3BDF57A01DCBD3A000ADE595 /* NoonianKitError.swift */,
 				3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */,
 				3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */,
 			);
@@ -558,7 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */,
-				3BDF57A11DCBD3A000ADE595 /* NoonianError.swift in Sources */,
+				3BDF57A11DCBD3A000ADE595 /* NoonianKitError.swift in Sources */,
 				3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */,
 				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,
 				3B74A2221DCD332300205C17 /* Environment.swift in Sources */,
