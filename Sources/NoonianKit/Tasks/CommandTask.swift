@@ -17,7 +17,7 @@ public struct CommandTask: ConfigurableTask, Equatable {
         self.commands = commands
     }
 
-    public init(name: String, commands: [Command]) {
+    public init(name: String, commands: [ShellCommand]) {
         self.init(name: name, commands: commands.map(assemble))
     }
 }
@@ -29,17 +29,17 @@ public func == (lhs: CommandTask, rhs: CommandTask) -> Bool {
         lhs.commands == rhs.commands
 }
 
-// MARK: - Command
+// MARK: - ShellCommand
 
-// TODO: Might want to rename these to not be too similar to Commandant (e.g. ShellCommand)
-public typealias CommandArgument = (flag: String, value: String?)
-public typealias Command = (command: String, arguments: [CommandArgument])
+// TODO: rewrite these as structures so syntax can be better for no value and arguments
+public typealias ShellArgument = (flag: String, value: String?)
+public typealias ShellCommand = (command: String, arguments: [ShellArgument])
 
-fileprivate func join(argument: CommandArgument) -> String {
+fileprivate func join(argument: ShellArgument) -> String {
     return [argument.flag, argument.value].flatMap { $0 }.joined(separator: " ")
 }
 
 // TODO: Need to make this fileprivate again
-public func assemble(command: Command) -> String {
+public func assemble(command: ShellCommand) -> String {
     return command.command + " " + command.arguments.map(join).joined(separator: " ")
 }

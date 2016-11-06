@@ -30,17 +30,17 @@ struct BuildCommand: AndroidCommand {
         runner.run(task: task)
     }
 
-    private func commandToPackageResources(buildTools: String, target: String) throws -> Command {
+    private func commandToPackageResources(buildTools: String, target: String) throws -> ShellCommand {
         // TODO: Rename these arguements
-        let arg0 = CommandArgument(flag: "package", value: nil)
-        let arg1 = CommandArgument(flag: "-v", value: nil)
-        let arg2 = CommandArgument(flag: "-f", value: nil)
-        let arg3 = CommandArgument(flag: "-m", value: nil)
-        let arg4 = CommandArgument(flag: "-S", value: "res")
-        let arg5 = CommandArgument(flag: "-J", value: "src")
-        let arg6 = CommandArgument(flag: "-M", value: "AndroidManifest.xml")
-        let arg7 = CommandArgument(flag: "-I", value: try includeFor(target: target))
-        return Command(command: packageToolPath(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7])
+        let arg0 = ShellArgument(flag: "package", value: nil)
+        let arg1 = ShellArgument(flag: "-v", value: nil)
+        let arg2 = ShellArgument(flag: "-f", value: nil)
+        let arg3 = ShellArgument(flag: "-m", value: nil)
+        let arg4 = ShellArgument(flag: "-S", value: "res")
+        let arg5 = ShellArgument(flag: "-J", value: "src")
+        let arg6 = ShellArgument(flag: "-M", value: "AndroidManifest.xml")
+        let arg7 = ShellArgument(flag: "-I", value: try includeFor(target: target))
+        return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7])
     }
 }
 
