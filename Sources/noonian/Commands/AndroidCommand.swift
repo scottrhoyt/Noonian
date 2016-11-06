@@ -17,6 +17,7 @@ fileprivate enum SDKPaths: String {
     case buildTools = "build-tools"
     case platformTools = "platform-tools"
     case platforms = "platforms"
+    case platformIncludeName = "android.jar"
     case packageTool = "aapt" // TODO: Need to come up with a better format for paths and tools
     case jackTool = "jack.jar"
 }
@@ -73,8 +74,10 @@ extension AndroidCommand {
     }
 
     func includeFor(target: String) throws -> String {
-        // TODO: Shoudl extract android.jar to an enum
-        return try androidHome().pathByAdding(component: SDKPaths.platforms.rawValue).pathByAdding(component: target).pathByAdding(component: "android.jar")
+        return try androidHome()
+            .pathByAdding(component: SDKPaths.platforms.rawValue)
+            .pathByAdding(component: target)
+            .pathByAdding(component: SDKPaths.platformIncludeName.rawValue)
     }
 
     func packageToolPath(buildTools: String) -> String {
