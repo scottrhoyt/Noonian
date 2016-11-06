@@ -29,15 +29,16 @@ struct InitCommand: AndroidCommand {
     }
 
     private func commandTask(options: InitOptions, command: String) -> CommandTask {
-        let verbArg = ShellArgument(flag: "create", value: "project")
-        let activityArg = ShellArgument(flag: "-a", value: "Main")
-        let pathArg = ShellArgument(flag: "-p", value: options.path)
-        let targetArg = ShellArgument(flag: "-t", value: options.target)
-        let packageArg = ShellArgument(flag: "-k", value: options.package)
-        let projectArg = ShellArgument(flag: "-n", value: options.projectName)
-        let args = [verbArg, activityArg, pathArg, targetArg, packageArg, projectArg]
+        var arguments = [ShellArgument]()
 
-        let task = CommandTask(name: "init", commands: [ShellCommand(command: command, arguments: args)])
+        arguments.append(ShellArgument(flag: "create", value: "project"))
+        arguments.append(ShellArgument(flag: "-a", value: "Main"))
+        arguments.append(ShellArgument(flag: "-p", value: options.path))
+        arguments.append(ShellArgument(flag: "-t", value: options.target))
+        arguments.append(ShellArgument(flag: "-k", value: options.package))
+        arguments.append(ShellArgument(flag: "-n", value: options.projectName))
+
+        let task = CommandTask(name: "init", commands: [ShellCommand(command: command, arguments: arguments)])
         return task
     }
 }
@@ -50,7 +51,7 @@ struct InitOptions: OptionsProtocol {
     let projectName: String
 
     init(path: String?, activity: String, target: String, package: String?, projectName: String) {
-        let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)
+        let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)  // TODO: Might be able to just use relative path here
         let packageName = package ?? "com.example." + projectName
 
         self.path = fullPath

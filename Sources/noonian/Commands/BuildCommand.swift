@@ -36,23 +36,29 @@ struct BuildCommand: AndroidCommand {
 
     private func commandToPackageResources(buildTools: String, target: String) throws -> ShellCommand {
         // TODO: Rename these arguements
-        let arg0 = ShellArgument(flag: "package", value: nil)
-        let arg1 = ShellArgument(flag: "-v", value: nil)
-        let arg2 = ShellArgument(flag: "-f", value: nil)
-        let arg3 = ShellArgument(flag: "-m", value: nil)
-        let arg4 = ShellArgument(flag: "-S", value: "res")
-        let arg5 = ShellArgument(flag: "-J", value: "src")
-        let arg6 = ShellArgument(flag: "-M", value: "AndroidManifest.xml")
-        let arg7 = ShellArgument(flag: "-I", value: try includeFor(target: target))
-        return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7])
+        var arguments = [ShellArgument]()
+
+        arguments.append(ShellArgument(flag: "package", value: nil))
+        arguments.append(ShellArgument(flag: "-v", value: nil))
+        arguments.append(ShellArgument(flag: "-f", value: nil))
+        arguments.append(ShellArgument(flag: "-m", value: nil))
+        arguments.append(ShellArgument(flag: "-S", value: "res"))
+        arguments.append(ShellArgument(flag: "-J", value: "src"))
+        arguments.append(ShellArgument(flag: "-M", value: "AndroidManifest.xml"))
+        arguments.append(ShellArgument(flag: "-I", value: try includeFor(target: target)))
+
+        return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: arguments)
     }
 
     private func commandToCompile(buildTools: String, target: String) throws -> ShellCommand {
-        let arg0 = ShellArgument(flag: "--verbose", value: "info")
-        let arg1 = ShellArgument(flag: "-cp", value: try includeFor(target: target))
-        let arg2 = ShellArgument(flag: "--output-dex", value: "bin")
-        let arg3 = ShellArgument(flag: "src", value: nil)
-        return ShellCommand(command: jackToolCommand(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3])
+        var arguments = [ShellArgument]()
+
+        arguments.append(ShellArgument(flag: "--verbose", value: "info"))
+        arguments.append(ShellArgument(flag: "-cp", value: try includeFor(target: target)))
+        arguments.append(ShellArgument(flag: "--output-dex", value: "bin"))
+        arguments.append(ShellArgument(flag: "src", value: nil))
+
+        return ShellCommand(command: jackToolCommand(buildTools: buildTools), arguments: arguments)
     }
 }
 
