@@ -51,13 +51,10 @@ struct InitOptions: OptionsProtocol {
     let projectName: String
 
     init(path: String?, activity: String, target: String, package: String?, projectName: String) {
-        let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)  // TODO: Might be able to just use relative path here
-        let packageName = package ?? "com.example." + projectName
-
-        self.path = fullPath
+        self.path = path ?? projectName
         self.activity = activity
         self.target = target
-        self.package = packageName
+        self.package = package ?? "com.example." + projectName
         self.projectName = projectName
     }
 
