@@ -31,12 +31,12 @@ struct InitCommand: AndroidCommand {
     private func commandTask(options: InitOptions, command: String) -> CommandTask {
         var arguments = [ShellArgument]()
 
-        arguments.append(ShellArgument(flag: "create", value: "project"))
-        arguments.append(ShellArgument(flag: "-a", value: "Main"))
-        arguments.append(ShellArgument(flag: "-p", value: options.path))
-        arguments.append(ShellArgument(flag: "-t", value: options.target))
-        arguments.append(ShellArgument(flag: "-k", value: options.package))
-        arguments.append(ShellArgument(flag: "-n", value: options.projectName))
+        arguments.append(ShellArgument("create", "project"))
+        arguments.append(ShellArgument("-a", "Main"))
+        arguments.append(ShellArgument("-p", options.path))
+        arguments.append(ShellArgument("-t", options.target))
+        arguments.append(ShellArgument("-k", options.package))
+        arguments.append(ShellArgument("-n", options.projectName))
 
         let task = CommandTask(name: "init", commands: [ShellCommand(command: command, arguments: arguments)])
         return task
