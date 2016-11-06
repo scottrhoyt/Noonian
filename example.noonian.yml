@@ -1,0 +1,22 @@
+##
+## This is an example configuration for for Noonian
+##
+
+##
+## Build Tools
+## By default, Noonian will use the latest build tools installed.
+##
+
+## Uncomment the following line to specify your build tools version.
+# build_tools: 25.0.0
+
+## Before/After Actions
+## Noonian supports specifying shell commands to run before and after commands.
+## The format is 'before_<command>' and 'after_<command>'.
+## The following commands support this feature: 'build', 'package', 'install'
+
+## This is an example of actions to perform before and after the build command.
+# before_build: echo "This is a single command"
+# after_build:
+#   - echo "This is a list"
+#   - echo "of commands."
