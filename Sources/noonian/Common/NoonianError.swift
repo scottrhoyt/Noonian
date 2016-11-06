@@ -11,6 +11,7 @@ import Foundation
 enum NoonianError: Error {
     case unknown(Error)
     case androidHomeNotDefined
+    case noBuildTools
 
     var description: String {
         switch self {
@@ -18,6 +19,8 @@ enum NoonianError: Error {
             return "An unknown error has occurred: \(error)"
         case .androidHomeNotDefined:
             return "\(EnvironmentKeys.androidHome.rawValue) is not defined"
+        case .noBuildTools:
+            return "Your SDK does not have any build tools."
         }
     }
 }

@@ -17,54 +17,35 @@ struct BuildCommand: AndroidCommand {
     let function = "Build, package, and sign the app."
 
     func run(_ options: BuildOptions) throws {
-        let command = try androidCommand()
-        //let task = commandTask(options: options, command: command)
+        let buildTools = try buildToolsPath()
 
-        //let runner = Runner()
-        //runner.run(task: task)
+        // TODO: Need to derive the target from the configuration file
+        let target = "android-25"
+        let command = try commandToPackageResources(buildTools: buildTools, target: target)
+
+        let task = CommandTask(name: "build", commands: [command])
+        print(assemble(command: command))
+
+        let runner = Runner()
+        runner.run(task: task)
+    }
+
+    private func commandToPackageResources(buildTools: String, target: String) throws -> Command {
+        // TODO: Rename these arguements
+        let arg0 = CommandArgument(flag: "package", value: nil)
+        let arg1 = CommandArgument(flag: "-v", value: nil)
+        let arg2 = CommandArgument(flag: "-f", value: nil)
+        let arg3 = CommandArgument(flag: "-m", value: nil)
+        let arg4 = CommandArgument(flag: "-S", value: "res")
+        let arg5 = CommandArgument(flag: "-J", value: "src")
+        let arg6 = CommandArgument(flag: "-M", value: "AndroidManifest.xml")
+        let arg7 = CommandArgument(flag: "-I", value: try includeFor(target: target))
+        return Command(command: packageToolPath(buildTools: buildTools), arguments: [arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7])
     }
 }
 
 struct BuildOptions: OptionsProtocol {
-    let path: String
-    let activity: String
-    let target: String
-    let package: String
-    let projectName: String
-
-    init(path: String?, activity: String, target: String, package: String?, projectName: String) {
-        let fullPath = path ?? FileManager.default.currentDirectoryPath.pathByAdding(component: projectName)
-        let packageName = package ?? "com.example." + projectName
-
-        self.path = fullPath
-        self.activity = activity
-        self.target = target
-        self.package = packageName
-        self.projectName = projectName
-    }
-
     static func evaluate(_ m: CommandMode) -> Result<BuildOptions, CommandantError<NoonianError>> {
-        return curry(BuildOptions.init)
-            <*> m <| Option(
-                                key: "path",
-                                defaultValue: nil,
-                                usage: "The directory to create the project in. Defaults to <Project Name> in the current directory."
-                     )
-            <*> m <| Option(
-                                key: "activity",
-                                defaultValue: "Main",
-                                usage: "The name of the activity. Defaults to Main."
-                     )
-            <*> m <| Option(
-                                key: "target",
-                                defaultValue: "android-25",
-                                usage: "The target to build for. Specify by target name and not ID. Defaults to android-25 (7.1)."
-                     )
-            <*> m <| Option<String?>(
-                                key: "package",
-                                defaultValue: nil,
-                                usage: "The package name. Defaults to com.example.<project>."
-                     )
-            <*> m <| Argument(usage: "the project name")
+        return .success(BuildOptions())
     }
 }
