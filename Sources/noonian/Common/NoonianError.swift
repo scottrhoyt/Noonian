@@ -9,13 +9,13 @@
 import Foundation
 
 enum NoonianError: Error {
-    case unknown
+    case unknown(Error)
     case androidHomeNotDefined
 
     var description: String {
         switch self {
-        case .unknown:
-            return "An unknown error has occurred."
+        case .unknown(let error):
+            return "An unknown error has occurred: \(error)"
         case .androidHomeNotDefined:
             return "\(EnvironmentKeys.androidHome.rawValue) is not defined"
         }
