@@ -71,8 +71,8 @@ struct InitOptions: OptionsProtocol {
                      )
             <*> m <| Option(
                                 key: "target",
-                                defaultValue: "18",
-                                usage: "The target to build for. Defaults to Android 7.0."
+                                defaultValue: "android-25",
+                                usage: "The target to build for. Specify by target name and not ID. Defaults to android-25 (7.1)."
                      )
             <*> m <| Option<String?>(
                                 key: "package",
