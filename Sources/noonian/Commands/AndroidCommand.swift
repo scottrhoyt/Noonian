@@ -8,9 +8,16 @@
 
 import Foundation
 import Commandant
+import Result
 import NoonianKit
 
-protocol AndroidCommand: CommandProtocol { }
+protocol AndroidCommand: CommandProtocol {
+    associatedtype _Options
+    typealias ClientError = NoonianError
+    typealias Options = _Options
+
+    func run(_ options: _Options) throws
+}
 
 extension AndroidCommand {
     private var android: String {
@@ -26,5 +33,14 @@ extension AndroidCommand {
 
     func androidCommand() throws -> String {
         return (try androidHome()).pathByAdding(component: android)
+    }
+
+    func run(_ options: _Options) -> Result<(), NoonianError> {
+        do {
+            try run(options)
+            return .success()
+        } catch {
+            return .failure((error as? NoonianError) ?? .unknown)
+        }
     }
 }

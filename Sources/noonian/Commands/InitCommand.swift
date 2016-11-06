@@ -16,27 +16,27 @@ struct InitCommand: AndroidCommand {
     let verb = "init"
     let function = "Initialize a new Android project"
 
-    func run(_ options: InitOptions) -> Result<(), NoonianError> {
-        do {
-            let command = try androidCommand()
+    func run(_ options: InitOptions) throws {
+        let command = try androidCommand()
+        let task = commandTask(options: options, command: command)
 
-            let verbArg = CommandArgument(flag: "create", value: "project")
-            let activityArg = CommandArgument(flag: "-a", value: "Main")
-            let pathArg = CommandArgument(flag: "-p", value: options.path)
-            let targetArg = CommandArgument(flag: "-t", value: options.target)
-            let packageArg = CommandArgument(flag: "-k", value: options.package)
-            let projectArg = CommandArgument(flag: "-n", value: options.projectName)
-            let args = [verbArg, activityArg, pathArg, targetArg, packageArg, projectArg]
+        let runner = Runner()
+        runner.run(task: task)
 
-            let task = CommandTask(name: "init", commands: [Command(command: command, arguments: args)])
-            let runner = Runner()
-            runner.run(task: task)
+        // TODO: Need to copy example configuration
+    }
 
-            // TODO: Need to copy example configuration
-            return .success()
-        } catch {
-            return .failure((error as? NoonianError) ?? .unknown)
-        }
+    private func commandTask(options: InitOptions, command: String) -> CommandTask {
+        let verbArg = CommandArgument(flag: "create", value: "project")
+        let activityArg = CommandArgument(flag: "-a", value: "Main")
+        let pathArg = CommandArgument(flag: "-p", value: options.path)
+        let targetArg = CommandArgument(flag: "-t", value: options.target)
+        let packageArg = CommandArgument(flag: "-k", value: options.package)
+        let projectArg = CommandArgument(flag: "-n", value: options.projectName)
+        let args = [verbArg, activityArg, pathArg, targetArg, packageArg, projectArg]
+
+        let task = CommandTask(name: "init", commands: [Command(command: command, arguments: args)])
+        return task
     }
 }
 
