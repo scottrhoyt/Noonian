@@ -9,14 +9,15 @@
 import Foundation
 import Commandant
 import Result
-import NoonianKit
 import Curry
 
-struct InitCommand: AndroidCommand {
-    typealias Options = InitOptions // TODO: Hopefully we can find a way to infer this
+public struct InitCommand: AndroidCommand {
+    public typealias Options = InitOptions // TODO: Hopefully we can find a way to infer this
 
-    let verb = "init"
-    let function = "Initialize a new Android project"
+    public let verb = "init"
+    public let function = "Initialize a new Android project"
+
+    public init() { }
 
     func run(_ options: InitOptions) throws {
         let command = try androidCommand()
@@ -43,7 +44,7 @@ struct InitCommand: AndroidCommand {
     }
 }
 
-struct InitOptions: OptionsProtocol {
+public struct InitOptions: OptionsProtocol {
     let path: String
     let activity: String
     let target: String
@@ -58,7 +59,7 @@ struct InitOptions: OptionsProtocol {
         self.projectName = projectName
     }
 
-    static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianError>> {
+    public static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianError>> {
         return curry(InitOptions.init)
             <*> m <| Option(
                                 key: "path",

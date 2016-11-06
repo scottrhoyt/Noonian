@@ -9,14 +9,15 @@
 import Foundation
 import Commandant
 import Result
-import NoonianKit
 import Curry
 
-struct BuildCommand: AndroidCommand {
-    typealias Options = BuildOptions
+public struct BuildCommand: AndroidCommand {
+    public typealias Options = BuildOptions
 
-    let verb = "build"
-    let function = "Build, package, and sign the app."
+    public let verb = "build"
+    public let function = "Build, package, and sign the app."
+
+    public init() { }
 
     func run(_ options: BuildOptions) throws {
         let buildTools = try buildToolsPath()
@@ -60,8 +61,8 @@ struct BuildCommand: AndroidCommand {
     }
 }
 
-struct BuildOptions: OptionsProtocol {
-    static func evaluate(_ m: CommandMode) -> Result<BuildOptions, CommandantError<NoonianError>> {
+public struct BuildOptions: OptionsProtocol {
+    public static func evaluate(_ m: CommandMode) -> Result<BuildOptions, CommandantError<NoonianError>> {
         return .success(BuildOptions())
     }
 }

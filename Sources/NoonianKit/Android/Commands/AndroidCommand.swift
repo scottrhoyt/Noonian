@@ -9,7 +9,6 @@
 import Foundation
 import Commandant
 import Result
-import NoonianKit
 
 fileprivate enum SDKPaths: String {
     case android = "tools/android"
@@ -44,7 +43,7 @@ extension AndroidCommand {
         return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
     }
 
-    func run(_ options: Self.Options) -> Result<(), NoonianError> {
+    public func run(_ options: Self.Options) -> Result<(), NoonianError> {
         do {
             try run(options)
             return .success()

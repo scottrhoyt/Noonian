@@ -9,6 +9,7 @@
 import Foundation
 import Commandant
 import Result
+import NoonianKit
 
 // Create registry and add commands
 let registry = CommandRegistry<NoonianError>()

@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum NoonianError: Error {
+public enum NoonianError: Error {
     case unknown(Error)
     case androidHomeNotDefined
     case noBuildTools
 
-    var description: String {
+    public var description: String {
         switch self {
         case .unknown(let error):
             return "An unknown error has occurred: \(error)"
