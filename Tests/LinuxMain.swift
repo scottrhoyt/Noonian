@@ -13,11 +13,12 @@ XCTMain([
     testCase(StringNoonianKitTests.allTests),
 
     // MARK: Android specifiv
-    testCase(BuildCommandTests.allTests),
+    testCase(BuildTests.allTests),
     testCase(InitCommandTests.allTests),
     testCase(NoonianConfigurationTests.allTests),
     testCase(AndroidCommandTests.allTests),
-    testCase(PackageCommandTests.allTests),
-    testCase(InstallCommandTests.allTests),
+    testCase(PackageTests.allTests),
+    testCase(InstallTests.allTests),
+    testCase(SDKPathBuilderTests.allTests),
 ])
 #endif

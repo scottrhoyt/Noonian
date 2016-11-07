@@ -10,34 +10,13 @@ import Foundation
 import Commandant
 import Result
 
-fileprivate enum SDKPaths: String {
-    case android = "tools/android"
-    case emulator = "tools/emulator"
-    case buildTools = "build-tools"
-    case platformTools = "platform-tools"
-    case platforms = "platforms"
-    case platformIncludeName = "android.jar"
-    case packageTool = "aapt" // TODO: Need to come up with a better format for paths and tools
-    case jackTool = "jack.jar"
-    case zipAlignTool = "zipalign"
-    case adbTool = "adb"
-}
-
 protocol AndroidCommand: CommandProtocol {
     typealias ClientError = NoonianError
 
-    func run(_ options: Self.Options) throws
+    func run(_ options: Self.Options, paths: SDKPathBuilder) throws
 }
 
 extension AndroidCommand {
-
-    // TODO: Maybe derive the app name from something else, like configuration or directory name
-    var appName: String {
-        return "App"
-    }
-
-    // MARK: - Paths
-
     func androidHome() throws -> String {
         guard let androidHome = Environment().stringValue(for: EnvironmentKeys.androidHome.rawValue) else {
             throw NoonianError.androidHomeNotDefined
@@ -45,75 +24,23 @@ extension AndroidCommand {
         return androidHome
     }
 
-    private func buildToolsBaseDir() throws -> String {
-        return (try androidHome()).pathByAdding(component: SDKPaths.buildTools.rawValue)
-    }
-
-    func androidToolPath() throws -> String {
-        return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
-    }
-
-    // TODO: Should provide an option to supply build tools via configuration file
-    // This function will return the path to the versioned tools if provided
-    // Otherwise it will return the latest tools installed
-    func buildToolsPath(toolsVersion: String? = nil) throws -> String {
-        let baseDir = try buildToolsBaseDir()
-
-        if let toolsVersion = toolsVersion {
-            return baseDir.pathByAdding(component: toolsVersion)
-        }
-
-        let contents = try FileManager.default.contentsOfDirectory(atPath: baseDir)
-
-        if let latest = contents.sorted(by: >).first {
-            print("Tools Version not supplied. Using latest.")
-            print(baseDir.pathByAdding(component: latest))
-            return baseDir.pathByAdding(component: latest)
-        } else {
-            throw NoonianError.noBuildTools
-        }
-    }
-
-    func includeFor(target: String) throws -> String {
-        return try androidHome()
-            .pathByAdding(component: SDKPaths.platforms.rawValue)
-            .pathByAdding(component: target)
-            .pathByAdding(component: SDKPaths.platformIncludeName.rawValue)
-    }
-
-    func packageToolPath(buildTools: String) -> String {
-        return buildTools.pathByAdding(component: SDKPaths.packageTool.rawValue)
-    }
-
-    func jackToolCommand(buildTools: String) -> String {
-        let jackPath = buildTools.pathByAdding(component: SDKPaths.jackTool.rawValue)
-        let command = "java -jar " + jackPath
-        return command
-    }
-
-    func zipAlignToolCommand(buildTools: String) -> String {
-        return buildTools.pathByAdding(component: SDKPaths.zipAlignTool.rawValue)
-    }
-
-    // MARK: - Running functions
-
     public func run(_ options: Self.Options) -> Result<(), NoonianError> {
         do {
-            try run(options)
+            try run(options, paths: SDKPathBuilder(androidHome: androidHome()))
             return .success()
         } catch {
             return .failure((error as? NoonianError) ?? .internalError(error))
         }
     }
 
-    func execute(commands: [ShellCommand]) throws {
-        let task = CommandTask(name: verb, commands: commands)
-        try execute(task: task)
-    }
-
     func execute(task: CommandTask) throws {
         let runner = Runner()
         try runner.run(task: task)
+    }
+
+    func execute(commands: [ShellCommand]) throws {
+        let task = CommandTask(name: verb, commands: commands)
+        try execute(task: task)
     }
 
     func execute(commands: [ShellCommand], configuration: NoonianConfiguration) throws {
@@ -125,13 +52,5 @@ extension AndroidCommand {
         let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
 
         try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
-    }
-
-    // TODO: Consider passing android home into all paths that need it
-    // We could extract this all out to a android command builder
-    func adbToolCommand() throws -> String {
-        return try androidHome()
-            .pathByAdding(component: SDKPaths.platformTools.rawValue)
-            .pathByAdding(component: SDKPaths.adbTool.rawValue)
     }
 }

@@ -14,10 +14,10 @@ import NoonianKit
 
 // Create registry and add commands
 let registry = CommandRegistry<NoonianError>()
-registry.register(InitCommand())
-registry.register(BuildCommand())
-registry.register(PackageCommand())
-registry.register(InstallCommand())
+registry.register(Init())
+registry.register(Build())
+registry.register(Package())
+registry.register(Install())
 
 // Add help command
 let helpCommand = HelpCommand(registry: registry)

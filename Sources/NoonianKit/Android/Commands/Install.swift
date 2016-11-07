@@ -1,5 +1,5 @@
 //
-//  InstallCommand.swift
+//  Install.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/6/16.
@@ -10,7 +10,7 @@ import Foundation
 import Commandant
 import Result
 
-public struct InstallCommand: AndroidCommand {
+public struct Install: AndroidCommand {
     public typealias Options = InstallOptions
 
     public let verb = "install"
@@ -18,25 +18,24 @@ public struct InstallCommand: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: InstallOptions) throws {
+    func run(_ options: InstallOptions, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
 
         try execute(
             commands: [
-                install(),
+                install(adbTool: paths.adbToolCommand(), appName: configuration.appName()),
             ],
             configuration: configuration
         )
     }
 
-    func install() throws -> ShellCommand {
-        let command = try adbToolCommand()
+    func install(adbTool: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("install"),
             ShellArgument("bin/\(appName).apk"),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: adbTool, arguments: arguments)
     }
 }
 

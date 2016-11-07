@@ -1,2 +1,3 @@
 build_tools: 25.0.0
 target: 2
+app_name: app

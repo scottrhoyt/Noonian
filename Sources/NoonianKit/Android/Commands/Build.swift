@@ -1,5 +1,5 @@
 //
-//  BuildCommand.swift
+//  Build.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/4/16.
@@ -10,7 +10,7 @@ import Foundation
 import Commandant
 import Result
 
-public struct BuildCommand: AndroidCommand {
+public struct Build: AndroidCommand {
     public typealias Options = BuildOptions
 
     public let verb = "build"
@@ -18,24 +18,26 @@ public struct BuildCommand: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: BuildOptions) throws {
+    func run(_ options: BuildOptions, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
-        let buildTools = try buildToolsPath(toolsVersion: toolsVersion)
         let target: String = try configuration.target()
 
         try execute(
             commands: [
-                packagingResources(buildTools: buildTools, target: target),
-                compiling(buildTools: buildTools, target: target)
+                packagingResources(
+                    packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
+                    include: paths.includeFor(target: target)
+                ),
+                compiling(
+                    jackTool: paths.jackToolCommand(toolsVersion: toolsVersion),
+                    include: paths.includeFor(target: target))
             ],
             configuration: configuration
         )
     }
 
-    // TODO: Consider passing in configuration instead. This would make it better when splitting the commands.
-    func packagingResources(buildTools: String, target: String) throws -> ShellCommand {
-        let command = packageToolPath(buildTools: buildTools)
+    func packagingResources(packageTool: String, include: String) -> ShellCommand {
         let arguments = [
             ShellArgument("package"),
             ShellArgument("-v"),
@@ -44,22 +46,21 @@ public struct BuildCommand: AndroidCommand {
             ShellArgument("-S", "res"),
             ShellArgument("-J", "src"),
             ShellArgument("-M", "AndroidManifest.xml"),
-            ShellArgument("-I", try includeFor(target: target)),
+            ShellArgument("-I", include),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: packageTool, arguments: arguments)
     }
 
-    func compiling(buildTools: String, target: String) throws -> ShellCommand {
-        let command = jackToolCommand(buildTools: buildTools)
+    func compiling(jackTool: String, include: String) -> ShellCommand {
         let arguments = [
             ShellArgument("--verbose", "info"),
-            ShellArgument("-cp", try includeFor(target: target)),
+            ShellArgument("-cp", include),
             ShellArgument("--output-dex", "bin"),
             ShellArgument("src"),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: jackTool, arguments: arguments)
     }
 }
 

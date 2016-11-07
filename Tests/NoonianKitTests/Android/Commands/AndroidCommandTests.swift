@@ -25,7 +25,7 @@ class AndroidCommandTests: XCTestCase {
         let function = "test"
         var error: Error?
 
-        func run(_ options: AndroidCommandTests.TestOptions) throws {
+        func run(_ options: TestOptions, paths: SDKPathBuilder) throws {
             if let error = error {
                 throw error
             }
@@ -39,6 +39,11 @@ class AndroidCommandTests: XCTestCase {
     }
 
     // MARK: - Tests
+
+    override func setUp() {
+        super.setUp()
+        clearAndroidHome()
+    }
 
     func testAndroidHomeNotDefinedThrows() {
         Environment().unset(for: "ANDROID_HOME")

@@ -1,5 +1,5 @@
 //
-//  InitCommand.swift
+//  Init.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/4/16.
@@ -11,27 +11,27 @@ import Commandant
 import Result
 import Curry
 
-public struct InitCommand: AndroidCommand {
-    public typealias Options = InitOptions // TODO: Hopefully we can find a way to infer this
+public struct Init: AndroidCommand {
+    public typealias Options = InitOptions
 
     public let verb = "init"
     public let function = "Initialize a new Android project"
 
     public init() { }
 
-    func run(_ options: InitOptions) throws {
+    func run(_ options: InitOptions, paths: SDKPathBuilder) throws {
         // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [
-                projectCreation(options: options),
+                projectCreation(options: options, androidTool: paths.androidToolCommand()),
                 copyingExampleConfig(projectPath: options.path),
-                addingTargetToConfig(target: options.target, projectPath: options.path)
+                addingStringToConfig(contents: "\(ConfigurationKeys.target.rawValue): \(options.target)", projectPath: options.path),
+                addingStringToConfig(contents: "\(ConfigurationKeys.appName.rawValue): \(options.projectName)", projectPath: options.path)
             ]
         )
     }
 
-    func projectCreation(options: InitOptions) throws -> ShellCommand {
-        let command = try androidToolPath()
+    func projectCreation(options: InitOptions, androidTool: String) -> ShellCommand {
         let arguments = [
             ShellArgument("create", "project"),
             ShellArgument("-a", options.activity),
@@ -41,7 +41,7 @@ public struct InitCommand: AndroidCommand {
             ShellArgument("-n", options.projectName),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: androidTool, arguments: arguments)
     }
 
     func copyingExampleConfig(projectPath: String) -> ShellCommand {
@@ -55,10 +55,10 @@ public struct InitCommand: AndroidCommand {
         return ShellCommand(command: command, arguments: arguments)
     }
 
-    func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
+    func addingStringToConfig(contents: String, projectPath: String) -> ShellCommand {
         let command = "echo"
         let arguments = [
-            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
+            ShellArgument(contents, ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
         ]
 
         return ShellCommand(command: command, arguments: arguments)

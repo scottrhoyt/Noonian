@@ -1,5 +1,5 @@
 //
-//  PackageCommand.swift
+//  Package.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/6/16.
@@ -10,7 +10,7 @@ import Foundation
 import Commandant
 import Result
 
-public struct PackageCommand: AndroidCommand {
+public struct Package: AndroidCommand {
     public typealias Options = PackageOptions
 
     public let verb = "package"
@@ -18,38 +18,52 @@ public struct PackageCommand: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: PackageOptions) throws {
+    func run(_ options: PackageOptions, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
-        let buildTools = try buildToolsPath(toolsVersion: configuration.buildTools())
+        let toolsVersion = configuration.buildTools()
         let target = try configuration.target()
+        let appName = configuration.appName()
 
         try execute(
             commands: [
-                packagingApk(buildTools: buildTools, target: target),
-                signingApk(),
-                zipAlign(buildTools: buildTools),
+                removeApks(),  // Need to do this to prevent aapt from entering an endless loop
+                packagingApk(
+                    packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
+                    include: paths.includeFor(target: target),
+                    appName: appName
+                ),
+                signingApk(appName: appName),
+                zipAlign(zipTool: paths.zipAlignToolCommand(toolsVersion: toolsVersion), appName: appName),
             ],
             configuration: configuration
         )
     }
 
-    func packagingApk(buildTools: String, target: String) throws -> ShellCommand {
-        let command = packageToolPath(buildTools: buildTools)
+    func removeApks() -> ShellCommand {
+        let arguments = [
+            ShellArgument("-f"),
+            ShellArgument("bin/*.apk")
+        ]
+
+        return ShellCommand(command: "rm", arguments: arguments)
+    }
+
+    func packagingApk(packageTool: String, include: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("package"),
             ShellArgument("-v"),
             ShellArgument("-f"),
             ShellArgument("-M", "AndroidManifest.xml"),
             ShellArgument("-S", "res"),
-            ShellArgument("-I", try includeFor(target: target)),
+            ShellArgument("-I", include),
             ShellArgument("-F", "bin/\(appName).unsigned.apk"),
             ShellArgument("bin")
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: packageTool, arguments: arguments)
     }
 
-    func signingApk() -> ShellCommand {
+    func signingApk(appName: String) -> ShellCommand {
         let command = "jarsigner"
         let arguments = [
             ShellArgument("-verbose"),
@@ -64,8 +78,7 @@ public struct PackageCommand: AndroidCommand {
         return ShellCommand(command: command, arguments: arguments)
     }
 
-    func zipAlign(buildTools: String) -> ShellCommand {
-        let command = zipAlignToolCommand(buildTools: buildTools)
+    func zipAlign(zipTool: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("-v"),
             ShellArgument("-f", "4"),
@@ -73,7 +86,7 @@ public struct PackageCommand: AndroidCommand {
             ShellArgument("bin/\(appName).apk"),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: zipTool, arguments: arguments)
     }
 }
 

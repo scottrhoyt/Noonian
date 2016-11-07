@@ -1,5 +1,5 @@
 //
-//  InstallCommandTests.swift
+//  InstallTests.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/6/16.
@@ -9,8 +9,9 @@
 import XCTest
 @testable import NoonianKit
 
-class InstallCommandTests: XCTestCase {
-    let installCommand = InstallCommand()
+class InstallTests: XCTestCase {
+    let install = Install()
+    let appName = "app"
 
     override func setUp() {
         super.setUp()
@@ -18,14 +19,14 @@ class InstallCommandTests: XCTestCase {
     }
 
     func testCommandForInstall() {
-        let command = try? installCommand.install()
-        let expected = "/platform-tools/adb install bin/App.apk"
-        XCTAssertEqual(expected, command?.join())
+        let command = install.install(adbTool: "adb", appName: appName)
+        let expected = "adb install bin/app.apk"
+        XCTAssertEqual(expected, command.join())
     }
 }
 
 #if os(Linux)
-    extension InstallCommandTests {
+    extension InstallTests {
         static var allTests = [
             ("testCommandForInstall", testCommandForInstall),
         ]

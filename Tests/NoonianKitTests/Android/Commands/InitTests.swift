@@ -10,7 +10,7 @@ import XCTest
 @testable import NoonianKit
 
 class InitCommandTests: XCTestCase {
-    let initCommand = InitCommand()
+    let initCommand = Init()
 
     override func setUp() {
         super.setUp()
@@ -36,9 +36,9 @@ class InitCommandTests: XCTestCase {
             projectName: "projectName"
         )
 
-        let command = try? initCommand.projectCreation(options: options)
-        let expected = "/tools/android create project -a activity -p path -t android -k package -n projectName"
-        XCTAssertEqual(expected, command?.join())
+        let command = initCommand.projectCreation(options: options, androidTool: "android")
+        let expected = "android create project -a activity -p path -t android -k package -n projectName"
+        XCTAssertEqual(expected, command.join())
     }
 
     func testCommandForCopyingConfig() {
@@ -51,10 +51,10 @@ class InitCommandTests: XCTestCase {
 
     func testCommandToAddTarger() {
         let projectPath = "projectPath"
-        let target = "target"
-        let command = initCommand.addingTargetToConfig(target: target, projectPath: projectPath)
+        let contents = "key: value"
+        let command = initCommand.addingStringToConfig(contents: contents, projectPath: projectPath)
 
-        let expected = "echo target: target >> projectPath/.noonian.yml"
+        let expected = "echo key: value >> projectPath/.noonian.yml"
         XCTAssertEqual(expected, command.join())
     }
     // TODO: Need to test options building

@@ -58,6 +58,10 @@ class NoonianConfigurationTests: XCTestCase {
 
         XCTFail("Should have thrown an error.")
     }
+
+    func testAppName() {
+        XCTAssertEqual(configuration.appName(), "app")
+    }
 }
 
 #if os(Linux)
@@ -67,6 +71,7 @@ class NoonianConfigurationTests: XCTestCase {
             ("testBadTypeThrows", testBadTypeThrows),
             ("testMissingValueThrows", testMissingValueThrows),
             ("testThrowsIfNoConfigurationFile", testThrowsIfNoConfigurationFile),
+            ("testAppName", testAppName),
         ]
     }
 #endif
