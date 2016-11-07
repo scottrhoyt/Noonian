@@ -49,6 +49,7 @@ class PackageTests: XCTestCase {
 #if os(Linux)
     extension PackageTests {
         static var allTests = [
+            ("testRemoveApks", testRemoveApks),
             ("testCommandForPackaging", testCommandForPackaging),
             ("testCommandForSigning", testCommandForSigning),
             ("testCommandForZipAlign", testCommandForZipAlign),
