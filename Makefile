@@ -1,5 +1,5 @@
 BINARIES_FOLDER=/usr/local/bin
-RESOURCES_FOLDER=/usr/local/lib/noonian
+RESOURCES_FOLDER=/usr/local/share/noonian
 
 SWIFT_SNAPSHOT=swift-3.0.1-GM-CANDIDATE
 SWIFT_URL=https://swift.org/builds/$(SWIFT_SNAPSHOT)/ubuntu1404/$(SWIFT_SNAPSHOT)/$(SWIFT_SNAPSHOT)-ubuntu14.04.tar.gz
@@ -20,10 +20,10 @@ build: clean
 	swift build -c release
 
 install: build
-	mkdir -p $(BINARIES_FOLDER)
-	mkdir -p $(RESOURCES_FOLDER)
-	cp .build/release/noonian $(BINARIES_FOLDER)
-	cp example.noonian.yml $(RESOURCES_FOLDER)
+	sudo mkdir -p $(BINARIES_FOLDER)
+	sudo mkdir -p $(RESOURCES_FOLDER)
+	sudo cp .build/release/noonian $(BINARIES_FOLDER)
+	sudo cp example.noonian.yml $(RESOURCES_FOLDER)
 
 linux_swift:
 	wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import -

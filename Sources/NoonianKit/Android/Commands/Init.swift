@@ -48,7 +48,7 @@ public struct Init: AndroidCommand {
         let command = "cp"
         let arguments = [
             // TODO: might want to extract install location to somewhere more reasonable
-            ShellArgument("/usr/local/lib/noonian/example.noonian.yml"),
+            ShellArgument("/usr/local/share/noonian/example.noonian.yml"),
             ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 
