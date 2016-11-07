@@ -15,6 +15,11 @@ class PackageCommandTests: XCTestCase {
     let buildTools = "build-tools"
     let target = "target"
 
+    override func setUp() {
+        super.setUp()
+        clearAndroidHome()
+    }
+
     func testCommandForPackaging() {
         let command = try? packageCommand.packagingApk(buildTools: buildTools, target: target)
         let expected = "build-tools/aapt package -v -f -M AndroidManifest.xml -S res -I /platforms/target/android.jar -F bin/App.unsigned.apk bin"
