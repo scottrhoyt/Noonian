@@ -26,7 +26,7 @@ public struct Package: AndroidCommand {
         try execute(
             commands: [
                 packagingApk(
-                    packageTool: paths.packageToolPath(toolsVersion: toolsVersion),
+                    packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
                     include: paths.includeFor(target: target)
                 ),
                 signingApk(),

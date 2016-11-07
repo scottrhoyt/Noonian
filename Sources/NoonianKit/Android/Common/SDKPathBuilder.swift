@@ -32,13 +32,12 @@ struct SDKPathBuilder {
         return androidHome.pathByAdding(component: Paths.buildTools.rawValue)
     }
 
-    func androidToolPath() -> String {
+    func androidToolCommand() -> String {
         return androidHome
             .pathByAdding(component: Paths.tools.rawValue)
             .pathByAdding(component: Tools.android.rawValue)
     }
 
-    // TODO: Should provide an option to supply build tools via configuration file
     // This function will return the path to the versioned tools if provided
     // Otherwise it will return the latest tools installed
     private func buildToolsPath(toolsVersion: String? = nil) throws -> String {
@@ -66,7 +65,7 @@ struct SDKPathBuilder {
             .pathByAdding(component: Paths.platformIncludeName.rawValue)
     }
 
-    func packageToolPath(toolsVersion: String?) throws -> String {
+    func packageToolCommand(toolsVersion: String?) throws -> String {
         return try buildToolsPath(toolsVersion: toolsVersion)
             .pathByAdding(component: Tools.package.rawValue)
     }

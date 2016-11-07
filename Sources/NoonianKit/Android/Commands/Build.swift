@@ -26,7 +26,7 @@ public struct Build: AndroidCommand {
         try execute(
             commands: [
                 packagingResources(
-                    packageTool: paths.packageToolPath(toolsVersion: toolsVersion),
+                    packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
                     include: paths.includeFor(target: target)
                 ),
                 compiling(

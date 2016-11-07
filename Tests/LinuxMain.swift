@@ -19,5 +19,6 @@ XCTMain([
     testCase(AndroidCommandTests.allTests),
     testCase(PackageTests.allTests),
     testCase(InstallTests.allTests),
+    testCase(SDKPathBuilderTests.allTests),
 ])
 #endif

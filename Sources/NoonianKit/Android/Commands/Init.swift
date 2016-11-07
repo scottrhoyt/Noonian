@@ -23,7 +23,7 @@ public struct Init: AndroidCommand {
         // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [
-                projectCreation(options: options, androidTool: paths.androidToolPath()),
+                projectCreation(options: options, androidTool: paths.androidToolCommand()),
                 copyingExampleConfig(projectPath: options.path),
                 addingTargetToConfig(target: options.target, projectPath: options.path)
             ]
