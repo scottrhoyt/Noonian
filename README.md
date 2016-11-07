@@ -15,8 +15,9 @@ building androids](http://memory-alpha.wikia.com/wiki/Noonian_Soong).
 * [Download the latest release](https://github.com/scottrhoyt/Noonian/releases)
 * Swift 3+ is installed
   * OSX: Included in Xcode 8+
-  * Linux: available at [Swift](http://www.swift.org) (`make linux_swift` will
-    create a local installation of Swift in the source directory)
+  * Linux: available at [Swift](http://www.swift.org). `make linux_swift` will
+    create a local installation of Swift in the source directory if you are
+    using Ubuntu 14.04
 * Run `make install`
 
 ### Android SDK Requirements
