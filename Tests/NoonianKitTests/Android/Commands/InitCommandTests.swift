@@ -36,12 +36,10 @@ class InitCommandTests: XCTestCase {
             package: "package",
             projectName: "projectName"
         )
-        let androidTool = "androidTool"
 
-        let command = initCommand.projectCreation(androidTool: androidTool, options: options)
-
-        let expected = "androidTool create project -a activity -p path -t android -k package -n projectName"
-        XCTAssertEqual(expected, command.join())
+        let command = try? initCommand.projectCreation(options: options)
+        let expected = "/tools/android create project -a activity -p path -t android -k package -n projectName"
+        XCTAssertEqual(expected, command?.join())
     }
 
     func testCommandForCopyingConfig() {

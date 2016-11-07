@@ -33,6 +33,7 @@ public struct BuildCommand: AndroidCommand {
         )
     }
 
+    // TODO: Consider passing in configuration instead. This would make it better when splitting the commands.
     func packagingResources(buildTools: String, target: String) throws -> ShellCommand {
         let command = packageToolPath(buildTools: buildTools)
         let arguments = [
