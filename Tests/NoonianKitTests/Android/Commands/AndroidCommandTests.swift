@@ -6,7 +6,6 @@
 //  Copyright © 2016 Scott Hoyt. All rights reserved.
 //
 
-import Foundation
 import XCTest
 @testable import NoonianKit
 import Commandant
@@ -15,6 +14,10 @@ import Result
 class AndroidCommandTests: XCTestCase {
 
     // MARK: Mocks
+
+    enum InternalError: Error {
+        case someError
+    }
 
     struct TestCommand: AndroidCommand {
         typealias Options = TestOptions
@@ -75,10 +78,10 @@ class AndroidCommandTests: XCTestCase {
 
     func testRunWithInternalError() {
         var command = TestCommand()
-        command.error = NSError()
+        command.error = InternalError.someError
         let result: Result<(), NoonianError> = command.run(TestOptions())
         switch result {
-        case .failure(NoonianError.internalError):
+        case .failure(NoonianError.internalError(InternalError.someError)):
             return
         default:
             XCTFail("Should have failed with an internalError")
