@@ -94,9 +94,24 @@ extension AndroidCommand {
         }
     }
 
-    func run(commands: [ShellCommand]) throws {
+    func execute(commands: [ShellCommand]) throws {
         let task = CommandTask(name: verb, commands: commands)
+        try execute(task: task)
+    }
+
+    func execute(task: CommandTask) throws {
         let runner = Runner()
         try runner.run(task: task)
+    }
+
+    func execute(commands: [ShellCommand], configuration: NoonianConfiguration) throws {
+        let beforeTaskKey = "before_" + verb
+        let afterTaskKey = "after_" + verb
+
+        // TODO: Maybe put these in configuration
+        let beforeTask = try? CommandTask(name: beforeTaskKey, configuration: configuration.value(for: beforeTaskKey))
+        let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
+
+        try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
     }
 }
