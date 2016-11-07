@@ -1,5 +1,5 @@
 //
-//  BuildCommandTests.swift
+//  BuildTests.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/6/16.
@@ -9,8 +9,8 @@
 import XCTest
 @testable import NoonianKit
 
-class BuildCommandTests: XCTestCase {
-    let build = BuildCommand()
+class BuildTests: XCTestCase {
+    let build = Build()
     let buildTools = "build-tools"
     let target = "android"
 
@@ -33,7 +33,7 @@ class BuildCommandTests: XCTestCase {
 }
 
 #if os(Linux)
-    extension BuildCommandTests {
+    extension BuildTests {
         static var allTests = [
             ("testCommandForCompile", testCommandForCompile),
             ("testCommandForPackageResources", testCommandForPackageResources),

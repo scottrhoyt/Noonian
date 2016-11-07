@@ -1,5 +1,5 @@
 //
-//  PackageCommand.swift
+//  Package.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/6/16.
@@ -10,7 +10,7 @@ import Foundation
 import Commandant
 import Result
 
-public struct PackageCommand: AndroidCommand {
+public struct Package: AndroidCommand {
     public typealias Options = PackageOptions
 
     public let verb = "package"

@@ -1,5 +1,5 @@
 //
-//  InitCommand.swift
+//  Init.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/4/16.
@@ -11,7 +11,7 @@ import Commandant
 import Result
 import Curry
 
-public struct InitCommand: AndroidCommand {
+public struct Init: AndroidCommand {
     public typealias Options = InitOptions // TODO: Hopefully we can find a way to infer this
 
     public let verb = "init"

@@ -1,5 +1,5 @@
 //
-//  InstallCommand.swift
+//  Install.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/6/16.
@@ -10,7 +10,7 @@ import Foundation
 import Commandant
 import Result
 
-public struct InstallCommand: AndroidCommand {
+public struct Install: AndroidCommand {
     public typealias Options = InstallOptions
 
     public let verb = "install"

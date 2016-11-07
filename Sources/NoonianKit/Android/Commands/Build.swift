@@ -1,5 +1,5 @@
 //
-//  BuildCommand.swift
+//  Build.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/4/16.
@@ -10,7 +10,7 @@ import Foundation
 import Commandant
 import Result
 
-public struct BuildCommand: AndroidCommand {
+public struct Build: AndroidCommand {
     public typealias Options = BuildOptions
 
     public let verb = "build"
