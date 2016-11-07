@@ -10,17 +10,21 @@ import Foundation
 import Commandant
 import Result
 
-fileprivate enum SDKPaths: String {
-    case android = "tools/android"
-    case emulator = "tools/emulator"
+fileprivate enum Paths: String {
+    case tools = "tools"
     case buildTools = "build-tools"
     case platformTools = "platform-tools"
     case platforms = "platforms"
     case platformIncludeName = "android.jar"
-    case packageTool = "aapt" // TODO: Need to come up with a better format for paths and tools
-    case jackTool = "jack.jar"
-    case zipAlignTool = "zipalign"
-    case adbTool = "adb"
+}
+
+fileprivate enum Tools: String {
+    case android = "android"
+    case emulator = "emulator"
+    case package = "aapt"
+    case jack = "jack.jar"
+    case zipAlign = "zipalign"
+    case adb = "adb"
 }
 
 protocol AndroidCommand: CommandProtocol {
@@ -46,11 +50,13 @@ extension AndroidCommand {
     }
 
     private func buildToolsBaseDir() throws -> String {
-        return (try androidHome()).pathByAdding(component: SDKPaths.buildTools.rawValue)
+        return (try androidHome()).pathByAdding(component: Paths.buildTools.rawValue)
     }
 
     func androidToolPath() throws -> String {
-        return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
+        return try androidHome()
+            .pathByAdding(component: Paths.tools.rawValue)
+            .pathByAdding(component: Tools.android.rawValue)
     }
 
     // TODO: Should provide an option to supply build tools via configuration file
@@ -76,23 +82,33 @@ extension AndroidCommand {
 
     func includeFor(target: String) throws -> String {
         return try androidHome()
-            .pathByAdding(component: SDKPaths.platforms.rawValue)
+            .pathByAdding(component: Paths.platforms.rawValue)
             .pathByAdding(component: target)
-            .pathByAdding(component: SDKPaths.platformIncludeName.rawValue)
+            .pathByAdding(component: Paths.platformIncludeName.rawValue)
     }
 
     func packageToolPath(buildTools: String) -> String {
-        return buildTools.pathByAdding(component: SDKPaths.packageTool.rawValue)
+        return buildTools
+            .pathByAdding(component: Tools.package.rawValue)
     }
 
     func jackToolCommand(buildTools: String) -> String {
-        let jackPath = buildTools.pathByAdding(component: SDKPaths.jackTool.rawValue)
+        let jackPath = buildTools
+            .pathByAdding(component: Tools.jack.rawValue)
         let command = "java -jar " + jackPath
         return command
     }
 
     func zipAlignToolCommand(buildTools: String) -> String {
-        return buildTools.pathByAdding(component: SDKPaths.zipAlignTool.rawValue)
+        return buildTools.pathByAdding(component: Tools.zipAlign.rawValue)
+    }
+
+    // TODO: Consider passing android home into all paths that need it
+    // We could extract this all out to a android command builder
+    func adbToolCommand() throws -> String {
+        return try androidHome()
+            .pathByAdding(component: Paths.platformTools.rawValue)
+            .pathByAdding(component: Tools.adb.rawValue)
     }
 
     // MARK: - Running functions
@@ -125,13 +141,5 @@ extension AndroidCommand {
         let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
 
         try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
-    }
-
-    // TODO: Consider passing android home into all paths that need it
-    // We could extract this all out to a android command builder
-    func adbToolCommand() throws -> String {
-        return try androidHome()
-            .pathByAdding(component: SDKPaths.platformTools.rawValue)
-            .pathByAdding(component: SDKPaths.adbTool.rawValue)
     }
 }
