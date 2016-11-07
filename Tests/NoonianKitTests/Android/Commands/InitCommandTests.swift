@@ -60,22 +60,6 @@ class InitCommandTests: XCTestCase {
         let expected = "echo target: target >> projectPath/.noonian.yml"
         XCTAssertEqual(expected, command.join())
     }
-
-    // MARK: AndroidCommand Tests
-    // TODO: Should move this into separate tests for AndroidCommand
-    func testAndroidHomeNotDefinedThrows() {
-        Environment().unset(for: "ANDROID_HOME")
-        do {
-            _ = try initCommand.androidHome()
-        } catch NoonianError.androidHomeNotDefined {
-            return
-        } catch {
-            XCTFail("Should have thrown an androidHomeNotDefined")
-        }
-
-        XCTFail("Should have thrown an error")
-    }
-
     // TODO: Need to test options building
 }
 
@@ -92,7 +76,6 @@ extension XCTestCase {
             ("testCommandForProjectCreation", testCommandForProjectCreation),
             ("testCommandForCopyingConfig", testCommandForCopyingConfig),
             ("testCommandToAddTarger", testCommandToAddTarger),
-            ("testAndroidHomeNotDefinedThrows", testAndroidHomeNotDefinedThrows),
         ]
     }
 #endif

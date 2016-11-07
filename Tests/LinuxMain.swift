@@ -16,5 +16,6 @@ XCTMain([
     testCase(BuildCommandTests.allTests),
     testCase(InitCommandTests.allTests),
     testCase(NoonianConfigurationTests.allTests),
+    testCase(AndroidCommandTests.allTests),
 ])
 #endif
