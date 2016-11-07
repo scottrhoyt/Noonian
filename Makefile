@@ -20,10 +20,10 @@ build: clean
 	swift build -c release
 
 install: build
-	sudo mkdir -p $(BINARIES_FOLDER)
-	sudo mkdir -p $(RESOURCES_FOLDER)
-	sudo cp .build/release/noonian $(BINARIES_FOLDER)
-	sudo cp example.noonian.yml $(RESOURCES_FOLDER)
+	mkdir -p $(BINARIES_FOLDER)
+	mkdir -p $(RESOURCES_FOLDER)
+	cp .build/release/noonian $(BINARIES_FOLDER)
+	cp example.noonian.yml $(RESOURCES_FOLDER)
 
 linux_swift:
 	wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import -
@@ -32,4 +32,4 @@ linux_swift:
 	wget $(SWIFT_URL).sig
 	gpg --verify $(SWIFT_SNAPSHOT)-ubuntu14.04.tar.gz.sig
 	tar xzf $(SWIFT_SNAPSHOT)-ubuntu14.04.tar.gz
-	export PATH="${PWD}/${SWIFT_SNAPSHOT}-ubuntu14.04/usr/bin:${PATH}"
+	#export PATH="${PWD}/${SWIFT_SNAPSHOT}-ubuntu14.04/usr/bin:${PATH}"
