@@ -21,12 +21,19 @@ class PackageCommandTests: XCTestCase {
         XCTAssertEqual(expected, command?.join())
     }
 
+    func testCommandForSigning() {
+        let command = packageCommand.signingApk()
+        let expected = "jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android " +
+                       "-signedjar bin/App.signed.apk bin/App.unsigned.apk androiddebugkey"
+        XCTAssertEqual(expected, command.join())
+    }
 }
 
 #if os(Linux)
     extension PackageCommandTests {
         static var allTests = [
             ("testCommandForPackaging", testCommandForPackaging),
+            ("testCommandForSigning", testCommandForSigning),
         ]
     }
 #endif

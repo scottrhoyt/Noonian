@@ -37,6 +37,21 @@ public struct PackageCommand: AndroidCommand {
 
         return ShellCommand(command: command, arguments: arguments)
     }
+
+    func signingApk() -> ShellCommand {
+        let command = "jarsigner"
+        let arguments = [
+            ShellArgument("-verbose"),
+            ShellArgument("-keystore", "~/.android/debug.keystore"),
+            ShellArgument("-storepass", "android"),
+            ShellArgument("-keypass", "android"),
+            ShellArgument("-signedjar", "bin/\(appName).signed.apk"),
+            ShellArgument("bin/\(appName).unsigned.apk"),
+            ShellArgument("androiddebugkey"),
+        ]
+
+        return ShellCommand(command: command, arguments: arguments)
+    }
 }
 
 public struct PackageOptions: OptionsProtocol {
