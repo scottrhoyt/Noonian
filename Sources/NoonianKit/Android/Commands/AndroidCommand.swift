@@ -19,6 +19,7 @@ fileprivate enum SDKPaths: String {
     case platformIncludeName = "android.jar"
     case packageTool = "aapt" // TODO: Need to come up with a better format for paths and tools
     case jackTool = "jack.jar"
+    case zipAlignTool = "zipalign"
 }
 
 protocol AndroidCommand: CommandProtocol {
@@ -28,6 +29,11 @@ protocol AndroidCommand: CommandProtocol {
 }
 
 extension AndroidCommand {
+
+    // TODO: Maybe derive the app name from something else, like configuration or directory name
+    var appName: String {
+        return "App"
+    }
 
     // MARK: - Paths
 
@@ -59,6 +65,7 @@ extension AndroidCommand {
         let contents = try FileManager.default.contentsOfDirectory(atPath: baseDir)
 
         if let latest = contents.sorted(by: >).first {
+            print("Tools Version not supplied. Using latest.")
             print(baseDir.pathByAdding(component: latest))
             return baseDir.pathByAdding(component: latest)
         } else {
@@ -81,6 +88,10 @@ extension AndroidCommand {
         let jackPath = buildTools.pathByAdding(component: SDKPaths.jackTool.rawValue)
         let command = "java -jar " + jackPath
         return command
+    }
+
+    func zipAlignToolCommand(buildTools: String) -> String {
+        return buildTools.pathByAdding(component: SDKPaths.zipAlignTool.rawValue)
     }
 
     // MARK: - Running functions

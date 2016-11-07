@@ -9,7 +9,6 @@
 import Foundation
 import Commandant
 import Result
-import Curry
 
 public struct BuildCommand: AndroidCommand {
     public typealias Options = BuildOptions
@@ -22,11 +21,8 @@ public struct BuildCommand: AndroidCommand {
     func run(_ options: BuildOptions) throws {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
-        if toolsVersion == nil { print("Tools Version not supplied. Using latest.") }
         let buildTools = try buildToolsPath(toolsVersion: toolsVersion)
-
-        // TODO: Need to move this constant somewhere else
-        let target: String = try configuration.value(for: "target")
+        let target: String = try configuration.target()
 
         try execute(
             commands: [
@@ -37,7 +33,9 @@ public struct BuildCommand: AndroidCommand {
         )
     }
 
+    // TODO: Consider passing in configuration instead. This would make it better when splitting the commands.
     func packagingResources(buildTools: String, target: String) throws -> ShellCommand {
+        let command = packageToolPath(buildTools: buildTools)
         let arguments = [
             ShellArgument("package"),
             ShellArgument("-v"),
@@ -49,10 +47,11 @@ public struct BuildCommand: AndroidCommand {
             ShellArgument("-I", try includeFor(target: target)),
         ]
 
-        return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 
     func compiling(buildTools: String, target: String) throws -> ShellCommand {
+        let command = jackToolCommand(buildTools: buildTools)
         let arguments = [
             ShellArgument("--verbose", "info"),
             ShellArgument("-cp", try includeFor(target: target)),
@@ -60,7 +59,7 @@ public struct BuildCommand: AndroidCommand {
             ShellArgument("src"),
         ]
 
-        return ShellCommand(command: jackToolCommand(buildTools: buildTools), arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 }
 

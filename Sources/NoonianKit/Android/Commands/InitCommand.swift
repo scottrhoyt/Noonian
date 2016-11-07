@@ -20,19 +20,18 @@ public struct InitCommand: AndroidCommand {
     public init() { }
 
     func run(_ options: InitOptions) throws {
-        let androidTool = try androidToolPath()
-
         // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [
-                projectCreation(androidTool: androidTool, options: options),
+                projectCreation(options: options),
                 copyingExampleConfig(projectPath: options.path),
                 addingTargetToConfig(target: options.target, projectPath: options.path)
             ]
         )
     }
 
-    func projectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
+    func projectCreation(options: InitOptions) throws -> ShellCommand {
+        let command = try androidToolPath()
         let arguments = [
             ShellArgument("create", "project"),
             ShellArgument("-a", options.activity),
@@ -42,25 +41,27 @@ public struct InitCommand: AndroidCommand {
             ShellArgument("-n", options.projectName),
         ]
 
-        return ShellCommand(command: androidTool, arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 
     func copyingExampleConfig(projectPath: String) -> ShellCommand {
+        let command = "cp"
         let arguments = [
             // TODO: might want to extract install location to somewhere more reasonable
             ShellArgument("/usr/local/lib/noonian/example.noonian.yml"),
             ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 
-        return ShellCommand(command: "cp", arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 
     func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
+        let command = "echo"
         let arguments = [
             ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
         ]
 
-        return ShellCommand(command: "echo", arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 }
 
