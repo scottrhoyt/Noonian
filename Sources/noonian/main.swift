@@ -17,6 +17,7 @@ let registry = CommandRegistry<NoonianError>()
 registry.register(InitCommand())
 registry.register(BuildCommand())
 registry.register(PackageCommand())
+registry.register(InstallCommand())
 
 // Add help command
 let helpCommand = HelpCommand(registry: registry)

@@ -20,6 +20,7 @@ fileprivate enum SDKPaths: String {
     case packageTool = "aapt" // TODO: Need to come up with a better format for paths and tools
     case jackTool = "jack.jar"
     case zipAlignTool = "zipalign"
+    case adbTool = "adb"
 }
 
 protocol AndroidCommand: CommandProtocol {
@@ -124,5 +125,13 @@ extension AndroidCommand {
         let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
 
         try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
+    }
+
+    // TODO: Consider passing android home into all paths that need it
+    // We could extract this all out to a android command builder
+    func adbToolCommand() throws -> String {
+        return try androidHome()
+            .pathByAdding(component: SDKPaths.platformTools.rawValue)
+            .pathByAdding(component: SDKPaths.adbTool.rawValue)
     }
 }

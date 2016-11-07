@@ -10,7 +10,6 @@ import XCTest
 @testable import NoonianKit
 
 class BuildCommandTests: XCTestCase {
-
     let build = BuildCommand()
     let buildTools = "build-tools"
     let target = "android"

@@ -10,7 +10,6 @@ import XCTest
 @testable import NoonianKit
 
 class InitCommandTests: XCTestCase {
-
     let initCommand = InitCommand()
 
     override func setUp() {
