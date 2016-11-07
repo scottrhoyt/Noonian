@@ -8,23 +8,27 @@
 
 import Foundation
 
-protocol HasDescription {
-    var description: String { get }
+public protocol HasExplanation {
+    var explanation: String { get }
 }
 
-extension NSError: HasDescription { }
+extension NSError: HasExplanation {
+    public var explanation: String {
+        return localizedDescription
+    }
+}
 
-public enum NoonianError: Error {
+public enum NoonianError: HasExplanation, Error {
     case internalError(Error)
     case androidHomeNotDefined
     case noBuildTools
     case missingConfiguration(key: String)
     case cannotReadConfiguration(key: String, type: Any)
 
-    public var description: String {
+    public var explanation: String {
         switch self {
         case .internalError(let error):
-            return description(from: error)
+            return explanation(from: error)
         case .androidHomeNotDefined:
             return "\(EnvironmentKeys.androidHome.rawValue) is not defined"
         case .noBuildTools:
@@ -36,9 +40,9 @@ public enum NoonianError: Error {
         }
     }
 
-    private func description(from error: Error) -> String {
-        if let error = error as? HasDescription {
-            return error.description
+    private func explanation(from error: Error) -> String {
+        if let error = error as? HasExplanation {
+            return error.explanation
         } else {
             return "An unknown error has occurred: \(error)"
         }

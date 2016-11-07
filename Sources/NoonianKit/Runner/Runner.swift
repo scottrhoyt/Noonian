@@ -28,14 +28,14 @@ public struct Runner {
     }
 
     public func run(task: CommandTask) throws {
+        log.start(task.name)
         for command in task.commands {
-            print("***".lightCyan + " " + "Running: \(task.name)".bold)
             let process = newProcess(command: command)
             let (internalOut, internalError) = setPipes(process: process)
             process.launch()
 
-            if let out = internalOut { handlePipe(pipe: out) { print($0, terminator: "") } }
-            if let error = internalError { handlePipe(pipe: error) { print($0, terminator: "") } }
+            if let out = internalOut { handlePipe(pipe: out, printer: log.info) }
+            if let error = internalError { handlePipe(pipe: error, printer: log.info) }
 
             process.waitUntilExit()
 
@@ -43,6 +43,7 @@ public struct Runner {
                 throw NoonianKitError.taskFailed(taskName: task.name, command: command)
             }
         }
+        log.end(task.name)
     }
 
     private func newProcess(command: String) -> Process {

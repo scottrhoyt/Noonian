@@ -35,6 +35,7 @@
 		3B3972471DD0698400850321 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972451DD068C700850321 /* EnvironmentKeys.swift */; };
 		3B3972491DD06AB000850321 /* SDKPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972481DD06AB000850321 /* SDKPathBuilder.swift */; };
 		3B39724B1DD07A5C00850321 /* SDKPathBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39724A1DD07A5C00850321 /* SDKPathBuilderTests.swift */; };
+		3B39724E1DD1087300850321 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39724D1DD1087300850321 /* Logger.swift */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
@@ -162,6 +163,7 @@
 		3B3972451DD068C700850321 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
 		3B3972481DD06AB000850321 /* SDKPathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilder.swift; sourceTree = "<group>"; };
 		3B39724A1DD07A5C00850321 /* SDKPathBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilderTests.swift; sourceTree = "<group>"; };
+		3B39724D1DD1087300850321 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -322,6 +324,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		3B39724C1DD1086700850321 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3B39724D1DD1087300850321 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		3B4114961DCAAD7600709803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +381,7 @@
 				3BDF57991DCBCCBB00ADE595 /* Configuration */,
 				3B74A2201DCD330900205C17 /* Environment */,
 				3BACDEDE1DCBFE670045A49A /* Runner */,
+				3B39724C1DD1086700850321 /* Logger */,
 				3B41149E1DCB12BB00709803 /* Tasks */,
 				3B4114AD1DCB993000709803 /* NoonianKit.h */,
 				3B4114AE1DCB993000709803 /* Info.plist */,
@@ -685,6 +696,7 @@
 				3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */,
 				3BDF57A11DCBD3A000ADE595 /* NoonianKitError.swift in Sources */,
 				3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */,
+				3B39724E1DD1087300850321 /* Logger.swift in Sources */,
 				3B3972231DCFD2B500850321 /* Init.swift in Sources */,
 				3B3972471DD0698400850321 /* EnvironmentKeys.swift in Sources */,
 				3B3972241DCFD2B500850321 /* OptionsProtocol+Noonian.swift in Sources */,
