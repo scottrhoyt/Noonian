@@ -25,7 +25,7 @@ class AndroidCommandTests: XCTestCase {
         let function = "test"
         var error: Error?
 
-        func run(_ options: TestOptions, pathBuilder: SDKPathBuilder) throws {
+        func run(_ options: TestOptions, paths: SDKPathBuilder) throws {
             if let error = error {
                 throw error
             }

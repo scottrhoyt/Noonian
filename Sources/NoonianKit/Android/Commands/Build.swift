@@ -18,7 +18,7 @@ public struct Build: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: BuildOptions, pathBuilder: SDKPathBuilder) throws {
+    func run(_ options: BuildOptions, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
         let target: String = try configuration.target()
@@ -26,12 +26,12 @@ public struct Build: AndroidCommand {
         try execute(
             commands: [
                 packagingResources(
-                    packageTool: pathBuilder.packageToolPath(toolsVersion: toolsVersion),
-                    include: pathBuilder.includeFor(target: target)
+                    packageTool: paths.packageToolPath(toolsVersion: toolsVersion),
+                    include: paths.includeFor(target: target)
                 ),
                 compiling(
-                    jackTool: pathBuilder.jackToolCommand(toolsVersion: toolsVersion),
-                    include: pathBuilder.includeFor(target: target))
+                    jackTool: paths.jackToolCommand(toolsVersion: toolsVersion),
+                    include: paths.includeFor(target: target))
             ],
             configuration: configuration
         )

@@ -13,7 +13,7 @@ import Result
 protocol AndroidCommand: CommandProtocol {
     typealias ClientError = NoonianError
 
-    func run(_ options: Self.Options, pathBuilder: SDKPathBuilder) throws
+    func run(_ options: Self.Options, paths: SDKPathBuilder) throws
 }
 
 extension AndroidCommand {
@@ -32,7 +32,7 @@ extension AndroidCommand {
 
     public func run(_ options: Self.Options) -> Result<(), NoonianError> {
         do {
-            try run(options, pathBuilder: SDKPathBuilder(androidHome: androidHome()))
+            try run(options, paths: SDKPathBuilder(androidHome: androidHome()))
             return .success()
         } catch {
             return .failure((error as? NoonianError) ?? .internalError(error))

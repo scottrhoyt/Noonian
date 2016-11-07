@@ -18,12 +18,12 @@ public struct Install: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: InstallOptions, pathBuilder: SDKPathBuilder) throws {
+    func run(_ options: InstallOptions, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
 
         try execute(
             commands: [
-                install(adbTool: pathBuilder.adbToolCommand()),
+                install(adbTool: paths.adbToolCommand()),
             ],
             configuration: configuration
         )
