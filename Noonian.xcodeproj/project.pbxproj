@@ -28,6 +28,7 @@
 		3B3972381DD0308000850321 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3B3972391DD0308000850321 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B39723A1DD0308000850321 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
+		3B39723D1DD0489500850321 /* PackageCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39723B1DD0486500850321 /* PackageCommand.swift */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
@@ -142,6 +143,7 @@
 		3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfigurationTests.swift; sourceTree = "<group>"; };
 		3B3972331DD0272600850321 /* test.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.noonian.yml; sourceTree = "<group>"; };
 		3B3972351DD02F3500850321 /* AndroidCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommandTests.swift; sourceTree = "<group>"; };
+		3B39723B1DD0486500850321 /* PackageCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageCommand.swift; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				3B39721C1DCFD2B500850321 /* BuildCommand.swift */,
 				3B39721D1DCFD2B500850321 /* InitCommand.swift */,
 				3B39721E1DCFD2B500850321 /* OptionsProtocol+Noonian.swift */,
+				3B39723B1DD0486500850321 /* PackageCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				3B3972231DCFD2B500850321 /* InitCommand.swift in Sources */,
 				3B3972241DCFD2B500850321 /* OptionsProtocol+Noonian.swift in Sources */,
 				3B3972211DCFD2B500850321 /* AndroidCommand.swift in Sources */,
+				3B39723D1DD0489500850321 /* PackageCommand.swift in Sources */,
 				3B3972221DCFD2B500850321 /* BuildCommand.swift in Sources */,
 				3B3971FB1DCF129B00850321 /* ShellCommand.swift in Sources */,
 				3BDF579D1DCBCDF900ADE595 /* Task.swift in Sources */,

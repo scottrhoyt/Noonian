@@ -9,7 +9,6 @@
 import Foundation
 import Commandant
 import Result
-import Curry
 
 public struct BuildCommand: AndroidCommand {
     public typealias Options = BuildOptions

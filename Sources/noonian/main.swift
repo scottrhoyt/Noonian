@@ -8,7 +8,6 @@
 
 import Foundation
 import Commandant
-import Result
 import NoonianKit
 
 // TODO: Need to create a Makefile
@@ -17,6 +16,7 @@ import NoonianKit
 let registry = CommandRegistry<NoonianError>()
 registry.register(InitCommand())
 registry.register(BuildCommand())
+registry.register(PackageCommand())
 
 // Add help command
 let helpCommand = HelpCommand(registry: registry)
