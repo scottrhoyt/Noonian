@@ -48,6 +48,16 @@ class NoonianConfigurationTests: XCTestCase {
 
         XCTFail("Should have thrown an error")
     }
+
+    func testThrowsIfNoConfigurationFile() {
+        do {
+            _ = try NoonianConfiguration()
+        } catch {
+            return
+        }
+
+        XCTFail("Should have thrown an error.")
+    }
 }
 
 #if os(Linux)
@@ -56,6 +66,7 @@ class NoonianConfigurationTests: XCTestCase {
             ("testBuildTools", testBuildTools),
             ("testBadTypeThrows", testBadTypeThrows),
             ("testMissingValueThrows", testMissingValueThrows),
+            ("testThrowsIfNoConfigurationFile", testThrowsIfNoConfigurationFile),
         ]
     }
 #endif
