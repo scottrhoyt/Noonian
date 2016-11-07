@@ -8,6 +8,8 @@
 
 import Foundation
 
+// TODO: Need to figure out how much of this is necessary???
+
 enum ConfigurationItem: String {
     case beforeBuild = "before_build"
 }

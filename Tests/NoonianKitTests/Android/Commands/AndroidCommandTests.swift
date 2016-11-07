@@ -13,7 +13,7 @@ import Result
 
 class AndroidCommandTests: XCTestCase {
 
-    // MARK: Mocks
+    // MARK: - Mocks
 
     enum InternalError: Error {
         case someError
@@ -38,7 +38,7 @@ class AndroidCommandTests: XCTestCase {
         }
     }
 
-    // MARK: Tests
+    // MARK: - Tests
 
     func testAndroidHomeNotDefinedThrows() {
         Environment().unset(for: "ANDROID_HOME")

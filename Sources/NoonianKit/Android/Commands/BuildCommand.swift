@@ -28,15 +28,13 @@ public struct BuildCommand: AndroidCommand {
         // TODO: Need to move this constant somewhere else
         let target: String = try configuration.value(for: "target")
 
-        let commands = [
-            try packagingResources(buildTools: buildTools, target: target),
-            try compiling(buildTools: buildTools, target: target)
-        ]
-
-        let task = CommandTask(name: verb, commands: commands)
-
-        let runner = Runner()
-        runner.run(task: task)
+        try execute(
+            commands: [
+                packagingResources(buildTools: buildTools, target: target),
+                compiling(buildTools: buildTools, target: target)
+            ],
+            configuration: configuration
+        )
     }
 
     func packagingResources(buildTools: String, target: String) throws -> ShellCommand {

@@ -21,11 +21,15 @@ public struct Runner {
         self.error = error
     }
 
-    public func run(task: CommandTask) {
+    public func run(task: CommandTask) throws {
         for command in task.commands {
             let process = newProcess(command: command)
             process.launch()
             process.waitUntilExit()
+
+            if process.terminationStatus != 0 {
+                throw NoonianKitError.taskFailed(taskName: task.name, command: command)
+            }
         }
     }
 

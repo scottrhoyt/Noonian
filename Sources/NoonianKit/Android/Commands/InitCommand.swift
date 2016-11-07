@@ -23,16 +23,13 @@ public struct InitCommand: AndroidCommand {
         let androidTool = try androidToolPath()
 
         // TODO: Need to add better shell printing of what we are doing here.
-        let commands = [
-            projectCreation(androidTool: androidTool, options: options),
-            copyingExampleConfig(projectPath: options.path),
-            addingTargetToConfig(target: options.target, projectPath: options.path)
-        ]
-
-        let task = CommandTask(name: verb, commands: commands)
-
-        let runner = Runner()
-        runner.run(task: task)
+        try execute(
+            commands: [
+                projectCreation(androidTool: androidTool, options: options),
+                copyingExampleConfig(projectPath: options.path),
+                addingTargetToConfig(target: options.target, projectPath: options.path)
+            ]
+        )
     }
 
     func projectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
@@ -52,7 +49,7 @@ public struct InitCommand: AndroidCommand {
         let arguments = [
             // TODO: might want to extract install location to somewhere more reasonable
             ShellArgument("/usr/local/lib/noonian/example.noonian.yml"),
-            ShellArgument(projectPath.pathByAdding(component: ".noonian.yml")),
+            ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 
         return ShellCommand(command: "cp", arguments: arguments)
@@ -60,9 +57,7 @@ public struct InitCommand: AndroidCommand {
 
     func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
         let arguments = [
-            // TODO: Need to extract file name out of here
-            // TODO: Should find a cleaner way of doing this
-            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: ".noonian.yml"))
+            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
         ]
 
         return ShellCommand(command: "echo", arguments: arguments)

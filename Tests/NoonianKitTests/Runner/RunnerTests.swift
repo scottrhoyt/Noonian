@@ -16,7 +16,7 @@ class RunnerTests: XCTestCase {
         let out = Pipe()
         let error = Pipe()
         let runner = Runner(out: out, error: error)
-        runner.run(task: testTask)
+        try? runner.run(task: testTask)
 
         var output = [String]()
         let outData = out.fileHandleForReading.readDataToEndOfFile()
@@ -48,7 +48,7 @@ class RunnerTests: XCTestCase {
                 "mv /tmp/testFile.tmp testFile.tmp",
             ])
         let runner = Runner()
-        runner.run(task: testTask)
+        try? runner.run(task: testTask)
         let fileManager = FileManager.default
         XCTAssertTrue(fileManager.fileExists(atPath: "testFile.tmp"))
 

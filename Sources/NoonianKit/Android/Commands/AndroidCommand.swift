@@ -28,6 +28,9 @@ protocol AndroidCommand: CommandProtocol {
 }
 
 extension AndroidCommand {
+
+    // MARK: - Paths
+
     func androidHome() throws -> String {
         guard let androidHome = Environment().stringValue(for: EnvironmentKeys.androidHome.rawValue) else {
             throw NoonianError.androidHomeNotDefined
@@ -41,15 +44,6 @@ extension AndroidCommand {
 
     func androidToolPath() throws -> String {
         return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
-    }
-
-    public func run(_ options: Self.Options) -> Result<(), NoonianError> {
-        do {
-            try run(options)
-            return .success()
-        } catch {
-            return .failure((error as? NoonianError) ?? .internalError(error))
-        }
     }
 
     // TODO: Should provide an option to supply build tools via configuration file
@@ -87,5 +81,37 @@ extension AndroidCommand {
         let jackPath = buildTools.pathByAdding(component: SDKPaths.jackTool.rawValue)
         let command = "java -jar " + jackPath
         return command
+    }
+
+    // MARK: - Running functions
+
+    public func run(_ options: Self.Options) -> Result<(), NoonianError> {
+        do {
+            try run(options)
+            return .success()
+        } catch {
+            return .failure((error as? NoonianError) ?? .internalError(error))
+        }
+    }
+
+    func execute(commands: [ShellCommand]) throws {
+        let task = CommandTask(name: verb, commands: commands)
+        try execute(task: task)
+    }
+
+    func execute(task: CommandTask) throws {
+        let runner = Runner()
+        try runner.run(task: task)
+    }
+
+    func execute(commands: [ShellCommand], configuration: NoonianConfiguration) throws {
+        let beforeTaskKey = "before_" + verb
+        let afterTaskKey = "after_" + verb
+
+        // TODO: Maybe put these in configuration
+        let beforeTask = try? CommandTask(name: beforeTaskKey, configuration: configuration.value(for: beforeTaskKey))
+        let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
+
+        try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
     }
 }
