@@ -18,6 +18,8 @@ public enum NoonianError: Error {
     case internalError(Error)
     case androidHomeNotDefined
     case noBuildTools
+    case missingConfiguration(key: String)
+    case cannotReadConfiguration(key: String, type: String)
 
     public var description: String {
         switch self {
@@ -27,6 +29,10 @@ public enum NoonianError: Error {
             return "\(EnvironmentKeys.androidHome.rawValue) is not defined"
         case .noBuildTools:
             return "Your SDK does not have any build tools."
+        case .missingConfiguration(let config):
+            return "Your configuration file is missing an entry for: \(config)"
+        case .cannotReadConfiguration(let key, let type):
+            return "Cannot read configuration for: \(key). Expected type: \(type)"
         }
     }
 
