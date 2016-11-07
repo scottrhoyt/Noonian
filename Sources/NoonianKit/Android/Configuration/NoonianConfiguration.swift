@@ -22,9 +22,9 @@ struct NoonianConfiguration {
     private let configs: [String: Any]
 
     // TODO: allow this to be configured.
-    init() throws {
+    init(configFile: String? = nil) throws {
         let parser = YamlParser()
-        configs = try parser.parseFile(at: NoonianConfiguration.defaultFileName)
+        configs = try parser.parseFile(at: configFile ?? NoonianConfiguration.defaultFileName)
     }
 
     func buildTools() -> String? {

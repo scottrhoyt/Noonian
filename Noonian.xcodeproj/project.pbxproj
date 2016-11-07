@@ -21,6 +21,8 @@
 		3B39722A1DCFD55A00850321 /* BuildCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972291DCFD55A00850321 /* BuildCommandTests.swift */; };
 		3B39722C1DCFDAAE00850321 /* InitCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39722B1DCFDAAE00850321 /* InitCommandTests.swift */; };
 		3B39722F1DD000C500850321 /* NoonianConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39722E1DD000C500850321 /* NoonianConfiguration.swift */; };
+		3B3972321DD0254A00850321 /* NoonianConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */; };
+		3B3972341DD0272600850321 /* test.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B3972331DD0272600850321 /* test.noonian.yml */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
@@ -132,6 +134,8 @@
 		3B3972291DCFD55A00850321 /* BuildCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildCommandTests.swift; sourceTree = "<group>"; };
 		3B39722B1DCFDAAE00850321 /* InitCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitCommandTests.swift; sourceTree = "<group>"; };
 		3B39722E1DD000C500850321 /* NoonianConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfiguration.swift; sourceTree = "<group>"; };
+		3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfigurationTests.swift; sourceTree = "<group>"; };
+		3B3972331DD0272600850321 /* test.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.noonian.yml; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 		3B3972261DCFD52C00850321 /* Android */ = {
 			isa = PBXGroup;
 			children = (
+				3B3972301DD0253700850321 /* Configuration */,
 				3B3972271DCFD52C00850321 /* Commands */,
 				3B3972281DCFD52C00850321 /* Common */,
 			);
@@ -268,6 +273,14 @@
 			path = Sources/NoonianKit/Android/Configuration;
 			sourceTree = SOURCE_ROOT;
 		};
+		3B3972301DD0253700850321 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		3B4114961DCAAD7600709803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +295,7 @@
 		3B41149B1DCB123A00709803 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
+				3B3972331DD0272600850321 /* test.noonian.yml */,
 				3BACDF081DCC38C30045A49A /* test.txt */,
 				3B36F3451DCC680100C0C3C1 /* test.yml */,
 			);
@@ -566,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B36F3461DCC680100C0C3C1 /* test.yml in Resources */,
+				3B3972341DD0272600850321 /* test.noonian.yml in Resources */,
 				3BACDF0B1DCC38C30045A49A /* test.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +675,7 @@
 				3BACDF0D1DCC38D50045A49A /* YamlParserTests.swift in Sources */,
 				3B74A2251DCD3E9000205C17 /* EnvironmentTests.swift in Sources */,
 				3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */,
+				3B3972321DD0254A00850321 /* NoonianConfigurationTests.swift in Sources */,
 				3B36F33E1DCC54C900C0C3C1 /* String+NoonianKitTests.swift in Sources */,
 				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
 				3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */,

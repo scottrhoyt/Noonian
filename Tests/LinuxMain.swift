@@ -15,5 +15,6 @@ XCTMain([
     // MARK: Android specifiv
     testCase(BuildCommandTests.allTests),
     testCase(InitCommandTests.allTests),
+    testCase(NoonianConfigurationTests.allTests),
 ])
 #endif
