@@ -27,6 +27,12 @@ class PackageCommandTests: XCTestCase {
                        "-signedjar bin/App.signed.apk bin/App.unsigned.apk androiddebugkey"
         XCTAssertEqual(expected, command.join())
     }
+
+    func testCommandForZipAlign() {
+        let command = packageCommand.zipAlign(buildTools: buildTools)
+        let expected = "build-tools/zipalign -v -f 4 bin/App.signed.apk bin/App.apk"
+        XCTAssertEqual(expected, command.join())
+    }
 }
 
 #if os(Linux)
@@ -34,6 +40,7 @@ class PackageCommandTests: XCTestCase {
         static var allTests = [
             ("testCommandForPackaging", testCommandForPackaging),
             ("testCommandForSigning", testCommandForSigning),
+            ("testCommandForZipAlign", testCommandForZipAlign),
         ]
     }
 #endif

@@ -19,7 +19,18 @@ public struct PackageCommand: AndroidCommand {
     public init() { }
 
     func run(_ options: PackageOptions) throws {
-        //
+        let configuration = try NoonianConfiguration()
+        let buildTools = try buildToolsPath(toolsVersion: configuration.buildTools())
+        let target = try configuration.target()
+
+        try execute(
+            commands: [
+                packagingApk(buildTools: buildTools, target: target),
+                signingApk(),
+                zipAlign(buildTools: buildTools),
+            ],
+            configuration: configuration
+        )
     }
 
     func packagingApk(buildTools: String, target: String) throws -> ShellCommand {
@@ -48,6 +59,18 @@ public struct PackageCommand: AndroidCommand {
             ShellArgument("-signedjar", "bin/\(appName).signed.apk"),
             ShellArgument("bin/\(appName).unsigned.apk"),
             ShellArgument("androiddebugkey"),
+        ]
+
+        return ShellCommand(command: command, arguments: arguments)
+    }
+
+    func zipAlign(buildTools: String) -> ShellCommand {
+        let command = zipAlignToolCommand(buildTools: buildTools)
+        let arguments = [
+            ShellArgument("-v"),
+            ShellArgument("-f", "4"),
+            ShellArgument("bin/\(appName).signed.apk"),
+            ShellArgument("bin/\(appName).apk"),
         ]
 
         return ShellCommand(command: command, arguments: arguments)
