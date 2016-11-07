@@ -18,7 +18,7 @@ public struct Package: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: PackageOptions) throws {
+    func run(_ options: PackageOptions, androidHome: String) throws {
         let configuration = try NoonianConfiguration()
         let buildTools = try buildToolsPath(toolsVersion: configuration.buildTools())
         let target = try configuration.target()

@@ -18,7 +18,7 @@ public struct Build: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: BuildOptions) throws {
+    func run(_ options: BuildOptions, androidHome: String) throws {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
         let buildTools = try buildToolsPath(toolsVersion: toolsVersion)

@@ -30,7 +30,7 @@ fileprivate enum Tools: String {
 protocol AndroidCommand: CommandProtocol {
     typealias ClientError = NoonianError
 
-    func run(_ options: Self.Options) throws
+    func run(_ options: Self.Options, androidHome: String) throws
 }
 
 extension AndroidCommand {
@@ -115,7 +115,7 @@ extension AndroidCommand {
 
     public func run(_ options: Self.Options) -> Result<(), NoonianError> {
         do {
-            try run(options)
+            try run(options, androidHome: androidHome())
             return .success()
         } catch {
             return .failure((error as? NoonianError) ?? .internalError(error))

@@ -19,7 +19,7 @@ public struct Init: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: InitOptions) throws {
+    func run(_ options: InitOptions, androidHome: String) throws {
         // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [

@@ -18,7 +18,7 @@ public struct Install: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: InstallOptions) throws {
+    func run(_ options: InstallOptions, androidHome: String) throws {
         let configuration = try NoonianConfiguration()
 
         try execute(
