@@ -43,6 +43,14 @@ class InitCommandTests: XCTestCase {
         let expected = "androidTool create project -a activity -p path -t android -k package -n projectName"
         XCTAssertEqual(expected, command.join())
     }
+
+    func testCommandForCopyingConfig() {
+        let projectPath = "projectPath"
+        let command = initCommand.commandToCopyExampleConfig(projectPath: projectPath)
+
+        let expected = "cp /usr/local/lib/noonian/example.noonian.yml \(projectPath)/.noonian.yml"
+        XCTAssertEqual(expected, command.join())
+    }
 }
 
 extension XCTestCase {

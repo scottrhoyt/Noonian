@@ -21,14 +21,14 @@ public struct InitCommand: AndroidCommand {
 
     func run(_ options: InitOptions) throws {
         let androidTool = try androidToolPath()
-        let creationCommand = commandForProjectCreation(androidTool: androidTool, options: options)
 
-        let task = CommandTask(name: "init", commands: [creationCommand])
+        let creationCommand = commandForProjectCreation(androidTool: androidTool, options: options)
+        let copyConfigCommand = commandToCopyExampleConfig(projectPath: options.path)
+
+        let task = CommandTask(name: "init", commands: [creationCommand, copyConfigCommand])
 
         let runner = Runner()
         runner.run(task: task)
-
-        // TODO: Need to copy example configuration
     }
 
     func commandForProjectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
@@ -42,6 +42,16 @@ public struct InitCommand: AndroidCommand {
         arguments.append(ShellArgument("-n", options.projectName))
 
         return ShellCommand(command: androidTool, arguments: arguments)
+    }
+
+    func commandToCopyExampleConfig(projectPath: String) -> ShellCommand {
+        var arguments = [ShellArgument]()
+
+        // TODO: might want to extract install location to somewhere more reasonable
+        arguments.append(ShellArgument("/usr/local/lib/noonian/example.noonian.yml"))
+        arguments.append(ShellArgument(projectPath.pathByAdding(component: ".noonian.yml")))
+
+        return ShellCommand(command: "cp", arguments: arguments)
     }
 }
 
