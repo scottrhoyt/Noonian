@@ -60,9 +60,7 @@ public struct InitCommand: AndroidCommand {
 
     func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
         let arguments = [
-            // TODO: Need to extract file name out of here
-            // TODO: Should find a cleaner way of doing this
-            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: ".noonian.yml"))
+            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
         ]
 
         return ShellCommand(command: "echo", arguments: arguments)

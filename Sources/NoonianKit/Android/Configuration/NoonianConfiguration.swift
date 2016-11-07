@@ -18,7 +18,7 @@ enum ConfigurationKeys: String {
 //}
 
 struct NoonianConfiguration {
-    private static let defaultFileName = ".noonian.yml"
+    static let defaultFileName = ".noonian.yml"
     private let configs: [String: Any]
 
     // TODO: allow this to be configured.
