@@ -10,7 +10,6 @@ import XCTest
 @testable import NoonianKit
 
 class PackageCommandTests: XCTestCase {
-
     let packageCommand = PackageCommand()
     let buildTools = "build-tools"
     let target = "target"
