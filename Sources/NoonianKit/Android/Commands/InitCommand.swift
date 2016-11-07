@@ -25,7 +25,7 @@ public struct InitCommand: AndroidCommand {
         let creationCommand = commandForProjectCreation(androidTool: androidTool, options: options)
         let copyConfigCommand = commandToCopyExampleConfig(projectPath: options.path)
 
-        let task = CommandTask(name: "init", commands: [creationCommand, copyConfigCommand])
+        let task = CommandTask(name: verb, commands: [creationCommand, copyConfigCommand])
 
         let runner = Runner()
         runner.run(task: task)

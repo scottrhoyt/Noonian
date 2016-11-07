@@ -27,7 +27,7 @@ public struct BuildCommand: AndroidCommand {
         let packageCommand = try commandToPackageResources(buildTools: buildTools, target: target)
         let compileCommand = try commandToCompile(buildTools: buildTools, target: target)
 
-        let task = CommandTask(name: "build", commands: [packageCommand, compileCommand])
+        let task = CommandTask(name: verb, commands: [packageCommand, compileCommand])
 
         let runner = Runner()
         runner.run(task: task)
