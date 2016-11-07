@@ -23,13 +23,13 @@ public struct Install: AndroidCommand {
 
         try execute(
             commands: [
-                install(adbTool: paths.adbToolCommand()),
+                install(adbTool: paths.adbToolCommand(), appName: configuration.appName()),
             ],
             configuration: configuration
         )
     }
 
-    func install(adbTool: String) -> ShellCommand {
+    func install(adbTool: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("install"),
             ShellArgument("bin/\(appName).apk"),

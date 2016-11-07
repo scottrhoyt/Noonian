@@ -22,21 +22,23 @@ public struct Package: AndroidCommand {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
         let target = try configuration.target()
+        let appName = configuration.appName()
 
         try execute(
             commands: [
                 packagingApk(
                     packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
-                    include: paths.includeFor(target: target)
+                    include: paths.includeFor(target: target),
+                    appName: appName
                 ),
-                signingApk(),
-                zipAlign(zipTool: paths.zipAlignToolCommand(toolsVersion: toolsVersion)),
+                signingApk(appName: appName),
+                zipAlign(zipTool: paths.zipAlignToolCommand(toolsVersion: toolsVersion), appName: appName),
             ],
             configuration: configuration
         )
     }
 
-    func packagingApk(packageTool: String, include: String) -> ShellCommand {
+    func packagingApk(packageTool: String, include: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("package"),
             ShellArgument("-v"),
@@ -51,7 +53,7 @@ public struct Package: AndroidCommand {
         return ShellCommand(command: packageTool, arguments: arguments)
     }
 
-    func signingApk() -> ShellCommand {
+    func signingApk(appName: String) -> ShellCommand {
         let command = "jarsigner"
         let arguments = [
             ShellArgument("-verbose"),
@@ -66,7 +68,7 @@ public struct Package: AndroidCommand {
         return ShellCommand(command: command, arguments: arguments)
     }
 
-    func zipAlign(zipTool: String) -> ShellCommand {
+    func zipAlign(zipTool: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("-v"),
             ShellArgument("-f", "4"),

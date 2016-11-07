@@ -11,6 +11,7 @@ import XCTest
 
 class InstallTests: XCTestCase {
     let install = Install()
+    let appName = "app"
 
     override func setUp() {
         super.setUp()
@@ -18,8 +19,8 @@ class InstallTests: XCTestCase {
     }
 
     func testCommandForInstall() {
-        let command = install.install(adbTool: "adb")
-        let expected = "adb install bin/App.apk"
+        let command = install.install(adbTool: "adb", appName: appName)
+        let expected = "adb install bin/app.apk"
         XCTAssertEqual(expected, command.join())
     }
 }

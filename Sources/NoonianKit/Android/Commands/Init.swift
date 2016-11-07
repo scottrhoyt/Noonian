@@ -25,7 +25,8 @@ public struct Init: AndroidCommand {
             commands: [
                 projectCreation(options: options, androidTool: paths.androidToolCommand()),
                 copyingExampleConfig(projectPath: options.path),
-                addingTargetToConfig(target: options.target, projectPath: options.path)
+                addingStringToConfig(contents: "\(ConfigurationKeys.target.rawValue): \(options.target)", projectPath: options.path),
+                addingStringToConfig(contents: "\(ConfigurationKeys.appName.rawValue): \(options.projectName)", projectPath: options.path)
             ]
         )
     }
@@ -54,10 +55,10 @@ public struct Init: AndroidCommand {
         return ShellCommand(command: command, arguments: arguments)
     }
 
-    func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
+    func addingStringToConfig(contents: String, projectPath: String) -> ShellCommand {
         let command = "echo"
         let arguments = [
-            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
+            ShellArgument(contents, ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
         ]
 
         return ShellCommand(command: command, arguments: arguments)

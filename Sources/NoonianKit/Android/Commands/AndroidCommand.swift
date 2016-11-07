@@ -17,12 +17,6 @@ protocol AndroidCommand: CommandProtocol {
 }
 
 extension AndroidCommand {
-
-    // TODO: Maybe derive the app name from something else, like configuration or directory name
-    var appName: String {
-        return "App"
-    }
-
     func androidHome() throws -> String {
         guard let androidHome = Environment().stringValue(for: EnvironmentKeys.androidHome.rawValue) else {
             throw NoonianError.androidHomeNotDefined
@@ -39,14 +33,14 @@ extension AndroidCommand {
         }
     }
 
-    func execute(commands: [ShellCommand]) throws {
-        let task = CommandTask(name: verb, commands: commands)
-        try execute(task: task)
-    }
-
     func execute(task: CommandTask) throws {
         let runner = Runner()
         try runner.run(task: task)
+    }
+    
+    func execute(commands: [ShellCommand]) throws {
+        let task = CommandTask(name: verb, commands: commands)
+        try execute(task: task)
     }
 
     func execute(commands: [ShellCommand], configuration: NoonianConfiguration) throws {

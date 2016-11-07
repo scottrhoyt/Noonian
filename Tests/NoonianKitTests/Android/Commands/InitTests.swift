@@ -51,10 +51,10 @@ class InitCommandTests: XCTestCase {
 
     func testCommandToAddTarger() {
         let projectPath = "projectPath"
-        let target = "target"
-        let command = initCommand.addingTargetToConfig(target: target, projectPath: projectPath)
+        let contents = "key: value"
+        let command = initCommand.addingStringToConfig(contents: contents, projectPath: projectPath)
 
-        let expected = "echo target: target >> projectPath/.noonian.yml"
+        let expected = "echo key: value >> projectPath/.noonian.yml"
         XCTAssertEqual(expected, command.join())
     }
     // TODO: Need to test options building

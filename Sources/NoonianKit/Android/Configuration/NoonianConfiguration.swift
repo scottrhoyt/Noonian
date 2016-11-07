@@ -11,6 +11,7 @@ import Foundation
 enum ConfigurationKeys: String {
     case buildTools = "build_tools"
     case target = "target"
+    case appName = "app_name"
 }
 
 //protocol AnyConfigurable {
@@ -18,6 +19,7 @@ enum ConfigurationKeys: String {
 //}
 
 struct NoonianConfiguration {
+    static let defaultAppName = "App"
     static let defaultFileName = ".noonian.yml"
     private let configs: [String: Any]
 
@@ -33,6 +35,10 @@ struct NoonianConfiguration {
 
     func target() throws -> String {
         return try value(for: ConfigurationKeys.target.rawValue)
+    }
+
+    func appName() -> String {
+        return (try? value(for: ConfigurationKeys.appName.rawValue)) ?? NoonianConfiguration.defaultAppName
     }
 
     func value<T>(for key: String) throws -> T {
