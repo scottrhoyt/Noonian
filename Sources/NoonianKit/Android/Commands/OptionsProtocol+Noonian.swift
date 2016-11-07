@@ -9,25 +9,23 @@
 import Foundation
 import Commandant
 
-enum EnvironmentKeys: String {
-    case androidHome = "ANDROID_HOME"
-}
 
-extension OptionsProtocol {
-    static var androidHomeOption: Option<String?> {
-        return envOption(
-            key: "android-home",
-            envName: EnvironmentKeys.androidHome.rawValue,
-            usage: "The path to the Android SDK. Defaults to $PATH."
-        )
-    }
 
-    static func envOption(key: String, envName: String, usage: String) -> Option<String?> {
-        let envVal = Environment().stringValue(for: envName)
-        let extendedUsage = [
-            usage,
-            "Can be provided with $\(envName)"
-            ].joined(separator: "\n")
-        return Option(key: key, defaultValue: envVal, usage: extendedUsage)
-    }
-}
+//extension OptionsProtocol {
+//    static var androidHomeOption: Option<String?> {
+//        return envOption(
+//            key: "android-home",
+//            envName: EnvironmentKeys.androidHome.rawValue,
+//            usage: "The path to the Android SDK. Defaults to $PATH."
+//        )
+//    }
+//
+//    static func envOption(key: String, envName: String, usage: String) -> Option<String?> {
+//        let envVal = Environment().stringValue(for: envName)
+//        let extendedUsage = [
+//            usage,
+//            "Can be provided with $\(envName)"
+//            ].joined(separator: "\n")
+//        return Option(key: key, defaultValue: envVal, usage: extendedUsage)
+//    }
+//}
