@@ -21,27 +21,51 @@ public struct InitCommand: AndroidCommand {
 
     func run(_ options: InitOptions) throws {
         let androidTool = try androidToolPath()
-        let creationCommand = commandForProjectCreation(androidTool: androidTool, options: options)
 
-        let task = CommandTask(name: "init", commands: [creationCommand])
+        // TODO: Need to add better shell printing of what we are doing here.
+        let commands = [
+            projectCreation(androidTool: androidTool, options: options),
+            copyingExampleConfig(projectPath: options.path),
+            addingTargetToConfig(target: options.target, projectPath: options.path)
+        ]
+
+        let task = CommandTask(name: verb, commands: commands)
 
         let runner = Runner()
         runner.run(task: task)
-
-        // TODO: Need to copy example configuration
     }
 
-    func commandForProjectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
-        var arguments = [ShellArgument]()
-
-        arguments.append(ShellArgument("create", "project"))
-        arguments.append(ShellArgument("-a", options.activity))
-        arguments.append(ShellArgument("-p", options.path))
-        arguments.append(ShellArgument("-t", options.target))
-        arguments.append(ShellArgument("-k", options.package))
-        arguments.append(ShellArgument("-n", options.projectName))
+    func projectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
+        let arguments = [
+            ShellArgument("create", "project"),
+            ShellArgument("-a", options.activity),
+            ShellArgument("-p", options.path),
+            ShellArgument("-t", options.target),
+            ShellArgument("-k", options.package),
+            ShellArgument("-n", options.projectName),
+        ]
 
         return ShellCommand(command: androidTool, arguments: arguments)
+    }
+
+    func copyingExampleConfig(projectPath: String) -> ShellCommand {
+        let arguments = [
+            // TODO: might want to extract install location to somewhere more reasonable
+            ShellArgument("/usr/local/lib/noonian/example.noonian.yml"),
+            ShellArgument(projectPath.pathByAdding(component: ".noonian.yml")),
+        ]
+
+        return ShellCommand(command: "cp", arguments: arguments)
+    }
+
+    func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
+        let arguments = [
+            // TODO: Need to extract file name out of here
+            // TODO: Should find a cleaner way of doing this
+            ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: ".noonian.yml"))
+        ]
+
+        return ShellCommand(command: "echo", arguments: arguments)
     }
 }
 

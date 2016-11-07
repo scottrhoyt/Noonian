@@ -21,13 +21,13 @@ class BuildCommandTests: XCTestCase {
     }
 
     func testCommandForCompile() {
-        let command = try? build.commandToCompile(buildTools: buildTools, target: target)
+        let command = try? build.compiling(buildTools: buildTools, target: target)
         let expectedStatement = "java -jar \(buildTools)/jack.jar --verbose info -cp /platforms/\(target)/android.jar --output-dex bin src"
         XCTAssertEqual(expectedStatement, command?.join())
     }
 
     func testCommandForPackageResources() {
-        let command = try? build.commandToPackageResources(buildTools: buildTools, target: target)
+        let command = try? build.packagingResources(buildTools: buildTools, target: target)
         let expectedStatement = "\(buildTools)/aapt package -v -f -m -S res -J src -M AndroidManifest.xml -I /platforms/\(target)/android.jar"
         XCTAssertEqual(expectedStatement, command?.join())
     }

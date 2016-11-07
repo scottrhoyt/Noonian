@@ -48,7 +48,7 @@ extension AndroidCommand {
             try run(options)
             return .success()
         } catch {
-            return .failure((error as? NoonianError) ?? .unknown(error))
+            return .failure((error as? NoonianError) ?? .internalError(error))
         }
     }
 

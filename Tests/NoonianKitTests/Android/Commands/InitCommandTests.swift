@@ -38,11 +38,29 @@ class InitCommandTests: XCTestCase {
         )
         let androidTool = "androidTool"
 
-        let command = initCommand.commandForProjectCreation(androidTool: androidTool, options: options)
+        let command = initCommand.projectCreation(androidTool: androidTool, options: options)
 
         let expected = "androidTool create project -a activity -p path -t android -k package -n projectName"
         XCTAssertEqual(expected, command.join())
     }
+
+    func testCommandForCopyingConfig() {
+        let projectPath = "projectPath"
+        let command = initCommand.copyingExampleConfig(projectPath: projectPath)
+
+        let expected = "cp /usr/local/lib/noonian/example.noonian.yml \(projectPath)/.noonian.yml"
+        XCTAssertEqual(expected, command.join())
+    }
+
+    func testCommandToAddTarger() {
+        let projectPath = "projectPath"
+        let target = "target"
+        let command = initCommand.addingTargetToConfig(target: target, projectPath: projectPath)
+
+        let expected = "echo target: target >> projectPath/.noonian.yml"
+        XCTAssertEqual(expected, command.join())
+    }
+    // TODO: Need to test options building
 }
 
 extension XCTestCase {
@@ -56,6 +74,8 @@ extension XCTestCase {
         static var allTests = [
             ("testOptionsDefaults", testOptionsDefaults),
             ("testCommandForProjectCreation", testCommandForProjectCreation),
+            ("testCommandForCopyingConfig", testCommandForCopyingConfig),
+            ("testCommandToAddTarger", testCommandToAddTarger),
         ]
     }
 #endif
