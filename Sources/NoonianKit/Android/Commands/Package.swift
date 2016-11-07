@@ -26,6 +26,7 @@ public struct Package: AndroidCommand {
 
         try execute(
             commands: [
+                removeApks(),
                 packagingApk(
                     packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
                     include: paths.includeFor(target: target),
@@ -36,6 +37,15 @@ public struct Package: AndroidCommand {
             ],
             configuration: configuration
         )
+    }
+
+    func removeApks() -> ShellCommand {
+        let arguments = [
+            ShellArgument("-f"),
+            ShellArgument("bin/*.apk")
+        ]
+
+        return ShellCommand(command: "rm", arguments: arguments)
     }
 
     func packagingApk(packageTool: String, include: String, appName: String) -> ShellCommand {

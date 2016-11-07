@@ -20,6 +20,12 @@ class PackageTests: XCTestCase {
         clearAndroidHome()
     }
 
+    func testRemoveApks() {
+        let command = package.removeApks()
+        let expected = "rm -f bin/*.apk"
+        XCTAssertEqual(expected, command.join())
+    }
+
     func testCommandForPackaging() {
         let command = package.packagingApk(packageTool: "aapt", include: "include", appName: appName)
         let expected = "aapt package -v -f -M AndroidManifest.xml -S res -I include -F bin/app.unsigned.apk bin"
