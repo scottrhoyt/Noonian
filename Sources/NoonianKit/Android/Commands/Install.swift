@@ -18,25 +18,24 @@ public struct Install: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: InstallOptions, androidHome: String) throws {
+    func run(_ options: InstallOptions, pathBuilder: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
 
         try execute(
             commands: [
-                install(),
+                install(adbTool: pathBuilder.adbToolCommand()),
             ],
             configuration: configuration
         )
     }
 
-    func install() throws -> ShellCommand {
-        let command = try adbToolCommand()
+    func install(adbTool: String) -> ShellCommand {
         let arguments = [
             ShellArgument("install"),
             ShellArgument("bin/\(appName).apk"),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: adbTool, arguments: arguments)
     }
 }
 

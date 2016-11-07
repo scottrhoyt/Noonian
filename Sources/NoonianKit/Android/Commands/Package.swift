@@ -18,35 +18,37 @@ public struct Package: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: PackageOptions, androidHome: String) throws {
+    func run(_ options: PackageOptions, pathBuilder: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
-        let buildTools = try buildToolsPath(toolsVersion: configuration.buildTools())
+        let toolsVersion = configuration.buildTools()
         let target = try configuration.target()
 
         try execute(
             commands: [
-                packagingApk(buildTools: buildTools, target: target),
+                packagingApk(
+                    packageTool: pathBuilder.packageToolPath(toolsVersion: toolsVersion),
+                    include: pathBuilder.includeFor(target: target)
+                ),
                 signingApk(),
-                zipAlign(buildTools: buildTools),
+                zipAlign(zipTool: pathBuilder.zipAlignToolCommand(toolsVersion: toolsVersion)),
             ],
             configuration: configuration
         )
     }
 
-    func packagingApk(buildTools: String, target: String) throws -> ShellCommand {
-        let command = packageToolPath(buildTools: buildTools)
+    func packagingApk(packageTool: String, include: String) -> ShellCommand {
         let arguments = [
             ShellArgument("package"),
             ShellArgument("-v"),
             ShellArgument("-f"),
             ShellArgument("-M", "AndroidManifest.xml"),
             ShellArgument("-S", "res"),
-            ShellArgument("-I", try includeFor(target: target)),
+            ShellArgument("-I", include),
             ShellArgument("-F", "bin/\(appName).unsigned.apk"),
             ShellArgument("bin")
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: packageTool, arguments: arguments)
     }
 
     func signingApk() -> ShellCommand {
@@ -64,8 +66,7 @@ public struct Package: AndroidCommand {
         return ShellCommand(command: command, arguments: arguments)
     }
 
-    func zipAlign(buildTools: String) -> ShellCommand {
-        let command = zipAlignToolCommand(buildTools: buildTools)
+    func zipAlign(zipTool: String) -> ShellCommand {
         let arguments = [
             ShellArgument("-v"),
             ShellArgument("-f", "4"),
@@ -73,7 +74,7 @@ public struct Package: AndroidCommand {
             ShellArgument("bin/\(appName).apk"),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: zipTool, arguments: arguments)
     }
 }
 

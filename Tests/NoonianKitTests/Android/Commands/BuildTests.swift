@@ -20,15 +20,15 @@ class BuildTests: XCTestCase {
     }
 
     func testCommandForCompile() {
-        let command = try? build.compiling(buildTools: buildTools, target: target)
-        let expectedStatement = "java -jar \(buildTools)/jack.jar --verbose info -cp /platforms/\(target)/android.jar --output-dex bin src"
-        XCTAssertEqual(expectedStatement, command?.join())
+        let command = build.compiling(jackTool: "java -jar jack.jar", include: "include")
+        let expectedStatement = "java -jar jack.jar --verbose info -cp include --output-dex bin src"
+        XCTAssertEqual(expectedStatement, command.join())
     }
 
     func testCommandForPackageResources() {
-        let command = try? build.packagingResources(buildTools: buildTools, target: target)
-        let expectedStatement = "\(buildTools)/aapt package -v -f -m -S res -J src -M AndroidManifest.xml -I /platforms/\(target)/android.jar"
-        XCTAssertEqual(expectedStatement, command?.join())
+        let command = build.packagingResources(packageTool: "aapt", include: "include")
+        let expectedStatement = "aapt package -v -f -m -S res -J src -M AndroidManifest.xml -I include"
+        XCTAssertEqual(expectedStatement, command.join())
     }
 }
 

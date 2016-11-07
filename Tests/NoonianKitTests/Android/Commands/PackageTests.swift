@@ -20,9 +20,9 @@ class PackageTests: XCTestCase {
     }
 
     func testCommandForPackaging() {
-        let command = try? package.packagingApk(buildTools: buildTools, target: target)
-        let expected = "build-tools/aapt package -v -f -M AndroidManifest.xml -S res -I /platforms/target/android.jar -F bin/App.unsigned.apk bin"
-        XCTAssertEqual(expected, command?.join())
+        let command = package.packagingApk(packageTool: "aapt", include: "include")
+        let expected = "aapt package -v -f -M AndroidManifest.xml -S res -I include -F bin/App.unsigned.apk bin"
+        XCTAssertEqual(expected, command.join())
     }
 
     func testCommandForSigning() {
@@ -33,8 +33,8 @@ class PackageTests: XCTestCase {
     }
 
     func testCommandForZipAlign() {
-        let command = package.zipAlign(buildTools: buildTools)
-        let expected = "build-tools/zipalign -v -f 4 bin/App.signed.apk bin/App.apk"
+        let command = package.zipAlign(zipTool: "zipalign")
+        let expected = "zipalign -v -f 4 bin/App.signed.apk bin/App.apk"
         XCTAssertEqual(expected, command.join())
     }
 }

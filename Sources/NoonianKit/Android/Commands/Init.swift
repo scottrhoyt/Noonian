@@ -19,19 +19,18 @@ public struct Init: AndroidCommand {
 
     public init() { }
 
-    func run(_ options: InitOptions, androidHome: String) throws {
+    func run(_ options: InitOptions, pathBuilder: SDKPathBuilder) throws {
         // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [
-                projectCreation(options: options),
+                projectCreation(options: options, androidTool: pathBuilder.androidToolPath()),
                 copyingExampleConfig(projectPath: options.path),
                 addingTargetToConfig(target: options.target, projectPath: options.path)
             ]
         )
     }
 
-    func projectCreation(options: InitOptions) throws -> ShellCommand {
-        let command = try androidToolPath()
+    func projectCreation(options: InitOptions, androidTool: String) -> ShellCommand {
         let arguments = [
             ShellArgument("create", "project"),
             ShellArgument("-a", options.activity),
@@ -41,7 +40,7 @@ public struct Init: AndroidCommand {
             ShellArgument("-n", options.projectName),
         ]
 
-        return ShellCommand(command: command, arguments: arguments)
+        return ShellCommand(command: androidTool, arguments: arguments)
     }
 
     func copyingExampleConfig(projectPath: String) -> ShellCommand {

@@ -33,6 +33,7 @@
 		3B3972421DD05D5400850321 /* Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972401DD05CDC00850321 /* Install.swift */; };
 		3B3972441DD05FA200850321 /* InstallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972431DD05FA200850321 /* InstallTests.swift */; };
 		3B3972471DD0698400850321 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972451DD068C700850321 /* EnvironmentKeys.swift */; };
+		3B3972491DD06AB000850321 /* SDKPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972481DD06AB000850321 /* SDKPathBuilder.swift */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
 		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
@@ -152,6 +153,7 @@
 		3B3972401DD05CDC00850321 /* Install.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Install.swift; sourceTree = "<group>"; };
 		3B3972431DD05FA200850321 /* InstallTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallTests.swift; sourceTree = "<group>"; };
 		3B3972451DD068C700850321 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
+		3B3972481DD06AB000850321 /* SDKPathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilder.swift; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			children = (
 				3B3972201DCFD2B500850321 /* NoonianError.swift */,
 				3B3972451DD068C700850321 /* EnvironmentKeys.swift */,
+				3B3972481DD06AB000850321 /* SDKPathBuilder.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				3B3972231DCFD2B500850321 /* Init.swift in Sources */,
 				3B3972471DD0698400850321 /* EnvironmentKeys.swift in Sources */,
 				3B3972241DCFD2B500850321 /* OptionsProtocol+Noonian.swift in Sources */,
+				3B3972491DD06AB000850321 /* SDKPathBuilder.swift in Sources */,
 				3B3972211DCFD2B500850321 /* AndroidCommand.swift in Sources */,
 				3B39723D1DD0489500850321 /* Package.swift in Sources */,
 				3B3972221DCFD2B500850321 /* Build.swift in Sources */,
