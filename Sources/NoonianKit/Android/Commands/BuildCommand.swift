@@ -20,41 +20,45 @@ public struct BuildCommand: AndroidCommand {
     public init() { }
 
     func run(_ options: BuildOptions) throws {
-        let buildTools = try buildToolsPath()
+        let configuration = try NoonianConfiguration()
+        let buildTools = try buildToolsPath(toolsVersion: configuration.buildTools())
 
         // TODO: Need to derive the target from the configuration file
         let target = "android-25"
-        let packageCommand = try commandToPackageResources(buildTools: buildTools, target: target)
-        let compileCommand = try commandToCompile(buildTools: buildTools, target: target)
 
-        let task = CommandTask(name: verb, commands: [packageCommand, compileCommand])
+        let commands = [
+            try packagingResources(buildTools: buildTools, target: target),
+            try compiling(buildTools: buildTools, target: target)
+        ]
+
+        let task = CommandTask(name: verb, commands: commands)
 
         let runner = Runner()
         runner.run(task: task)
     }
 
-    func commandToPackageResources(buildTools: String, target: String) throws -> ShellCommand {
-        var arguments = [ShellArgument]()
-
-        arguments.append(ShellArgument("package"))
-        arguments.append(ShellArgument("-v"))
-        arguments.append(ShellArgument("-f"))
-        arguments.append(ShellArgument("-m"))
-        arguments.append(ShellArgument("-S", "res"))
-        arguments.append(ShellArgument("-J", "src"))
-        arguments.append(ShellArgument("-M", "AndroidManifest.xml"))
-        arguments.append(ShellArgument("-I", try includeFor(target: target)))
+    func packagingResources(buildTools: String, target: String) throws -> ShellCommand {
+        let arguments = [
+            ShellArgument("package"),
+            ShellArgument("-v"),
+            ShellArgument("-f"),
+            ShellArgument("-m"),
+            ShellArgument("-S", "res"),
+            ShellArgument("-J", "src"),
+            ShellArgument("-M", "AndroidManifest.xml"),
+            ShellArgument("-I", try includeFor(target: target)),
+        ]
 
         return ShellCommand(command: packageToolPath(buildTools: buildTools), arguments: arguments)
     }
 
-    func commandToCompile(buildTools: String, target: String) throws -> ShellCommand {
-        var arguments = [ShellArgument]()
-
-        arguments.append(ShellArgument("--verbose", "info"))
-        arguments.append(ShellArgument("-cp", try includeFor(target: target)))
-        arguments.append(ShellArgument("--output-dex", "bin"))
-        arguments.append(ShellArgument("src"))
+    func compiling(buildTools: String, target: String) throws -> ShellCommand {
+        let arguments = [
+            ShellArgument("--verbose", "info"),
+            ShellArgument("-cp", try includeFor(target: target)),
+            ShellArgument("--output-dex", "bin"),
+            ShellArgument("src"),
+        ]
 
         return ShellCommand(command: jackToolCommand(buildTools: buildTools), arguments: arguments)
     }
