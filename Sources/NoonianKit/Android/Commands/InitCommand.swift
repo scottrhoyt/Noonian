@@ -29,7 +29,7 @@ public struct InitCommand: AndroidCommand {
             addingTargetToConfig(target: options.target, projectPath: options.path)
         ]
 
-        run(commands: commands)
+        try run(commands: commands)
     }
 
     func projectCreation(androidTool: String, options: InitOptions) -> ShellCommand {

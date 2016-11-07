@@ -9,6 +9,7 @@
 import Foundation
 
 public enum NoonianKitError: Error {
+    case taskFailed(taskName: String, command: String)
     case invalidConfiguration
     case configurationParsing
     case duplicateConfigurations(items: [String])

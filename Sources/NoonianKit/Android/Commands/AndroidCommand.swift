@@ -94,9 +94,9 @@ extension AndroidCommand {
         }
     }
 
-    func run(commands: [ShellCommand]) {
+    func run(commands: [ShellCommand]) throws {
         let task = CommandTask(name: verb, commands: commands)
         let runner = Runner()
-        runner.run(task: task)
+        try runner.run(task: task)
     }
 }
