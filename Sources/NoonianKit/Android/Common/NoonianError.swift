@@ -19,7 +19,7 @@ public enum NoonianError: Error {
     case androidHomeNotDefined
     case noBuildTools
     case missingConfiguration(key: String)
-    case cannotReadConfiguration(key: String, type: String)
+    case cannotReadConfiguration(key: String, type: Any)
 
     public var description: String {
         switch self {

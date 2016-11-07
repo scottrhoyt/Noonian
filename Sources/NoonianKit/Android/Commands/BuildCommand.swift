@@ -21,10 +21,12 @@ public struct BuildCommand: AndroidCommand {
 
     func run(_ options: BuildOptions) throws {
         let configuration = try NoonianConfiguration()
-        let buildTools = try buildToolsPath(toolsVersion: configuration.buildTools())
+        let toolsVersion = configuration.buildTools()
+        if toolsVersion == nil { print("Tools Version not supplied. Using latest.") }
+        let buildTools = try buildToolsPath(toolsVersion: toolsVersion)
 
-        // TODO: Need to derive the target from the configuration file
-        let target = "android-25"
+        // TODO: Need to move this constant somewhere else
+        let target: String = try configuration.value(for: "target")
 
         let commands = [
             try packagingResources(buildTools: buildTools, target: target),

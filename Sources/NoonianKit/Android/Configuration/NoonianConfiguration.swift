@@ -28,14 +28,18 @@ struct NoonianConfiguration {
     }
 
     func buildTools() -> String? {
-        return (try? value(for: ConfigurationKeys.buildTools.rawValue)) as? String
+        return try? value(for: ConfigurationKeys.buildTools.rawValue)
     }
 
-    func value(for key: String) throws -> Any {
+    func value<T>(for key: String) throws -> T {
         guard let val = configs[key] else {
             throw NoonianError.missingConfiguration(key: key)
         }
 
-        return val
+        if let val = val as? T {
+            return val
+        }
+
+        throw NoonianError.cannotReadConfiguration(key: key, type: T.self)
     }
 }

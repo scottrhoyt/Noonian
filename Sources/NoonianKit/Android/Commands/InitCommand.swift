@@ -22,6 +22,7 @@ public struct InitCommand: AndroidCommand {
     func run(_ options: InitOptions) throws {
         let androidTool = try androidToolPath()
 
+        // TODO: Need to add better shell printing of what we are doing here.
         let commands = [
             projectCreation(androidTool: androidTool, options: options),
             copyingExampleConfig(projectPath: options.path),
