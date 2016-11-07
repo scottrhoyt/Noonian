@@ -52,6 +52,15 @@ class InitCommandTests: XCTestCase {
         XCTAssertEqual(expected, command.join())
     }
 
+    func testCommandToAddTarger() {
+        let projectPath = "projectPath"
+        let target = "target"
+        let command = initCommand.addingTargetToConfig(target: target, projectPath: projectPath)
+
+        let expected = "echo target: target >> projectPath/.noonian.yml"
+        XCTAssertEqual(expected, command.join())
+    }
+
     // TODO: Need to test options building
 }
 
@@ -66,6 +75,8 @@ extension XCTestCase {
         static var allTests = [
             ("testOptionsDefaults", testOptionsDefaults),
             ("testCommandForProjectCreation", testCommandForProjectCreation),
+            ("testCommandForCopyingConfig", testCommandForCopyingConfig),
+            ("testCommandToAddTarger", testCommandToAddTarger)
         ]
     }
 #endif
