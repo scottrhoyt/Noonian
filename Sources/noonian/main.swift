@@ -10,8 +10,6 @@ import Foundation
 import Commandant
 import NoonianKit
 
-// TODO: Need to create a Makefile
-
 // Create registry and add commands
 let registry = CommandRegistry<NoonianError>()
 registry.register(Init())

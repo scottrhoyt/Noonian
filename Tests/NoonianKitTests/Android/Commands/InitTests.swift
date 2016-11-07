@@ -45,7 +45,7 @@ class InitCommandTests: XCTestCase {
         let projectPath = "projectPath"
         let command = initCommand.copyingExampleConfig(projectPath: projectPath)
 
-        let expected = "cp /usr/local/lib/noonian/example.noonian.yml \(projectPath)/.noonian.yml"
+        let expected = "cp /usr/local/share/noonian/example.noonian.yml \(projectPath)/.noonian.yml"
         XCTAssertEqual(expected, command.join())
     }
 
