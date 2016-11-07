@@ -28,6 +28,9 @@ protocol AndroidCommand: CommandProtocol {
 }
 
 extension AndroidCommand {
+
+    // MARK: - Paths
+
     func androidHome() throws -> String {
         guard let androidHome = Environment().stringValue(for: EnvironmentKeys.androidHome.rawValue) else {
             throw NoonianError.androidHomeNotDefined
@@ -41,15 +44,6 @@ extension AndroidCommand {
 
     func androidToolPath() throws -> String {
         return (try androidHome()).pathByAdding(component: SDKPaths.android.rawValue)
-    }
-
-    public func run(_ options: Self.Options) -> Result<(), NoonianError> {
-        do {
-            try run(options)
-            return .success()
-        } catch {
-            return .failure((error as? NoonianError) ?? .internalError(error))
-        }
     }
 
     // TODO: Should provide an option to supply build tools via configuration file
@@ -87,5 +81,22 @@ extension AndroidCommand {
         let jackPath = buildTools.pathByAdding(component: SDKPaths.jackTool.rawValue)
         let command = "java -jar " + jackPath
         return command
+    }
+
+    // MARK: - Running functions
+
+    public func run(_ options: Self.Options) -> Result<(), NoonianError> {
+        do {
+            try run(options)
+            return .success()
+        } catch {
+            return .failure((error as? NoonianError) ?? .internalError(error))
+        }
+    }
+
+    func run(commands: [ShellCommand]) {
+        let task = CommandTask(name: verb, commands: commands)
+        let runner = Runner()
+        runner.run(task: task)
     }
 }

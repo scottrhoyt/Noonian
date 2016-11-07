@@ -29,10 +29,7 @@ public struct InitCommand: AndroidCommand {
             addingTargetToConfig(target: options.target, projectPath: options.path)
         ]
 
-        let task = CommandTask(name: verb, commands: commands)
-
-        let runner = Runner()
-        runner.run(task: task)
+        run(commands: commands)
     }
 
     func projectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
@@ -52,7 +49,7 @@ public struct InitCommand: AndroidCommand {
         let arguments = [
             // TODO: might want to extract install location to somewhere more reasonable
             ShellArgument("/usr/local/lib/noonian/example.noonian.yml"),
-            ShellArgument(projectPath.pathByAdding(component: ".noonian.yml")),
+            ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 
         return ShellCommand(command: "cp", arguments: arguments)

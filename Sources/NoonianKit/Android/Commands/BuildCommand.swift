@@ -33,10 +33,7 @@ public struct BuildCommand: AndroidCommand {
             try compiling(buildTools: buildTools, target: target)
         ]
 
-        let task = CommandTask(name: verb, commands: commands)
-
-        let runner = Runner()
-        runner.run(task: task)
+        run(commands: commands)
     }
 
     func packagingResources(buildTools: String, target: String) throws -> ShellCommand {
