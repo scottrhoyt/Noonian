@@ -31,6 +31,10 @@ struct NoonianConfiguration {
         return try? value(for: ConfigurationKeys.buildTools.rawValue)
     }
 
+    func target() throws -> String {
+        return try value(for: ConfigurationKeys.target.rawValue)
+    }
+
     func value<T>(for key: String) throws -> T {
         guard let val = configs[key] else {
             throw NoonianError.missingConfiguration(key: key)

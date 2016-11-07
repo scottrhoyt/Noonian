@@ -21,11 +21,8 @@ public struct BuildCommand: AndroidCommand {
     func run(_ options: BuildOptions) throws {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
-        if toolsVersion == nil { print("Tools Version not supplied. Using latest.") }
         let buildTools = try buildToolsPath(toolsVersion: toolsVersion)
-
-        // TODO: Need to move this constant somewhere else
-        let target: String = try configuration.value(for: "target")
+        let target: String = try configuration.target()
 
         try execute(
             commands: [
