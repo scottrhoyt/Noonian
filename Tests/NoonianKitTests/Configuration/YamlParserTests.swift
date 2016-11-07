@@ -21,7 +21,6 @@ class YamlParserTests: XCTestCase {
         } catch NoonianKitError.configurationParsing {
             return
         } catch {
-            // TODO: Need to refactor error functions
             XCTFail(
                 "Should have thrown an configurationParsing error.\n" +
                 "Instead threw: \(error)"
@@ -37,7 +36,6 @@ class YamlParserTests: XCTestCase {
         } catch NoonianKitError.invalidConfiguration {
             return
         } catch {
-            // TODO: Need to refactor error functions
             XCTFail(
                 "Should have thrown an invalidConfiguration error.\n" +
                 "Instead threw: \(error)"

@@ -23,7 +23,6 @@ struct NoonianConfiguration {
     static let defaultFileName = ".noonian.yml"
     private let configs: [String: Any]
 
-    // TODO: allow this to be configured.
     init(configFile: String? = nil) throws {
         let parser = YamlParser()
         configs = try parser.parseFile(at: configFile ?? NoonianConfiguration.defaultFileName)

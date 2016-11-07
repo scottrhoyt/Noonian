@@ -12,7 +12,7 @@ import Result
 import Curry
 
 public struct Init: AndroidCommand {
-    public typealias Options = InitOptions // TODO: Hopefully we can find a way to infer this
+    public typealias Options = InitOptions
 
     public let verb = "init"
     public let function = "Initialize a new Android project"

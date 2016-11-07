@@ -26,7 +26,7 @@ public struct Package: AndroidCommand {
 
         try execute(
             commands: [
-                removeApks(),
+                removeApks(),  // Need to do this to prevent aapt from entering an endless loop
                 packagingApk(
                     packageTool: paths.packageToolCommand(toolsVersion: toolsVersion),
                     include: paths.includeFor(target: target),

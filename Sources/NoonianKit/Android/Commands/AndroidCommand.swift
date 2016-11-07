@@ -37,7 +37,7 @@ extension AndroidCommand {
         let runner = Runner()
         try runner.run(task: task)
     }
-    
+
     func execute(commands: [ShellCommand]) throws {
         let task = CommandTask(name: verb, commands: commands)
         try execute(task: task)
