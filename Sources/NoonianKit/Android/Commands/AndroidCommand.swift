@@ -29,6 +29,11 @@ protocol AndroidCommand: CommandProtocol {
 
 extension AndroidCommand {
 
+    // TODO: Maybe derive the app name from something else, like configuration or directory name
+    var appName: String {
+        return "App"
+    }
+
     // MARK: - Paths
 
     func androidHome() throws -> String {

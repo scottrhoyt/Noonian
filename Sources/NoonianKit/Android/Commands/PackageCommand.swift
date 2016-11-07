@@ -21,6 +21,22 @@ public struct PackageCommand: AndroidCommand {
     func run(_ options: PackageOptions) throws {
         //
     }
+
+    func packagingApk(buildTools: String, target: String) throws -> ShellCommand {
+        let command = packageToolPath(buildTools: buildTools)
+        let arguments = [
+            ShellArgument("package"),
+            ShellArgument("-v"),
+            ShellArgument("-f"),
+            ShellArgument("-M", "AndroidManifest.xml"),
+            ShellArgument("-S", "res"),
+            ShellArgument("-I", try includeFor(target: target)),
+            ShellArgument("-F", "bin/\(appName).unsigned.apk"),
+            ShellArgument("bin")
+        ]
+
+        return ShellCommand(command: command, arguments: arguments)
+    }
 }
 
 public struct PackageOptions: OptionsProtocol {

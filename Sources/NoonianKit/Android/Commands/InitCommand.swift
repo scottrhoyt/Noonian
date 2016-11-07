@@ -33,6 +33,7 @@ public struct InitCommand: AndroidCommand {
     }
 
     func projectCreation(androidTool: String, options: InitOptions) -> ShellCommand {
+        let command = androidTool
         let arguments = [
             ShellArgument("create", "project"),
             ShellArgument("-a", options.activity),
@@ -42,25 +43,27 @@ public struct InitCommand: AndroidCommand {
             ShellArgument("-n", options.projectName),
         ]
 
-        return ShellCommand(command: androidTool, arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 
     func copyingExampleConfig(projectPath: String) -> ShellCommand {
+        let command = "cp"
         let arguments = [
             // TODO: might want to extract install location to somewhere more reasonable
             ShellArgument("/usr/local/lib/noonian/example.noonian.yml"),
             ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 
-        return ShellCommand(command: "cp", arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 
     func addingTargetToConfig(target: String, projectPath: String) -> ShellCommand {
+        let command = "echo"
         let arguments = [
             ShellArgument("target: \(target)", ">>", projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName))
         ]
 
-        return ShellCommand(command: "echo", arguments: arguments)
+        return ShellCommand(command: command, arguments: arguments)
     }
 }
 
