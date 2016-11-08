@@ -20,7 +20,6 @@ public struct Init: AndroidCommand {
     public init() { }
 
     func run(_ options: InitOptions, paths: SDKPathBuilder) throws {
-        // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [
                 projectCreation(options: options, androidTool: paths.androidToolCommand()),
