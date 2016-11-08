@@ -6,6 +6,7 @@
 //  Copyright © 2016 Scott Hoyt. All rights reserved.
 //
 
+import Foundation
 import XCTest
 @testable import NoonianKit
 
