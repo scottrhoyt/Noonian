@@ -7,45 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */; };
-		3B36F33E1DCC54C900C0C3C1 /* String+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */; };
-		3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */; };
-		3B36F3421DCC670500C0C3C1 /* Yaml+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */; };
-		3B36F3461DCC680100C0C3C1 /* test.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B36F3451DCC680100C0C3C1 /* test.yml */; };
-		3B3971FB1DCF129B00850321 /* ShellCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3971FA1DCF129B00850321 /* ShellCommand.swift */; };
-		3B3972211DCFD2B500850321 /* AndroidCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39721B1DCFD2B500850321 /* AndroidCommand.swift */; };
-		3B3972221DCFD2B500850321 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39721C1DCFD2B500850321 /* Build.swift */; };
-		3B3972231DCFD2B500850321 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39721D1DCFD2B500850321 /* Init.swift */; };
-		3B3972241DCFD2B500850321 /* OptionsProtocol+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39721E1DCFD2B500850321 /* OptionsProtocol+Noonian.swift */; };
-		3B3972251DCFD2B500850321 /* NoonianError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972201DCFD2B500850321 /* NoonianError.swift */; };
-		3B39722A1DCFD55A00850321 /* BuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972291DCFD55A00850321 /* BuildTests.swift */; };
-		3B39722C1DCFDAAE00850321 /* InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39722B1DCFDAAE00850321 /* InitTests.swift */; };
-		3B39722F1DD000C500850321 /* NoonianConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39722E1DD000C500850321 /* NoonianConfiguration.swift */; };
-		3B3972321DD0254A00850321 /* NoonianConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */; };
-		3B3972341DD0272600850321 /* test.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3B3972331DD0272600850321 /* test.noonian.yml */; };
-		3B3972361DD02F3500850321 /* AndroidCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972351DD02F3500850321 /* AndroidCommandTests.swift */; };
 		3B3972371DD0308000850321 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; };
 		3B3972381DD0308000850321 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3B3972391DD0308000850321 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B39723A1DD0308000850321 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
-		3B39723D1DD0489500850321 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39723B1DD0486500850321 /* Package.swift */; };
-		3B39723F1DD0506200850321 /* PackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39723E1DD0506200850321 /* PackageTests.swift */; };
-		3B3972421DD05D5400850321 /* Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972401DD05CDC00850321 /* Install.swift */; };
-		3B3972441DD05FA200850321 /* InstallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972431DD05FA200850321 /* InstallTests.swift */; };
-		3B3972471DD0698400850321 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972451DD068C700850321 /* EnvironmentKeys.swift */; };
-		3B3972491DD06AB000850321 /* SDKPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3972481DD06AB000850321 /* SDKPathBuilder.swift */; };
-		3B39724B1DD07A5C00850321 /* SDKPathBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39724A1DD07A5C00850321 /* SDKPathBuilderTests.swift */; };
-		3B39724E1DD1087300850321 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B39724D1DD1087300850321 /* Logger.swift */; };
 		3B4114941DCAAD7100709803 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3B4114951DCAAD7100709803 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
-		3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A41DCB142800709803 /* CommandTaskTests.swift */; };
 		3B4114AF1DCB993000709803 /* NoonianKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B4114AD1DCB993000709803 /* NoonianKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B4114B21DCB993000709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; };
 		3B4114B31DCB993000709803 /* NoonianKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B4114B81DCB9A6700709803 /* NoonianKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114AB1DCB993000709803 /* NoonianKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		3B74A2221DCD332300205C17 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2211DCD332300205C17 /* Environment.swift */; };
-		3B74A2251DCD3E9000205C17 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */; };
-		3B74A22C1DCD8FC200205C17 /* String+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */; };
 		3B74A22E1DCD9ED500205C17 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; };
 		3B74A22F1DCD9EE400205C17 /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; };
 		3B74A2311DCD9EFF00205C17 /* Curry.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B74A22D1DCD9ED500205C17 /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,25 +25,54 @@
 		3B74A2351DCDCE5200205C17 /* Rainbow.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3B74A2361DCDCE5E00205C17 /* Rainbow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; };
 		3B74A2371DCDCE7000205C17 /* Rainbow.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B74A2331DCDCE3D00205C17 /* Rainbow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEDF1DCBFE810045A49A /* Runner.swift */; };
-		3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */; };
 		3BACDEF91DCC31010045A49A /* Yaml.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDEFA1DCC31010045A49A /* Commandant.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDEFB1DCC31010045A49A /* Result.framework in Embed Frameworks in NoonianKit */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDEFD1DCC32BF0045A49A /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; };
 		3BACDEFE1DCC32BF0045A49A /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; };
 		3BACDEFF1DCC32BF0045A49A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; };
-		3BACDF0B1DCC38C30045A49A /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BACDF081DCC38C30045A49A /* test.txt */; };
-		3BACDF0D1DCC38D50045A49A /* YamlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0C1DCC38D50045A49A /* YamlParserTests.swift */; };
-		3BACDF101DCC38EF0045A49A /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0E1DCC38EF0045A49A /* Parser.swift */; };
-		3BACDF111DCC38EF0045A49A /* YamlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BACDF0F1DCC38EF0045A49A /* YamlParser.swift */; };
 		3BACDF161DCC437E0045A49A /* Yaml.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114991DCB0A3F00709803 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDF171DCC437E0045A49A /* Commandant.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114921DCAAD7100709803 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BACDF181DCC437E0045A49A /* Result.framework in Copy Carthage Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4114931DCAAD7100709803 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BBD8B791DC8250600EB7A35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBD8B781DC8250600EB7A35 /* main.swift */; };
-		3BDF579D1DCBCDF900ADE595 /* ConfigurableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B41149F1DCB12D400709803 /* ConfigurableItem.swift */; };
-		3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4114A11DCB133C00709803 /* CommandTask.swift */; };
-		3BDF57A11DCBD3A000ADE595 /* NoonianKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF57A01DCBD3A000ADE595 /* NoonianKitError.swift */; };
+		3BE490EA1DD16F120041D3F1 /* AndroidCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490CE1DD16F120041D3F1 /* AndroidCommand.swift */; };
+		3BE490EB1DD16F120041D3F1 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490CF1DD16F120041D3F1 /* Build.swift */; };
+		3BE490EC1DD16F120041D3F1 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D01DD16F120041D3F1 /* Init.swift */; };
+		3BE490ED1DD16F120041D3F1 /* Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D11DD16F120041D3F1 /* Install.swift */; };
+		3BE490EE1DD16F120041D3F1 /* OptionsProtocol+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D21DD16F120041D3F1 /* OptionsProtocol+Noonian.swift */; };
+		3BE490EF1DD16F120041D3F1 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D31DD16F120041D3F1 /* Package.swift */; };
+		3BE490F01DD16F120041D3F1 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */; };
+		3BE490F11DD16F120041D3F1 /* NoonianConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */; };
+		3BE490F21DD16F120041D3F1 /* NoonianError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D71DD16F120041D3F1 /* NoonianError.swift */; };
+		3BE490F31DD16F120041D3F1 /* SDKPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D81DD16F120041D3F1 /* SDKPathBuilder.swift */; };
+		3BE490F41DD16F120041D3F1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490DB1DD16F120041D3F1 /* Parser.swift */; };
+		3BE490F51DD16F120041D3F1 /* YamlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490DC1DD16F120041D3F1 /* YamlParser.swift */; };
+		3BE490F61DD16F120041D3F1 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490DE1DD16F120041D3F1 /* Environment.swift */; };
+		3BE490F71DD16F120041D3F1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E01DD16F120041D3F1 /* Logger.swift */; };
+		3BE490F81DD16F120041D3F1 /* NoonianKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E11DD16F120041D3F1 /* NoonianKitError.swift */; };
+		3BE490F91DD16F120041D3F1 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E31DD16F120041D3F1 /* Runner.swift */; };
+		3BE490FA1DD16F120041D3F1 /* String+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E41DD16F120041D3F1 /* String+NoonianKit.swift */; };
+		3BE490FB1DD16F120041D3F1 /* CommandTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E61DD16F120041D3F1 /* CommandTask.swift */; };
+		3BE490FC1DD16F120041D3F1 /* ConfigurableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E71DD16F120041D3F1 /* ConfigurableItem.swift */; };
+		3BE490FD1DD16F120041D3F1 /* ShellCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E81DD16F120041D3F1 /* ShellCommand.swift */; };
+		3BE490FE1DD16F120041D3F1 /* Yaml+NoonianKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490E91DD16F120041D3F1 /* Yaml+NoonianKit.swift */; };
+		3BE491191DD16F970041D3F1 /* AndroidCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491011DD16F970041D3F1 /* AndroidCommandTests.swift */; };
+		3BE4911A1DD16F970041D3F1 /* BuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491021DD16F970041D3F1 /* BuildTests.swift */; };
+		3BE4911B1DD16F970041D3F1 /* InitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491031DD16F970041D3F1 /* InitTests.swift */; };
+		3BE4911C1DD16F970041D3F1 /* InstallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491041DD16F970041D3F1 /* InstallTests.swift */; };
+		3BE4911D1DD16F970041D3F1 /* PackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491051DD16F970041D3F1 /* PackageTests.swift */; };
+		3BE4911E1DD16F970041D3F1 /* NoonianConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491071DD16F970041D3F1 /* NoonianConfigurationTests.swift */; };
+		3BE4911F1DD16F970041D3F1 /* SDKPathBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491081DD16F970041D3F1 /* SDKPathBuilderTests.swift */; };
+		3BE491201DD16F970041D3F1 /* test.noonian.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BE4910A1DD16F970041D3F1 /* test.noonian.yml */; };
+		3BE491211DD16F970041D3F1 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BE4910B1DD16F970041D3F1 /* test.txt */; };
+		3BE491221DD16F970041D3F1 /* test.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3BE4910C1DD16F970041D3F1 /* test.yml */; };
+		3BE491231DD16F970041D3F1 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4910F1DD16F970041D3F1 /* ParserTests.swift */; };
+		3BE491241DD16F970041D3F1 /* YamlParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491101DD16F970041D3F1 /* YamlParserTests.swift */; };
+		3BE491251DD16F970041D3F1 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491121DD16F970041D3F1 /* EnvironmentTests.swift */; };
+		3BE491261DD16F970041D3F1 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491141DD16F970041D3F1 /* RunnerTests.swift */; };
+		3BE491271DD16F970041D3F1 /* String+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491151DD16F970041D3F1 /* String+NoonianKitTests.swift */; };
+		3BE491281DD16F970041D3F1 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */; };
+		3BE4912B1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,58 +137,58 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
-		3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKitTests.swift"; sourceTree = "<group>"; };
-		3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
-		3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Yaml+NoonianKit.swift"; sourceTree = "<group>"; };
-		3B36F3451DCC680100C0C3C1 /* test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.yml; sourceTree = "<group>"; };
-		3B3971FA1DCF129B00850321 /* ShellCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShellCommand.swift; sourceTree = "<group>"; };
-		3B39721B1DCFD2B500850321 /* AndroidCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommand.swift; sourceTree = "<group>"; };
-		3B39721C1DCFD2B500850321 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
-		3B39721D1DCFD2B500850321 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
-		3B39721E1DCFD2B500850321 /* OptionsProtocol+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OptionsProtocol+Noonian.swift"; sourceTree = "<group>"; };
-		3B3972201DCFD2B500850321 /* NoonianError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianError.swift; sourceTree = "<group>"; };
-		3B3972291DCFD55A00850321 /* BuildTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTests.swift; sourceTree = "<group>"; };
-		3B39722B1DCFDAAE00850321 /* InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitTests.swift; sourceTree = "<group>"; };
-		3B39722E1DD000C500850321 /* NoonianConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfiguration.swift; sourceTree = "<group>"; };
-		3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfigurationTests.swift; sourceTree = "<group>"; };
-		3B3972331DD0272600850321 /* test.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.noonian.yml; sourceTree = "<group>"; };
-		3B3972351DD02F3500850321 /* AndroidCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommandTests.swift; sourceTree = "<group>"; };
-		3B39723B1DD0486500850321 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		3B39723E1DD0506200850321 /* PackageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTests.swift; sourceTree = "<group>"; };
-		3B3972401DD05CDC00850321 /* Install.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Install.swift; sourceTree = "<group>"; };
-		3B3972431DD05FA200850321 /* InstallTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallTests.swift; sourceTree = "<group>"; };
-		3B3972451DD068C700850321 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
-		3B3972481DD06AB000850321 /* SDKPathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilder.swift; sourceTree = "<group>"; };
-		3B39724A1DD07A5C00850321 /* SDKPathBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilderTests.swift; sourceTree = "<group>"; };
-		3B39724D1DD1087300850321 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3B4114921DCAAD7100709803 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		3B4114931DCAAD7100709803 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		3B4114991DCB0A3F00709803 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/Mac/Yaml.framework; sourceTree = "<group>"; };
-		3B41149F1DCB12D400709803 /* ConfigurableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurableItem.swift; path = ../Tasks/ConfigurableItem.swift; sourceTree = "<group>"; };
-		3B4114A11DCB133C00709803 /* CommandTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTask.swift; sourceTree = "<group>"; };
-		3B4114A41DCB142800709803 /* CommandTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTaskTests.swift; sourceTree = "<group>"; };
 		3B4114AB1DCB993000709803 /* NoonianKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NoonianKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4114AD1DCB993000709803 /* NoonianKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoonianKit.h; sourceTree = "<group>"; };
 		3B4114AE1DCB993000709803 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B74A2211DCD332300205C17 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
-		3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKit.swift"; sourceTree = "<group>"; };
 		3B74A22D1DCD9ED500205C17 /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/Mac/Curry.framework; sourceTree = "<group>"; };
 		3B74A2331DCDCE3D00205C17 /* Rainbow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rainbow.framework; path = Carthage/Build/Mac/Rainbow.framework; sourceTree = "<group>"; };
-		3BACDEDF1DCBFE810045A49A /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
-		3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
-		3BACDF081DCC38C30045A49A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
-		3BACDF0C1DCC38D50045A49A /* YamlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParserTests.swift; sourceTree = "<group>"; };
-		3BACDF0E1DCC38EF0045A49A /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		3BACDF0F1DCC38EF0045A49A /* YamlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParser.swift; sourceTree = "<group>"; };
 		3BBD8B5A1DC823AF00EB7A35 /* noonian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noonian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B641DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B691DC823AF00EB7A35 /* NoonianKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoonianKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBD8B6F1DC823AF00EB7A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBD8B781DC8250600EB7A35 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = SOURCE_ROOT; };
-		3BDF57A01DCBD3A000ADE595 /* NoonianKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianKitError.swift; sourceTree = "<group>"; };
+		3BE490CE1DD16F120041D3F1 /* AndroidCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommand.swift; sourceTree = "<group>"; };
+		3BE490CF1DD16F120041D3F1 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
+		3BE490D01DD16F120041D3F1 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
+		3BE490D11DD16F120041D3F1 /* Install.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Install.swift; sourceTree = "<group>"; };
+		3BE490D21DD16F120041D3F1 /* OptionsProtocol+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OptionsProtocol+Noonian.swift"; sourceTree = "<group>"; };
+		3BE490D31DD16F120041D3F1 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
+		3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfiguration.swift; sourceTree = "<group>"; };
+		3BE490D71DD16F120041D3F1 /* NoonianError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianError.swift; sourceTree = "<group>"; };
+		3BE490D81DD16F120041D3F1 /* SDKPathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilder.swift; sourceTree = "<group>"; };
+		3BE490DB1DD16F120041D3F1 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		3BE490DC1DD16F120041D3F1 /* YamlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParser.swift; sourceTree = "<group>"; };
+		3BE490DE1DD16F120041D3F1 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		3BE490E01DD16F120041D3F1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3BE490E11DD16F120041D3F1 /* NoonianKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianKitError.swift; sourceTree = "<group>"; };
+		3BE490E31DD16F120041D3F1 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		3BE490E41DD16F120041D3F1 /* String+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKit.swift"; sourceTree = "<group>"; };
+		3BE490E61DD16F120041D3F1 /* CommandTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTask.swift; sourceTree = "<group>"; };
+		3BE490E71DD16F120041D3F1 /* ConfigurableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableItem.swift; sourceTree = "<group>"; };
+		3BE490E81DD16F120041D3F1 /* ShellCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShellCommand.swift; sourceTree = "<group>"; };
+		3BE490E91DD16F120041D3F1 /* Yaml+NoonianKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Yaml+NoonianKit.swift"; sourceTree = "<group>"; };
+		3BE491011DD16F970041D3F1 /* AndroidCommandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AndroidCommandTests.swift; sourceTree = "<group>"; };
+		3BE491021DD16F970041D3F1 /* BuildTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTests.swift; sourceTree = "<group>"; };
+		3BE491031DD16F970041D3F1 /* InitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitTests.swift; sourceTree = "<group>"; };
+		3BE491041DD16F970041D3F1 /* InstallTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallTests.swift; sourceTree = "<group>"; };
+		3BE491051DD16F970041D3F1 /* PackageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageTests.swift; sourceTree = "<group>"; };
+		3BE491071DD16F970041D3F1 /* NoonianConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfigurationTests.swift; sourceTree = "<group>"; };
+		3BE491081DD16F970041D3F1 /* SDKPathBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilderTests.swift; sourceTree = "<group>"; };
+		3BE4910A1DD16F970041D3F1 /* test.noonian.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.noonian.yml; sourceTree = "<group>"; };
+		3BE4910B1DD16F970041D3F1 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		3BE4910C1DD16F970041D3F1 /* test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.yml; sourceTree = "<group>"; };
+		3BE4910F1DD16F970041D3F1 /* ParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		3BE491101DD16F970041D3F1 /* YamlParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParserTests.swift; sourceTree = "<group>"; };
+		3BE491121DD16F970041D3F1 /* EnvironmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
+		3BE491141DD16F970041D3F1 /* RunnerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
+		3BE491151DD16F970041D3F1 /* String+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKitTests.swift"; sourceTree = "<group>"; };
+		3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTaskTests.swift; sourceTree = "<group>"; };
+		3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,103 +231,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3B36F33A1DCC549C00C0C3C1 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3B36F33B1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift */,
-				3B36F33D1DCC54C900C0C3C1 /* String+NoonianKitTests.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3B3972191DCFD2B500850321 /* Android */ = {
-			isa = PBXGroup;
-			children = (
-				3B39721A1DCFD2B500850321 /* Commands */,
-				3B39722D1DD000AE00850321 /* Configuration */,
-				3B39721F1DCFD2B500850321 /* Common */,
-			);
-			path = Android;
-			sourceTree = "<group>";
-		};
-		3B39721A1DCFD2B500850321 /* Commands */ = {
-			isa = PBXGroup;
-			children = (
-				3B39721B1DCFD2B500850321 /* AndroidCommand.swift */,
-				3B39721C1DCFD2B500850321 /* Build.swift */,
-				3B39721D1DCFD2B500850321 /* Init.swift */,
-				3B39721E1DCFD2B500850321 /* OptionsProtocol+Noonian.swift */,
-				3B39723B1DD0486500850321 /* Package.swift */,
-				3B3972401DD05CDC00850321 /* Install.swift */,
-			);
-			path = Commands;
-			sourceTree = "<group>";
-		};
-		3B39721F1DCFD2B500850321 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3B3972201DCFD2B500850321 /* NoonianError.swift */,
-				3B3972451DD068C700850321 /* EnvironmentKeys.swift */,
-				3B3972481DD06AB000850321 /* SDKPathBuilder.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3B3972261DCFD52C00850321 /* Android */ = {
-			isa = PBXGroup;
-			children = (
-				3B3972301DD0253700850321 /* Configuration */,
-				3B3972271DCFD52C00850321 /* Commands */,
-				3B3972281DCFD52C00850321 /* Common */,
-			);
-			path = Android;
-			sourceTree = "<group>";
-		};
-		3B3972271DCFD52C00850321 /* Commands */ = {
-			isa = PBXGroup;
-			children = (
-				3B3972291DCFD55A00850321 /* BuildTests.swift */,
-				3B39722B1DCFDAAE00850321 /* InitTests.swift */,
-				3B3972351DD02F3500850321 /* AndroidCommandTests.swift */,
-				3B39723E1DD0506200850321 /* PackageTests.swift */,
-				3B3972431DD05FA200850321 /* InstallTests.swift */,
-			);
-			path = Commands;
-			sourceTree = "<group>";
-		};
-		3B3972281DCFD52C00850321 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3B39724A1DD07A5C00850321 /* SDKPathBuilderTests.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3B39722D1DD000AE00850321 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				3B39722E1DD000C500850321 /* NoonianConfiguration.swift */,
-			);
-			name = Configuration;
-			path = Sources/NoonianKit/Android/Configuration;
-			sourceTree = SOURCE_ROOT;
-		};
-		3B3972301DD0253700850321 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				3B3972311DD0254A00850321 /* NoonianConfigurationTests.swift */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		3B39724C1DD1086700850321 /* Logger */ = {
-			isa = PBXGroup;
-			children = (
-				3B39724D1DD1087300850321 /* Logger.swift */,
-			);
-			path = Logger;
-			sourceTree = "<group>";
-		};
 		3B4114961DCAAD7600709803 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,83 +243,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3B41149B1DCB123A00709803 /* Fixtures */ = {
-			isa = PBXGroup;
-			children = (
-				3B3972331DD0272600850321 /* test.noonian.yml */,
-				3BACDF081DCC38C30045A49A /* test.txt */,
-				3B36F3451DCC680100C0C3C1 /* test.yml */,
-			);
-			path = Fixtures;
-			sourceTree = "<group>";
-		};
-		3B41149E1DCB12BB00709803 /* Tasks */ = {
-			isa = PBXGroup;
-			children = (
-				3B4114A11DCB133C00709803 /* CommandTask.swift */,
-				3B3971FA1DCF129B00850321 /* ShellCommand.swift */,
-			);
-			name = Tasks;
-			path = Sources/NoonianKit/Tasks;
-			sourceTree = SOURCE_ROOT;
-		};
-		3B4114A31DCB140000709803 /* Tasks */ = {
-			isa = PBXGroup;
-			children = (
-				3B4114A41DCB142800709803 /* CommandTaskTests.swift */,
-			);
-			path = Tasks;
-			sourceTree = "<group>";
-		};
 		3B4114AC1DCB993000709803 /* NoonianKit */ = {
 			isa = PBXGroup;
 			children = (
-				3B3972191DCFD2B500850321 /* Android */,
-				3BDF579F1DCBD37E00ADE595 /* Common */,
-				3BDF57991DCBCCBB00ADE595 /* Configuration */,
-				3B74A2201DCD330900205C17 /* Environment */,
-				3BACDEDE1DCBFE670045A49A /* Runner */,
-				3B39724C1DD1086700850321 /* Logger */,
-				3B41149E1DCB12BB00709803 /* Tasks */,
+				3BE490CC1DD16F120041D3F1 /* Android */,
+				3BE490D91DD16F120041D3F1 /* Utilities */,
 				3B4114AD1DCB993000709803 /* NoonianKit.h */,
 				3B4114AE1DCB993000709803 /* Info.plist */,
 			);
 			name = NoonianKit;
 			path = Sources/NoonianKit;
 			sourceTree = "<group>";
-		};
-		3B74A2201DCD330900205C17 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				3B74A2211DCD332300205C17 /* Environment.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		3B74A2231DCD3E7900205C17 /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				3B74A2241DCD3E9000205C17 /* EnvironmentTests.swift */,
-			);
-			path = Environment;
-			sourceTree = "<group>";
-		};
-		3BACDEDD1DCBFE4D0045A49A /* Runner */ = {
-			isa = PBXGroup;
-			children = (
-				3BACDEE11DCBFEF60045A49A /* RunnerTests.swift */,
-			);
-			path = Runner;
-			sourceTree = "<group>";
-		};
-		3BACDEDE1DCBFE670045A49A /* Runner */ = {
-			isa = PBXGroup;
-			children = (
-				3BACDEDF1DCBFE810045A49A /* Runner.swift */,
-			);
-			name = Runner;
-			path = Sources/NoonianKit/Runner;
-			sourceTree = SOURCE_ROOT;
 		};
 		3BBD8B511DC823AF00EB7A35 = {
 			isa = PBXGroup;
@@ -452,13 +289,9 @@
 		3BBD8B6C1DC823AF00EB7A35 /* NoonianKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				3B3972261DCFD52C00850321 /* Android */,
-				3B36F33A1DCC549C00C0C3C1 /* Common */,
-				3B41149B1DCB123A00709803 /* Fixtures */,
-				3BDF57A21DCBD5D200ADE595 /* Configuration */,
-				3B74A2231DCD3E7900205C17 /* Environment */,
-				3BACDEDD1DCBFE4D0045A49A /* Runner */,
-				3B4114A31DCB140000709803 /* Tasks */,
+				3BE490FF1DD16F970041D3F1 /* Android */,
+				3BE491091DD16F970041D3F1 /* Fixtures */,
+				3BE4910D1DD16F970041D3F1 /* Utilities */,
 				3BBD8BA41DC845E400EB7A35 /* LinuxMain.swift */,
 				3BBD8B6F1DC823AF00EB7A35 /* Info.plist */,
 			);
@@ -466,33 +299,181 @@
 			path = Tests/NoonianKitTests;
 			sourceTree = "<group>";
 		};
-		3BDF57991DCBCCBB00ADE595 /* Configuration */ = {
+		3BE490CC1DD16F120041D3F1 /* Android */ = {
 			isa = PBXGroup;
 			children = (
-				3B41149F1DCB12D400709803 /* ConfigurableItem.swift */,
-				3BACDF0E1DCC38EF0045A49A /* Parser.swift */,
-				3BACDF0F1DCC38EF0045A49A /* YamlParser.swift */,
+				3BE490CD1DD16F120041D3F1 /* Commands */,
+				3BE490D41DD16F120041D3F1 /* Common */,
 			);
-			path = Configuration;
+			path = Android;
 			sourceTree = "<group>";
 		};
-		3BDF579F1DCBD37E00ADE595 /* Common */ = {
+		3BE490CD1DD16F120041D3F1 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				3BDF57A01DCBD3A000ADE595 /* NoonianKitError.swift */,
-				3B36F3411DCC670500C0C3C1 /* Yaml+NoonianKit.swift */,
-				3B74A22A1DCD8FAF00205C17 /* String+NoonianKit.swift */,
+				3BE490CE1DD16F120041D3F1 /* AndroidCommand.swift */,
+				3BE490CF1DD16F120041D3F1 /* Build.swift */,
+				3BE490D01DD16F120041D3F1 /* Init.swift */,
+				3BE490D11DD16F120041D3F1 /* Install.swift */,
+				3BE490D21DD16F120041D3F1 /* OptionsProtocol+Noonian.swift */,
+				3BE490D31DD16F120041D3F1 /* Package.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		3BE490D41DD16F120041D3F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */,
+				3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */,
+				3BE490D71DD16F120041D3F1 /* NoonianError.swift */,
+				3BE490D81DD16F120041D3F1 /* SDKPathBuilder.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		3BDF57A21DCBD5D200ADE595 /* Configuration */ = {
+		3BE490D91DD16F120041D3F1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				3BACDF0C1DCC38D50045A49A /* YamlParserTests.swift */,
-				3B36F33F1DCC596500C0C3C1 /* ParserTests.swift */,
+				3BE490DA1DD16F120041D3F1 /* Configuration */,
+				3BE490DD1DD16F120041D3F1 /* Environment */,
+				3BE490DF1DD16F120041D3F1 /* Logger */,
+				3BE490E11DD16F120041D3F1 /* NoonianKitError.swift */,
+				3BE490E21DD16F120041D3F1 /* Runner */,
+				3BE490E41DD16F120041D3F1 /* String+NoonianKit.swift */,
+				3BE490E51DD16F120041D3F1 /* Tasks */,
+				3BE490E91DD16F120041D3F1 /* Yaml+NoonianKit.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3BE490DA1DD16F120041D3F1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3BE490DB1DD16F120041D3F1 /* Parser.swift */,
+				3BE490DC1DD16F120041D3F1 /* YamlParser.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3BE490DD1DD16F120041D3F1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				3BE490DE1DD16F120041D3F1 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		3BE490DF1DD16F120041D3F1 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3BE490E01DD16F120041D3F1 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		3BE490E21DD16F120041D3F1 /* Runner */ = {
+			isa = PBXGroup;
+			children = (
+				3BE490E31DD16F120041D3F1 /* Runner.swift */,
+			);
+			path = Runner;
+			sourceTree = "<group>";
+		};
+		3BE490E51DD16F120041D3F1 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				3BE490E61DD16F120041D3F1 /* CommandTask.swift */,
+				3BE490E71DD16F120041D3F1 /* ConfigurableItem.swift */,
+				3BE490E81DD16F120041D3F1 /* ShellCommand.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		3BE490FF1DD16F970041D3F1 /* Android */ = {
+			isa = PBXGroup;
+			children = (
+				3BE491001DD16F970041D3F1 /* Commands */,
+				3BE491061DD16F970041D3F1 /* Common */,
+			);
+			path = Android;
+			sourceTree = "<group>";
+		};
+		3BE491001DD16F970041D3F1 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				3BE491011DD16F970041D3F1 /* AndroidCommandTests.swift */,
+				3BE491021DD16F970041D3F1 /* BuildTests.swift */,
+				3BE491031DD16F970041D3F1 /* InitTests.swift */,
+				3BE491041DD16F970041D3F1 /* InstallTests.swift */,
+				3BE491051DD16F970041D3F1 /* PackageTests.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		3BE491061DD16F970041D3F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3BE491071DD16F970041D3F1 /* NoonianConfigurationTests.swift */,
+				3BE491081DD16F970041D3F1 /* SDKPathBuilderTests.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3BE491091DD16F970041D3F1 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				3BE4910A1DD16F970041D3F1 /* test.noonian.yml */,
+				3BE4910B1DD16F970041D3F1 /* test.txt */,
+				3BE4910C1DD16F970041D3F1 /* test.yml */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		3BE4910D1DD16F970041D3F1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3BE4910E1DD16F970041D3F1 /* Configuration */,
+				3BE491111DD16F970041D3F1 /* Environment */,
+				3BE491131DD16F970041D3F1 /* Runner */,
+				3BE491151DD16F970041D3F1 /* String+NoonianKitTests.swift */,
+				3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */,
+				3BE491161DD16F970041D3F1 /* Tasks */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3BE4910E1DD16F970041D3F1 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3BE4910F1DD16F970041D3F1 /* ParserTests.swift */,
+				3BE491101DD16F970041D3F1 /* YamlParserTests.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3BE491111DD16F970041D3F1 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				3BE491121DD16F970041D3F1 /* EnvironmentTests.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		3BE491131DD16F970041D3F1 /* Runner */ = {
+			isa = PBXGroup;
+			children = (
+				3BE491141DD16F970041D3F1 /* RunnerTests.swift */,
+			);
+			path = Runner;
+			sourceTree = "<group>";
+		};
+		3BE491161DD16F970041D3F1 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */,
+			);
+			path = Tasks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,9 +607,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B36F3461DCC680100C0C3C1 /* test.yml in Resources */,
-				3B3972341DD0272600850321 /* test.noonian.yml in Resources */,
-				3BACDF0B1DCC38C30045A49A /* test.txt in Resources */,
+				3BE491211DD16F970041D3F1 /* test.txt in Resources */,
+				3BE491201DD16F970041D3F1 /* test.noonian.yml in Resources */,
+				3BE491221DD16F970041D3F1 /* test.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,27 +667,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B3972421DD05D5400850321 /* Install.swift in Sources */,
-				3BDF579E1DCBCE0000ADE595 /* CommandTask.swift in Sources */,
-				3BDF57A11DCBD3A000ADE595 /* NoonianKitError.swift in Sources */,
-				3BACDEE01DCBFE810045A49A /* Runner.swift in Sources */,
-				3B39724E1DD1087300850321 /* Logger.swift in Sources */,
-				3B3972231DCFD2B500850321 /* Init.swift in Sources */,
-				3B3972471DD0698400850321 /* EnvironmentKeys.swift in Sources */,
-				3B3972241DCFD2B500850321 /* OptionsProtocol+Noonian.swift in Sources */,
-				3B3972491DD06AB000850321 /* SDKPathBuilder.swift in Sources */,
-				3B3972211DCFD2B500850321 /* AndroidCommand.swift in Sources */,
-				3B39723D1DD0489500850321 /* Package.swift in Sources */,
-				3B3972221DCFD2B500850321 /* Build.swift in Sources */,
-				3B3971FB1DCF129B00850321 /* ShellCommand.swift in Sources */,
-				3BDF579D1DCBCDF900ADE595 /* ConfigurableItem.swift in Sources */,
-				3B3972251DCFD2B500850321 /* NoonianError.swift in Sources */,
-				3B74A2221DCD332300205C17 /* Environment.swift in Sources */,
-				3B36F3421DCC670500C0C3C1 /* Yaml+NoonianKit.swift in Sources */,
-				3BACDF111DCC38EF0045A49A /* YamlParser.swift in Sources */,
-				3B74A22C1DCD8FC200205C17 /* String+NoonianKit.swift in Sources */,
-				3BACDF101DCC38EF0045A49A /* Parser.swift in Sources */,
-				3B39722F1DD000C500850321 /* NoonianConfiguration.swift in Sources */,
+				3BE490F81DD16F120041D3F1 /* NoonianKitError.swift in Sources */,
+				3BE490F91DD16F120041D3F1 /* Runner.swift in Sources */,
+				3BE490EF1DD16F120041D3F1 /* Package.swift in Sources */,
+				3BE490F41DD16F120041D3F1 /* Parser.swift in Sources */,
+				3BE490FD1DD16F120041D3F1 /* ShellCommand.swift in Sources */,
+				3BE490FA1DD16F120041D3F1 /* String+NoonianKit.swift in Sources */,
+				3BE490F31DD16F120041D3F1 /* SDKPathBuilder.swift in Sources */,
+				3BE490FB1DD16F120041D3F1 /* CommandTask.swift in Sources */,
+				3BE490F21DD16F120041D3F1 /* NoonianError.swift in Sources */,
+				3BE490F01DD16F120041D3F1 /* EnvironmentKeys.swift in Sources */,
+				3BE490EC1DD16F120041D3F1 /* Init.swift in Sources */,
+				3BE490EB1DD16F120041D3F1 /* Build.swift in Sources */,
+				3BE490F51DD16F120041D3F1 /* YamlParser.swift in Sources */,
+				3BE490FC1DD16F120041D3F1 /* ConfigurableItem.swift in Sources */,
+				3BE490F61DD16F120041D3F1 /* Environment.swift in Sources */,
+				3BE490EA1DD16F120041D3F1 /* AndroidCommand.swift in Sources */,
+				3BE490ED1DD16F120041D3F1 /* Install.swift in Sources */,
+				3BE490F71DD16F120041D3F1 /* Logger.swift in Sources */,
+				3BE490EE1DD16F120041D3F1 /* OptionsProtocol+Noonian.swift in Sources */,
+				3BE490FE1DD16F120041D3F1 /* Yaml+NoonianKit.swift in Sources */,
+				3BE490F11DD16F120041D3F1 /* NoonianConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,20 +703,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B39722A1DCFD55A00850321 /* BuildTests.swift in Sources */,
-				3BACDF0D1DCC38D50045A49A /* YamlParserTests.swift in Sources */,
-				3B74A2251DCD3E9000205C17 /* EnvironmentTests.swift in Sources */,
-				3B3972441DD05FA200850321 /* InstallTests.swift in Sources */,
-				3B3972361DD02F3500850321 /* AndroidCommandTests.swift in Sources */,
-				3B36F3401DCC596500C0C3C1 /* ParserTests.swift in Sources */,
-				3B39724B1DD07A5C00850321 /* SDKPathBuilderTests.swift in Sources */,
-				3B3972321DD0254A00850321 /* NoonianConfigurationTests.swift in Sources */,
-				3B36F33E1DCC54C900C0C3C1 /* String+NoonianKitTests.swift in Sources */,
-				3B4114A51DCB142800709803 /* CommandTaskTests.swift in Sources */,
-				3B36F33C1DCC54BB00C0C3C1 /* XCTest+NoonianKitTests.swift in Sources */,
-				3BACDEE21DCBFEF60045A49A /* RunnerTests.swift in Sources */,
-				3B39723F1DD0506200850321 /* PackageTests.swift in Sources */,
-				3B39722C1DCFDAAE00850321 /* InitTests.swift in Sources */,
+				3BE4911A1DD16F970041D3F1 /* BuildTests.swift in Sources */,
+				3BE4911B1DD16F970041D3F1 /* InitTests.swift in Sources */,
+				3BE491191DD16F970041D3F1 /* AndroidCommandTests.swift in Sources */,
+				3BE491251DD16F970041D3F1 /* EnvironmentTests.swift in Sources */,
+				3BE491241DD16F970041D3F1 /* YamlParserTests.swift in Sources */,
+				3BE4911E1DD16F970041D3F1 /* NoonianConfigurationTests.swift in Sources */,
+				3BE491281DD16F970041D3F1 /* CommandTaskTests.swift in Sources */,
+				3BE491231DD16F970041D3F1 /* ParserTests.swift in Sources */,
+				3BE4912B1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift in Sources */,
+				3BE491261DD16F970041D3F1 /* RunnerTests.swift in Sources */,
+				3BE4911F1DD16F970041D3F1 /* SDKPathBuilderTests.swift in Sources */,
+				3BE4911D1DD16F970041D3F1 /* PackageTests.swift in Sources */,
+				3BE491271DD16F970041D3F1 /* String+NoonianKitTests.swift in Sources */,
+				3BE4911C1DD16F970041D3F1 /* InstallTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
