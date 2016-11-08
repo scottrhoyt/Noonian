@@ -1,16 +1,9 @@
-## Noonian
+# Noonian [![Build Status](https://travis-ci.org/scottrhoyt/Noonian.svg?branch=master)](https://travis-ci.org/scottrhoyt/Noonian) [![codecov](https://codecov.io/gh/scottrhoyt/Noonian/branch/master/graph/badge.svg)](https://codecov.io/gh/scottrhoyt/Noonian) ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg) ![SPM](https://img.shields.io/badge/SPM-Compatible-green.svg)
 
 A tool for building Android apps. Inspired by [a man who had some success in
 building androids](http://memory-alpha.wikia.com/wiki/Noonian_Soong).
 
-[![Build Status](https://travis-ci.org/scottrhoyt/Noonian.svg?branch=master)](https://travis-ci.org/scottrhoyt/Noonian)
-[![codecov](https://codecov.io/gh/scottrhoyt/Noonian/branch/master/graph/badge.svg)](https://codecov.io/gh/scottrhoyt/Noonian)
-![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
-![SPM](https://img.shields.io/badge/SPM-Compatible-green.svg)
-
---------------
-
-### Installation
+## Installation
 
 * Clone or [Download the latest release](https://github.com/scottrhoyt/Noonian/releases)
 * `cd Noonian`
@@ -21,7 +14,7 @@ building androids](http://memory-alpha.wikia.com/wiki/Noonian_Soong).
     using Ubuntu 14.04
 * Run `make install`
 
-### Android SDK Requirements
+## Android SDK Requirements
 
 * Java 7+ installed and set in `$JAVA_HOME`
 * `$ANDROID_HOME` is set to an Android SDK directory
@@ -30,14 +23,14 @@ building androids](http://memory-alpha.wikia.com/wiki/Noonian_Soong).
 * You have a valid Android debug key located at `~/.android/debug.keystore`
 * To install your app, you must have a simulator running
 
-### Usage
+## Usage
 
 Use `noonian help` and `noonian help <action>` to display command line help.
 
 `init` can be run from any directory, but all other commands must be run from
 your project directory.
 
-#### Initialize A Project
+### Initialize A Project
 
 `noonian init <Project Name>`
 
@@ -48,29 +41,29 @@ your project directory.
 * `--target <android api target>`
 * `--activity <name of activity to create>`
 
-#### Build Your Project
+### Build Your Project
 
 `noonian build`
 
-#### Package, Sign, Zipalign APK
+### Package, Sign, Zipalign APK
 
 `noonian package`
 
-#### Install On Active simulator
+### Install On Active simulator
 
 `noonian install`
 
-#### Build, Package, and Install
+### Build, Package, and Install
 
 `noonian all`
 
-### Configuration
+## Configuration
 
 Noonian is configured via a `.noonian.yml` file. `noonian init` will create a
 basic configuration file for you with the minimum necessary settings, but you
 can modify it to further suit your needs.
 
-#### Project Settings
+### Project Settings
 
 * `app_name: <app name>` specifies the name of your app for packaging and
   installation purposes.
@@ -78,13 +71,13 @@ can modify it to further suit your needs.
 * `build_tools: <tools version>` specifies which version of the SDK build tools
   to use.
 
-#### Before/After
+### Before/After Commands
 
 All actions other than `init` can be configured with shell commands to run
 before and after the action by using the `before_<action>` and `after_<action>`
 keys. The value can either be a single command or an array of commands.
 
-#### Example Configuration
+### Example Configuration
 
 ```yaml
 ## You can use comments to annotate your configuration
@@ -103,9 +96,9 @@ after_install:
   - echo we finished!
 ```
 
-### Troubleshooting
+## Troubleshooting
 
-#### `make install` fails:
+### `make install` fails:
 
 * Make sure you have Swift 3+ installed
     * **macOS**: via Xcode 8+ or a manually installed toolchain from swift.org
@@ -120,7 +113,7 @@ after_install:
   will be unable to create an initial configuration for you. You can manually
   copy `example.noonian.yml` to your project directory.
 
-#### `noonian <action>` fails:
+### `noonian <action>` fails:
 
 * Check `$ANDROID_HOME` is defined
 * Check `$JAVA_HOME` is defined
