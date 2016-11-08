@@ -8,11 +8,29 @@
 
 import Foundation
 
-public enum NoonianKitError: Error {
+public protocol HasExplanation {
+    var explanation: String { get }
+}
+
+extension NSError: HasExplanation {
+    public var explanation: String {
+        return localizedDescription
+    }
+}
+
+public enum NoonianKitError: HasExplanation, Error {
     case taskFailed(taskName: String, command: String)
-    case invalidConfiguration
     case configurationParsing
-    case duplicateConfigurations(items: [String])
-    case unknownConfigurationItems(items: [String])
-    case unknownConfigurationOption(item: String, Option: Any)
+    case cannotConfigure(item: String, with: Any)
+
+    public var explanation: String {
+        switch self {
+        case .taskFailed(let taskName, let command):
+            return "\(taskName) failed at command: \(command)"
+        case .configurationParsing:
+            return "Error parsing configuration file."
+        case .cannotConfigure(let item, let with):
+            return "Cannot configure \(item) with \(with)"
+        }
+    }
 }

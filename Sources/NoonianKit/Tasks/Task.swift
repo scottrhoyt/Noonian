@@ -29,7 +29,7 @@ extension ConfigurableTask {
         } else if let arrayCommands = configuration as? [String] {
             commands += arrayCommands
         } else {
-            throw NoonianKitError.unknownConfigurationOption(item: name, Option: configuration)
+            throw NoonianKitError.cannotConfigure(item: name, with: configuration)
         }
 
         self.init(name: name, commands: commands)

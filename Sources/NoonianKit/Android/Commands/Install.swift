@@ -34,7 +34,7 @@ public struct Install: AndroidCommand {
             ShellArgument("install"),
             ShellArgument("bin/\(appName).apk"),
         ]
-
+        
         return ShellCommand(command: adbTool, arguments: arguments)
     }
 }

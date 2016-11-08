@@ -8,16 +8,6 @@
 
 import Foundation
 
-public protocol HasExplanation {
-    var explanation: String { get }
-}
-
-extension NSError: HasExplanation {
-    public var explanation: String {
-        return localizedDescription
-    }
-}
-
 public enum NoonianError: HasExplanation, Error {
     case internalError(Error)
     case androidHomeNotDefined

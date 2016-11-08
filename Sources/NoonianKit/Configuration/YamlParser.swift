@@ -13,17 +13,13 @@ struct YamlParser: Parser {
     init() { }
 
     func parse(contents: String) throws -> [String : Any] {
-        var parsed: Yaml
-        do {
-            parsed = try Yaml.load(contents)
-        } catch {
+        guard
+            let parsed = try? Yaml.load(contents),
+            let dictionary = parsed.flatDictionary
+        else {
             throw NoonianKitError.configurationParsing
         }
 
-        if let dictionary = parsed.flatDictionary {
-            return dictionary
-        } else {
-            throw NoonianKitError.invalidConfiguration
-        }
+        return dictionary
     }
 }
