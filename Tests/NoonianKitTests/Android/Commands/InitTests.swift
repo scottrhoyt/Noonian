@@ -8,6 +8,8 @@
 
 import XCTest
 @testable import NoonianKit
+import Commandant
+import Result
 
 class InitCommandTests: XCTestCase {
     let initCommand = Init()
@@ -57,7 +59,34 @@ class InitCommandTests: XCTestCase {
         let expected = "echo key: value >> projectPath/.noonian.yml"
         XCTAssertEqual(expected, command.join())
     }
-    // TODO: Need to test options building
+
+    func testOptionsFullySpecified() {
+        let arguments = ["--path", "pathName", "--activity", "activityName", "--package", "packageName", "--target", "targetName", "projectName"]
+        switch InitOptions.evaluate(.arguments(ArgumentParser(arguments))) {
+        case .success(let options):
+            XCTAssertEqual(options.activity, "activityName")
+            XCTAssertEqual(options.package, "packageName")
+            XCTAssertEqual(options.path, "pathName")
+            XCTAssertEqual(options.projectName, "projectName")
+            XCTAssertEqual(options.target, "targetName")
+        default:
+            XCTFail()
+        }
+    }
+
+    func testOptionsMinimallySpecified() {
+        let arguments = ["projectName"]
+        switch InitOptions.evaluate(.arguments(ArgumentParser(arguments))) {
+        case .success(let options):
+            XCTAssertEqual(options.activity, "Main")
+            XCTAssertEqual(options.package, "com.example.projectName")
+            XCTAssertEqual(options.path, "projectName")
+            XCTAssertEqual(options.projectName, "projectName")
+            XCTAssertEqual(options.target, "android-25")
+        default:
+            XCTFail()
+        }
+    }
 }
 
 extension XCTestCase {
@@ -73,6 +102,8 @@ extension XCTestCase {
             ("testCommandForProjectCreation", testCommandForProjectCreation),
             ("testCommandForCopyingConfig", testCommandForCopyingConfig),
             ("testCommandToAddTarger", testCommandToAddTarger),
+            ("testOptionsFullySpecified", testOptionsFullySpecified),
+            ("testOptionsMinimallySpecified", testOptionsMinimallySpecified),
         ]
     }
 #endif
