@@ -11,14 +11,14 @@ import Commandant
 import Result
 
 public struct Package: AndroidCommand {
-    public typealias Options = PackageOptions
+    public typealias Options = NoOptions<NoonianKitError>
 
     public let verb = "package"
     public let function = "Sign and package an app."
 
     public init() { }
 
-    func run(_ options: PackageOptions, paths: SDKPathBuilder) throws {
+    func run(_ options: NoOptions<NoonianKitError>, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
         let toolsVersion = configuration.buildTools()
         let target = try configuration.target()
@@ -87,11 +87,5 @@ public struct Package: AndroidCommand {
         ]
 
         return ShellCommand(command: zipTool, arguments: arguments)
-    }
-}
-
-public struct PackageOptions: OptionsProtocol {
-    public static func evaluate(_ m: CommandMode) -> Result<PackageOptions, CommandantError<NoonianKitError>> {
-        return .success(PackageOptions())
     }
 }

@@ -11,14 +11,14 @@ import Commandant
 import Result
 
 public struct Install: AndroidCommand {
-    public typealias Options = InstallOptions
+    public typealias Options = NoOptions<NoonianKitError>
 
     public let verb = "install"
     public let function = "Install the app on a running simulator."
 
     public init() { }
 
-    func run(_ options: InstallOptions, paths: SDKPathBuilder) throws {
+    func run(_ options: NoOptions<NoonianKitError>, paths: SDKPathBuilder) throws {
         let configuration = try NoonianConfiguration()
 
         try execute(
@@ -37,11 +37,5 @@ public struct Install: AndroidCommand {
         ]
 
         return ShellCommand(command: adbTool, arguments: arguments)
-    }
-}
-
-public struct InstallOptions: OptionsProtocol {
-    public static func evaluate(_ m: CommandMode) -> Result<InstallOptions, CommandantError<NoonianKitError>> {
-        return .success(InstallOptions())
     }
 }
