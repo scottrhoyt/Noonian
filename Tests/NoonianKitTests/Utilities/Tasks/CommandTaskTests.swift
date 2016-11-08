@@ -26,8 +26,7 @@ class CommandTaskTests: XCTestCase {
     func testInitWithStringConfiguration() {
         do {
             let task = try CommandTask(name: commandName, configuration: stringCommand)
-            XCTAssertEqual(commandName, task.name)
-            XCTAssertEqual([stringCommand], task.commands)
+            XCTAssertEqual(task, CommandTask(name: commandName, commands: [stringCommand]))
         } catch {
             XCTFail("Should not throw an error")
         }
@@ -36,8 +35,7 @@ class CommandTaskTests: XCTestCase {
     func testInitWithArrayConfiguration() {
         do {
             let task = try CommandTask(name: commandName, configuration: arrayCommands)
-            XCTAssertEqual(commandName, task.name)
-            XCTAssertEqual(arrayCommands, task.commands)
+            XCTAssertEqual(task, CommandTask(name: commandName, commands: arrayCommands))
         } catch {
             XCTFail("Should not throw an error")
         }
@@ -47,9 +45,9 @@ class CommandTaskTests: XCTestCase {
         let badConfig = 1
         do {
             _ = try CommandTask(name: commandName, configuration: badConfig)
-        } catch NoonianKitError.unknownConfigurationOption(let name, let option) {
-            XCTAssertEqual(commandName, name)
-            XCTAssertEqual(badConfig, option as? Int)
+        } catch UtilityError.cannotConfigure(let item, let with) {
+            XCTAssertEqual(commandName, item)
+            XCTAssertEqual(badConfig, with as? Int)
             return
         } catch {
             XCTFail("Should have caught an unknownConfigurationOption Error")

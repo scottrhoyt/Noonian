@@ -11,7 +11,7 @@ import Commandant
 import Result
 
 protocol AndroidCommand: CommandProtocol {
-    typealias ClientError = NoonianError
+    typealias ClientError = NoonianKitError
 
     func run(_ options: Self.Options, paths: SDKPathBuilder) throws
 }
@@ -19,17 +19,17 @@ protocol AndroidCommand: CommandProtocol {
 extension AndroidCommand {
     func androidHome() throws -> String {
         guard let androidHome = Environment().stringValue(for: EnvironmentKeys.androidHome.rawValue) else {
-            throw NoonianError.androidHomeNotDefined
+            throw NoonianKitError.androidHomeNotDefined
         }
         return androidHome
     }
 
-    public func run(_ options: Self.Options) -> Result<(), NoonianError> {
+    public func run(_ options: Self.Options) -> Result<(), NoonianKitError> {
         do {
             try run(options, paths: SDKPathBuilder(androidHome: androidHome()))
             return .success()
         } catch {
-            return .failure((error as? NoonianError) ?? .internalError(error))
+            return .failure((error as? NoonianKitError) ?? .internalError(error))
         }
     }
 
@@ -44,13 +44,12 @@ extension AndroidCommand {
     }
 
     func execute(commands: [ShellCommand], configuration: NoonianConfiguration) throws {
-        let beforeTaskKey = "before_" + verb
-        let afterTaskKey = "after_" + verb
+        let tasks: [CommandTask?] = [
+            try? configuration.configuredValue(for: ConfigurationKeys.beforeTask.rawValue + verb),
+            CommandTask(name: verb, commands: commands),
+            try? configuration.configuredValue(for: ConfigurationKeys.afterTask.rawValue + verb),
+        ]
 
-        // TODO: Maybe put these in configuration
-        let beforeTask = try? CommandTask(name: beforeTaskKey, configuration: configuration.value(for: beforeTaskKey))
-        let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
-
-        try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
+        try tasks.flatMap { $0 }.forEach(execute)
     }
 }

@@ -68,7 +68,7 @@ class RunnerTests: XCTestCase {
 
         do {
             try runner.run(task: testTask)
-        } catch NoonianKitError.taskFailed(taskName: "test", command: "cat file.doesnt.exist") {
+        } catch UtilityError.taskFailed(taskName: "test", command: "cat file.doesnt.exist") {
             return
         } catch {
             XCTFail("Should have thrown a taskFailed")

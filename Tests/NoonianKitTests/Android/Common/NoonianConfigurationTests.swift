@@ -26,7 +26,7 @@ class NoonianConfigurationTests: XCTestCase {
     func testBadTypeThrows() {
         do {
             let _: String = try configuration.value(for: "target")
-        } catch NoonianError.cannotReadConfiguration(let key, _) {
+        } catch NoonianKitError.cannotReadConfiguration(let key, _) {
             XCTAssertEqual(key, "target")
             return
         } catch {
@@ -39,7 +39,7 @@ class NoonianConfigurationTests: XCTestCase {
     func testMissingValueThrows() {
         do {
             let _: String = try configuration.value(for: "not there")
-        } catch NoonianError.missingConfiguration(let key) {
+        } catch NoonianKitError.missingConfiguration(let key) {
             XCTAssertEqual(key, "not there")
             return
         } catch {
@@ -62,6 +62,12 @@ class NoonianConfigurationTests: XCTestCase {
     func testAppName() {
         XCTAssertEqual(configuration.appName(), "app")
     }
+
+    func testConfiguredValue() {
+        let task1: CommandTask? = try? configuration.configuredValue(for: "before_test")
+        let task2 = CommandTask(name: "before_test", commands: ["a", "b"])
+        XCTAssertEqual(task1, task2)
+    }
 }
 
 #if os(Linux)
@@ -72,6 +78,7 @@ class NoonianConfigurationTests: XCTestCase {
             ("testMissingValueThrows", testMissingValueThrows),
             ("testThrowsIfNoConfigurationFile", testThrowsIfNoConfigurationFile),
             ("testAppName", testAppName),
+            ("testConfiguredValue", testConfiguredValue),
         ]
     }
 #endif

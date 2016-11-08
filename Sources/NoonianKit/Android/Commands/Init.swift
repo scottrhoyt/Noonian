@@ -20,7 +20,6 @@ public struct Init: AndroidCommand {
     public init() { }
 
     func run(_ options: InitOptions, paths: SDKPathBuilder) throws {
-        // TODO: Need to add better shell printing of what we are doing here.
         try execute(
             commands: [
                 projectCreation(options: options, androidTool: paths.androidToolCommand()),
@@ -47,8 +46,7 @@ public struct Init: AndroidCommand {
     func copyingExampleConfig(projectPath: String) -> ShellCommand {
         let command = "cp"
         let arguments = [
-            // TODO: might want to extract install location to somewhere more reasonable
-            ShellArgument("/usr/local/share/noonian/example.noonian.yml"),
+            ShellArgument(NoonianConfiguration.examplePath),
             ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 
@@ -80,7 +78,7 @@ public struct InitOptions: OptionsProtocol {
         self.projectName = projectName
     }
 
-    public static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianError>> {
+    public static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianKitError>> {
         return curry(InitOptions.init)
             <*> m <| Option(
                                 key: "path",

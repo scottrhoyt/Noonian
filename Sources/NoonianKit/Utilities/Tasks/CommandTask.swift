@@ -1,5 +1,5 @@
 //
-//  Task.swift
+//  BeforeBuildTask.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/2/16.
@@ -8,18 +8,19 @@
 
 import Foundation
 
-protocol Task {
-    var name: String { get }
-    var commands: [String] { get }
+public struct CommandTask: ConfigurableItem, Equatable {
+    let name: String
+    let commands: [String]
 
-    init(name: String, commands: [String])
-}
+    public init(name: String, commands: [String]) {
+        self.name = name
+        self.commands = commands
+    }
 
-protocol ConfigurableTask: Task {
-    init(name: String, configuration: Any) throws
-}
+    public init(name: String, commands: [ShellCommand]) {
+        self.init(name: name, commands: commands.map { $0.join() })
+    }
 
-extension ConfigurableTask {
     init(name: String, configuration: Any) throws {
         // Configuration could be either a string or an array of strings.
         // If it is neither, then we have to throw an error.
@@ -29,9 +30,16 @@ extension ConfigurableTask {
         } else if let arrayCommands = configuration as? [String] {
             commands += arrayCommands
         } else {
-            throw NoonianKitError.unknownConfigurationOption(item: name, Option: configuration)
+            throw UtilityError.cannotConfigure(item: name, with: configuration)
         }
 
         self.init(name: name, commands: commands)
     }
+}
+
+// MARK: - CommandTask: Equatable
+
+public func == (lhs: CommandTask, rhs: CommandTask) -> Bool {
+    return lhs.name == rhs.name &&
+        lhs.commands == rhs.commands
 }

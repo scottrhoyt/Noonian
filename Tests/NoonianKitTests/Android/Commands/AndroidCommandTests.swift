@@ -33,7 +33,7 @@ class AndroidCommandTests: XCTestCase {
     }
 
     struct TestOptions: OptionsProtocol {
-        static func evaluate(_ m: CommandMode) -> Result<AndroidCommandTests.TestOptions, CommandantError<NoonianError>> {
+        static func evaluate(_ m: CommandMode) -> Result<AndroidCommandTests.TestOptions, CommandantError<NoonianKitError>> {
             return .success(TestOptions())
         }
     }
@@ -49,7 +49,7 @@ class AndroidCommandTests: XCTestCase {
         Environment().unset(for: "ANDROID_HOME")
         do {
             _ = try TestCommand().androidHome()
-        } catch NoonianError.androidHomeNotDefined {
+        } catch NoonianKitError.androidHomeNotDefined {
             return
         } catch {
             XCTFail("Should have thrown an androidHomeNotDefined")
@@ -60,7 +60,7 @@ class AndroidCommandTests: XCTestCase {
 
     func testRunSuccessfully() {
         let command = TestCommand()
-        let result: Result<(), NoonianError> = command.run(TestOptions())
+        let result: Result<(), NoonianKitError> = command.run(TestOptions())
         switch result {
         case .success:
             return
@@ -71,22 +71,22 @@ class AndroidCommandTests: XCTestCase {
 
     func testRunWithNoonianError() {
         var command = TestCommand()
-        command.error = NoonianError.androidHomeNotDefined
-        let result: Result<(), NoonianError> = command.run(TestOptions())
+        command.error = NoonianKitError.androidHomeNotDefined
+        let result: Result<(), NoonianKitError> = command.run(TestOptions())
         switch result {
-        case .failure(NoonianError.androidHomeNotDefined):
+        case .failure(NoonianKitError.androidHomeNotDefined):
             return
         default:
-            XCTFail("Should have failed with a NoonianError")
+            XCTFail("Should have failed with a NoonianKitError")
         }
     }
 
     func testRunWithInternalError() {
         var command = TestCommand()
         command.error = InternalError.someError
-        let result: Result<(), NoonianError> = command.run(TestOptions())
+        let result: Result<(), NoonianKitError> = command.run(TestOptions())
         switch result {
-        case .failure(NoonianError.internalError(InternalError.someError)):
+        case .failure(NoonianKitError.internalError(InternalError.someError)):
             return
         default:
             XCTFail("Should have failed with an internalError")

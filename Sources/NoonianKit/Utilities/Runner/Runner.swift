@@ -40,7 +40,7 @@ public struct Runner {
 
             process.waitUntilExit()
             if process.terminationStatus != 0 {
-                throw NoonianKitError.taskFailed(taskName: task.name, command: command)
+                throw UtilityError.taskFailed(taskName: task.name, command: command)
             }
             log.info("")
         }

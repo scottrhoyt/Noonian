@@ -1,5 +1,5 @@
 //
-//  NoonianError.swift
+//  NoonianKitError.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/5/16.
@@ -8,17 +8,7 @@
 
 import Foundation
 
-public protocol HasExplanation {
-    var explanation: String { get }
-}
-
-extension NSError: HasExplanation {
-    public var explanation: String {
-        return localizedDescription
-    }
-}
-
-public enum NoonianError: HasExplanation, Error {
+public enum NoonianKitError: HasExplanation, Error {
     case internalError(Error)
     case androidHomeNotDefined
     case noBuildTools

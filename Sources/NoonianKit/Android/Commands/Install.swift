@@ -40,7 +40,7 @@ public struct Install: AndroidCommand {
 }
 
 public struct InstallOptions: OptionsProtocol {
-    public static func evaluate(_ m: CommandMode) -> Result<InstallOptions, CommandantError<NoonianError>> {
+    public static func evaluate(_ m: CommandMode) -> Result<InstallOptions, CommandantError<NoonianKitError>> {
         return .success(InstallOptions())
     }
 }

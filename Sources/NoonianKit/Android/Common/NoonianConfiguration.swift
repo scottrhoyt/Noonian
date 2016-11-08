@@ -12,6 +12,10 @@ enum ConfigurationKeys: String {
     case buildTools = "build_tools"
     case target = "target"
     case appName = "app_name"
+
+    // prefixes
+    case beforeTask = "before_"
+    case afterTask = "after_"
 }
 
 //protocol AnyConfigurable {
@@ -21,6 +25,8 @@ enum ConfigurationKeys: String {
 struct NoonianConfiguration {
     static let defaultAppName = "App"
     static let defaultFileName = ".noonian.yml"
+    static let examplePath = "/usr/local/share/noonian/example.noonian.yml"
+
     private let configs: [String: Any]
 
     init(configFile: String? = nil) throws {
@@ -42,13 +48,18 @@ struct NoonianConfiguration {
 
     func value<T>(for key: String) throws -> T {
         guard let val = configs[key] else {
-            throw NoonianError.missingConfiguration(key: key)
+            throw NoonianKitError.missingConfiguration(key: key)
         }
 
         if let val = val as? T {
             return val
         }
 
-        throw NoonianError.cannotReadConfiguration(key: key, type: T.self)
+        throw NoonianKitError.cannotReadConfiguration(key: key, type: T.self)
+    }
+
+    func configuredValue<T: ConfigurableItem>(for key: String) throws -> T {
+        let config: Any = try value(for: key)
+        return try T(name: key, configuration: config)
     }
 }

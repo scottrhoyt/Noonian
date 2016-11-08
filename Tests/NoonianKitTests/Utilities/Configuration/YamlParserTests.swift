@@ -18,7 +18,7 @@ class YamlParserTests: XCTestCase {
                        "item1: value"
         do {
             _ = try parser.parse(contents: contents)
-        } catch NoonianKitError.configurationParsing {
+        } catch UtilityError.configurationParsing {
             return
         } catch {
             XCTFail(
@@ -33,7 +33,7 @@ class YamlParserTests: XCTestCase {
         let contents = "2"
         do {
             _ = try parser.parse(contents: contents)
-        } catch NoonianKitError.invalidConfiguration {
+        } catch UtilityError.configurationParsing {
             return
         } catch {
             XCTFail(
