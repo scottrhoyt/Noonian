@@ -81,24 +81,24 @@ public struct InitOptions: OptionsProtocol {
     public static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianKitError>> {
         return curry(InitOptions.init)
             <*> m <| Option(
-                                key: "path",
-                                defaultValue: nil,
-                                usage: "The directory to create the project in. Defaults to <Project Name> in the current directory."
+                        key: "path",
+                        defaultValue: nil,
+                        usage: "The directory to create the project in. Defaults to <Project Name> in the current directory."
                      )
-            <*> m <| Option<String?>(
-                                key: "activity",
-                                defaultValue: nil,
-                                usage: "The name of the activity. Defaults to Main."
+            <*> m <| Option(
+                        key: "activity",
+                        defaultValue: nil,
+                        usage: "The name of the activity. Defaults to Main."
                      )
-            <*> m <| Option<String?>(
-                                key: "target",
-                                defaultValue: nil,
-                                usage: "The target to build for. Specify by target name and not ID. Defaults to android-25 (7.1)."
+            <*> m <| Option(
+                        key: "target",
+                        defaultValue: nil,
+                        usage: "The target to build for. Specify by target name and not ID. Defaults to android-25 (7.1)."
                      )
-            <*> m <| Option<String?>(
-                                key: "package",
-                                defaultValue: nil,
-                                usage: "The package name. Defaults to com.example.<project>."
+            <*> m <| Option(
+                        key: "package",
+                        defaultValue: nil,
+                        usage: "The package name. Defaults to com.example.<project>."
                      )
             <*> m <| Argument(usage: "the project name")
     }
