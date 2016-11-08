@@ -1,4 +1,5 @@
 github "thoughtbot/Curry" "v3.0.0"
+github "onevcat/Rainbow" "2.0.1"
 github "antitypical/Result" "3.0.0"
 github "behrang/YamlSwift" "3.1.0"
 github "scottrhoyt/Commandant" "0.11.3"

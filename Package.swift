@@ -13,5 +13,6 @@ let package = Package(
     .Package(url: "https://github.com/scottrhoyt/Commandant.git", majorVersion: 0),
     .Package(url: "https://github.com/behrang/YamlSwift.git", majorVersion: 3),
     .Package(url: "https://github.com/thoughtbot/Curry.git", majorVersion: 3),
+    .Package(url: "https://github.com/onevcat/Rainbow", majorVersion: 2),
   ]
 )
