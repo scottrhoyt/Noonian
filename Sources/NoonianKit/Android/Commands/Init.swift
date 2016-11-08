@@ -79,7 +79,7 @@ public struct InitOptions: OptionsProtocol {
         self.projectName = projectName
     }
 
-    public static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianError>> {
+    public static func evaluate(_ m: CommandMode) -> Result<InitOptions, CommandantError<NoonianKitError>> {
         return curry(InitOptions.init)
             <*> m <| Option(
                                 key: "path",

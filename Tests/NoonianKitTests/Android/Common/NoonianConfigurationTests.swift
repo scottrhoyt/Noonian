@@ -26,7 +26,7 @@ class NoonianConfigurationTests: XCTestCase {
     func testBadTypeThrows() {
         do {
             let _: String = try configuration.value(for: "target")
-        } catch NoonianError.cannotReadConfiguration(let key, _) {
+        } catch NoonianKitError.cannotReadConfiguration(let key, _) {
             XCTAssertEqual(key, "target")
             return
         } catch {
@@ -39,7 +39,7 @@ class NoonianConfigurationTests: XCTestCase {
     func testMissingValueThrows() {
         do {
             let _: String = try configuration.value(for: "not there")
-        } catch NoonianError.missingConfiguration(let key) {
+        } catch NoonianKitError.missingConfiguration(let key) {
             XCTAssertEqual(key, "not there")
             return
         } catch {

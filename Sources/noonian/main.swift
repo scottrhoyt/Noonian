@@ -11,7 +11,7 @@ import Commandant
 import NoonianKit
 
 // Create registry and add commands
-let registry = CommandRegistry<NoonianError>()
+let registry = CommandRegistry<NoonianKitError>()
 registry.register(Init())
 registry.register(Build())
 registry.register(Package())

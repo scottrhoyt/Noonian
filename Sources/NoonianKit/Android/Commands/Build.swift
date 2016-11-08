@@ -65,7 +65,7 @@ public struct Build: AndroidCommand {
 }
 
 public struct BuildOptions: OptionsProtocol {
-    public static func evaluate(_ m: CommandMode) -> Result<BuildOptions, CommandantError<NoonianError>> {
+    public static func evaluate(_ m: CommandMode) -> Result<BuildOptions, CommandantError<NoonianKitError>> {
         return .success(BuildOptions())
     }
 }

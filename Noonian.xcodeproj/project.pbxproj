@@ -42,7 +42,7 @@
 		3BE490EF1DD16F120041D3F1 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D31DD16F120041D3F1 /* Package.swift */; };
 		3BE490F01DD16F120041D3F1 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */; };
 		3BE490F11DD16F120041D3F1 /* NoonianConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */; };
-		3BE490F21DD16F120041D3F1 /* NoonianError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D71DD16F120041D3F1 /* NoonianError.swift */; };
+		3BE490F21DD16F120041D3F1 /* NoonianKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D71DD16F120041D3F1 /* NoonianKitError.swift */; };
 		3BE490F31DD16F120041D3F1 /* SDKPathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D81DD16F120041D3F1 /* SDKPathBuilder.swift */; };
 		3BE490F41DD16F120041D3F1 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490DB1DD16F120041D3F1 /* Parser.swift */; };
 		3BE490F51DD16F120041D3F1 /* YamlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490DC1DD16F120041D3F1 /* YamlParser.swift */; };
@@ -157,7 +157,7 @@
 		3BE490D31DD16F120041D3F1 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
 		3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfiguration.swift; sourceTree = "<group>"; };
-		3BE490D71DD16F120041D3F1 /* NoonianError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianError.swift; sourceTree = "<group>"; };
+		3BE490D71DD16F120041D3F1 /* NoonianKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianKitError.swift; sourceTree = "<group>"; };
 		3BE490D81DD16F120041D3F1 /* SDKPathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKPathBuilder.swift; sourceTree = "<group>"; };
 		3BE490DB1DD16F120041D3F1 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		3BE490DC1DD16F120041D3F1 /* YamlParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YamlParser.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 			children = (
 				3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */,
 				3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */,
-				3BE490D71DD16F120041D3F1 /* NoonianError.swift */,
+				3BE490D71DD16F120041D3F1 /* NoonianKitError.swift */,
 				3BE490D81DD16F120041D3F1 /* SDKPathBuilder.swift */,
 			);
 			path = Common;
@@ -672,7 +672,7 @@
 				3BE490FA1DD16F120041D3F1 /* String+NoonianKit.swift in Sources */,
 				3BE490F31DD16F120041D3F1 /* SDKPathBuilder.swift in Sources */,
 				3BE490FB1DD16F120041D3F1 /* CommandTask.swift in Sources */,
-				3BE490F21DD16F120041D3F1 /* NoonianError.swift in Sources */,
+				3BE490F21DD16F120041D3F1 /* NoonianKitError.swift in Sources */,
 				3BE490F01DD16F120041D3F1 /* EnvironmentKeys.swift in Sources */,
 				3BE490EC1DD16F120041D3F1 /* Init.swift in Sources */,
 				3BE490EB1DD16F120041D3F1 /* Build.swift in Sources */,

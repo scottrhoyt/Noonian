@@ -91,7 +91,7 @@ public struct Package: AndroidCommand {
 }
 
 public struct PackageOptions: OptionsProtocol {
-    public static func evaluate(_ m: CommandMode) -> Result<PackageOptions, CommandantError<NoonianError>> {
+    public static func evaluate(_ m: CommandMode) -> Result<PackageOptions, CommandantError<NoonianKitError>> {
         return .success(PackageOptions())
     }
 }

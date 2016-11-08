@@ -54,7 +54,7 @@ struct SDKPathBuilder {
             print(baseDir.pathByAdding(component: latest))
             return baseDir.pathByAdding(component: latest)
         } else {
-            throw NoonianError.noBuildTools
+            throw NoonianKitError.noBuildTools
         }
     }
 

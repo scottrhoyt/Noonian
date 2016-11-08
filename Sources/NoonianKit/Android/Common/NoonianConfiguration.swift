@@ -42,13 +42,13 @@ struct NoonianConfiguration {
 
     func value<T>(for key: String) throws -> T {
         guard let val = configs[key] else {
-            throw NoonianError.missingConfiguration(key: key)
+            throw NoonianKitError.missingConfiguration(key: key)
         }
 
         if let val = val as? T {
             return val
         }
 
-        throw NoonianError.cannotReadConfiguration(key: key, type: T.self)
+        throw NoonianKitError.cannotReadConfiguration(key: key, type: T.self)
     }
 }
