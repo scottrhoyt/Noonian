@@ -31,7 +31,8 @@ public struct Build: AndroidCommand {
                 ),
                 compiling(
                     jackTool: paths.jackToolCommand(toolsVersion: toolsVersion),
-                    include: paths.includeFor(target: target))
+                    include: paths.includeFor(target: target)
+                )
             ],
             configuration: configuration
         )
