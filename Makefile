@@ -6,7 +6,10 @@ SWIFT_URL=https://swift.org/builds/$(SWIFT_SNAPSHOT)/ubuntu1404/$(SWIFT_SNAPSHOT
 
 export PATH := $(SWIFT_SNAPSHOT)-ubuntu14.04/usr/bin:$(PATH)
 
-.PHONY: uninstall clean test build install linux_swift
+.PHONY: bootstrap uninstall clean test build install linux_swift
+
+bootstrap:
+	carthage bootstrap --no-use-binaries --platform mac
 
 uninstall:
 	rm -rf "$(RESOURCES_FOLDER)"
