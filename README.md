@@ -12,10 +12,11 @@ building androids](http://memory-alpha.wikia.com/wiki/Noonian_Soong).
 
 ### Installation
 
-* [Download the latest release](https://github.com/scottrhoyt/Noonian/releases)
+* Clone or [Download the latest release](https://github.com/scottrhoyt/Noonian/releases)
+* `cd Noonian`
 * Swift 3+ is installed
-  * OSX: Included in Xcode 8+
-  * Linux: available at [Swift](http://www.swift.org). `make linux_swift` will
+  * **macOS**: Included in Xcode 8+
+  * **Linux**: available at [Swift](http://www.swift.org). `make linux_swift` will
     create a local installation of Swift in the source directory if you are
     using Ubuntu 14.04
 * Run `make install`
@@ -59,6 +60,10 @@ your project directory.
 
 `noonian install`
 
+#### Build, Package, and Install
+
+`noonian all`
+
 ### Configuration
 
 Noonian is configured via a `.noonian.yml` file. `noonian init` will create a
@@ -97,3 +102,30 @@ after_build:
 after_install:
   - echo we finished!
 ```
+
+### Troubleshooting
+
+#### `make install` fails:
+
+* Make sure you have Swift 3+ installed
+    * **macOS**: via Xcode 8+ or a manually installed toolchain from swift.org
+    * **Linux**: via `make linux_swift` or a manually installed toolchain from
+      swift.org. Additionally, you must have `clang` installed (available
+      via `sudo apt-get install clang`)
+* The binary is installed to `/usr/local/bin`
+* The resources are installed to `/usr/local/share/noonian`
+* If you don't have write permissions to these directories, installation will
+  fail.
+* The binary can still be copied anywhere from `.build/release/noonian`, but it
+  will be unable to create an initial configuration for you. You can manually
+  copy `example.noonian.yml` to your project directory.
+
+#### `noonian <action>` fails:
+
+* Check `$ANDROID_HOME` is defined
+* Check `$JAVA_HOME` is defined
+* Update your Android SDK
+* for `build`, `package`, `install` and `all` make sure you have a valid
+  configuration:
+  * defining `taget: <target name>` is required
+  * defining `build_tools: <tools version>` is recommended
