@@ -16,6 +16,7 @@ registry.register(Init())
 registry.register(Build())
 registry.register(Package())
 registry.register(Install())
+registry.register(All())
 
 // Add help command
 let helpCommand = HelpCommand(registry: registry)

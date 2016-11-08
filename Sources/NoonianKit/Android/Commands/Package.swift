@@ -14,7 +14,7 @@ public struct Package: AndroidCommand {
     public typealias Options = NoOptions<NoonianKitError>
 
     public let verb = "package"
-    public let function = "Sign and package an app."
+    public let function = "Package, sign, and zipalign an app."
 
     public init() { }
 

@@ -73,6 +73,7 @@
 		3BE491281DD16F970041D3F1 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */; };
 		3BE4912B1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */; };
 		3BE4912F1DD17B370041D3F1 /* NoonianKitErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4912E1DD17B370041D3F1 /* NoonianKitErrorTests.swift */; };
+		3BE491321DD1977F0041D3F1 /* All.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491301DD197070041D3F1 /* All.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTaskTests.swift; sourceTree = "<group>"; };
 		3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3BE4912E1DD17B370041D3F1 /* NoonianKitErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianKitErrorTests.swift; sourceTree = "<group>"; };
+		3BE491301DD197070041D3F1 /* All.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = All.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				3BE490D01DD16F120041D3F1 /* Init.swift */,
 				3BE490D11DD16F120041D3F1 /* Install.swift */,
 				3BE490D31DD16F120041D3F1 /* Package.swift */,
+				3BE491301DD197070041D3F1 /* All.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -685,6 +688,7 @@
 				3BE490EA1DD16F120041D3F1 /* AndroidCommand.swift in Sources */,
 				3BE490ED1DD16F120041D3F1 /* Install.swift in Sources */,
 				3BE490F71DD16F120041D3F1 /* Logger.swift in Sources */,
+				3BE491321DD1977F0041D3F1 /* All.swift in Sources */,
 				3BE490FE1DD16F120041D3F1 /* Yaml+NoonianKit.swift in Sources */,
 				3BE490F11DD16F120041D3F1 /* NoonianConfiguration.swift in Sources */,
 			);

@@ -14,7 +14,7 @@ public struct Install: AndroidCommand {
     public typealias Options = NoOptions<NoonianKitError>
 
     public let verb = "install"
-    public let function = "Install the app on a running simulator."
+    public let function = "Install an app on a running simulator."
 
     public init() { }
 

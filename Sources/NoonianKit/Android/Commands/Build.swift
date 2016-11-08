@@ -14,7 +14,7 @@ public struct Build: AndroidCommand {
     public typealias Options = NoOptions<NoonianKitError>
 
     public let verb = "build"
-    public let function = "Build, package, and sign the app."
+    public let function = "Compile an app."
 
     public init() { }
 

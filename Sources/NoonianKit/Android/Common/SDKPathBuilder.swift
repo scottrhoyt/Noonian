@@ -50,8 +50,6 @@ struct SDKPathBuilder {
         let contents = try FileManager.default.contentsOfDirectory(atPath: baseDir)
 
         if let latest = contents.sorted(by: >).first {
-            print("Tools Version not supplied. Using latest.")
-            print(baseDir.pathByAdding(component: latest))
             return baseDir.pathByAdding(component: latest)
         } else {
             throw NoonianKitError.noBuildTools

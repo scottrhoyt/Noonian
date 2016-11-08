@@ -15,7 +15,7 @@ public struct Init: AndroidCommand {
     public typealias Options = InitOptions
 
     public let verb = "init"
-    public let function = "Initialize a new Android project"
+    public let function = "Initialize a new Android project."
 
     public init() { }
 
