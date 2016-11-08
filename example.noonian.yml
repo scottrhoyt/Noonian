@@ -1,6 +1,9 @@
 ##
 ## This is an example configuration for for Noonian
 ##
+## The `target` and `app_name` entries will be appended to this file when you
+## run `noonian init`. If you are copying this file manually, you will have to
+## add those keys yourself for the proper function of the tool.
 
 ##
 ## Build Tools
