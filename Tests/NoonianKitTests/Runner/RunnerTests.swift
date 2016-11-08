@@ -57,13 +57,32 @@ class RunnerTests: XCTestCase {
         try? fileManager.removeItem(atPath: "testFile.tmp")
         try? fileManager.removeItem(atPath: "test file.tmp")
     }
+
+    func testRunnerFails() {
+        let testTask = CommandTask(
+            name: "test",
+            commands: [
+                "cat file.doesnt.exist",
+            ])
+        let runner = Runner()
+
+        do {
+            try runner.run(task: testTask)
+        } catch NoonianKitError.taskFailed(taskName: "test", command: "cat file.doesnt.exist") {
+            return
+        } catch {
+            XCTFail("Should have thrown a taskFailed")
+        }
+        XCTFail("Should have thrown an error")
+    }
 }
 
 #if os(Linux)
     extension RunnerTests {
         static var allTests = [
             ("testRunnerSimple", testRunnerSimple),
-            ("testRunnerComplex", testRunnerComplex)
+            ("testRunnerComplex", testRunnerComplex),
+            ("testRunnerFails", testRunnerFails),
         ]
     }
 #endif
