@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct CommandTask: ConfigurableTask, Equatable {
+public struct CommandTask: ConfigurableItem, Equatable {
     let name: String
     let commands: [String]
 
@@ -19,6 +19,21 @@ public struct CommandTask: ConfigurableTask, Equatable {
 
     public init(name: String, commands: [ShellCommand]) {
         self.init(name: name, commands: commands.map { $0.join() })
+    }
+
+    init(name: String, configuration: Any) throws {
+        // Configuration could be either a string or an array of strings.
+        // If it is neither, then we have to throw an error.
+        var commands = [String]()
+        if let stringCommand = configuration as? String {
+            commands.append(stringCommand)
+        } else if let arrayCommands = configuration as? [String] {
+            commands += arrayCommands
+        } else {
+            throw NoonianKitError.cannotConfigure(item: name, with: configuration)
+        }
+
+        self.init(name: name, commands: commands)
     }
 }
 

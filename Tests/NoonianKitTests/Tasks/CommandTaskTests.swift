@@ -26,8 +26,7 @@ class CommandTaskTests: XCTestCase {
     func testInitWithStringConfiguration() {
         do {
             let task = try CommandTask(name: commandName, configuration: stringCommand)
-            XCTAssertEqual(commandName, task.name)
-            XCTAssertEqual([stringCommand], task.commands)
+            XCTAssertEqual(task, CommandTask(name: commandName, commands: [stringCommand]))
         } catch {
             XCTFail("Should not throw an error")
         }
@@ -36,8 +35,7 @@ class CommandTaskTests: XCTestCase {
     func testInitWithArrayConfiguration() {
         do {
             let task = try CommandTask(name: commandName, configuration: arrayCommands)
-            XCTAssertEqual(commandName, task.name)
-            XCTAssertEqual(arrayCommands, task.commands)
+            XCTAssertEqual(task, CommandTask(name: commandName, commands: arrayCommands))
         } catch {
             XCTFail("Should not throw an error")
         }
