@@ -72,6 +72,7 @@
 		3BE491271DD16F970041D3F1 /* String+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491151DD16F970041D3F1 /* String+NoonianKitTests.swift */; };
 		3BE491281DD16F970041D3F1 /* CommandTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */; };
 		3BE4912B1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */; };
+		3BE4912F1DD17B370041D3F1 /* NoonianKitErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE4912E1DD17B370041D3F1 /* NoonianKitErrorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		3BE491151DD16F970041D3F1 /* String+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NoonianKitTests.swift"; sourceTree = "<group>"; };
 		3BE491171DD16F970041D3F1 /* CommandTaskTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTaskTests.swift; sourceTree = "<group>"; };
 		3BE4912A1DD16FC10041D3F1 /* XCTest+NoonianKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+NoonianKitTests.swift"; sourceTree = "<group>"; };
+		3BE4912E1DD17B370041D3F1 /* NoonianKitErrorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianKitErrorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +413,7 @@
 		3BE491061DD16F970041D3F1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3BE4912E1DD17B370041D3F1 /* NoonianKitErrorTests.swift */,
 				3BE491071DD16F970041D3F1 /* NoonianConfigurationTests.swift */,
 				3BE491081DD16F970041D3F1 /* SDKPathBuilderTests.swift */,
 			);
@@ -713,6 +716,7 @@
 				3BE4911D1DD16F970041D3F1 /* PackageTests.swift in Sources */,
 				3BE491271DD16F970041D3F1 /* String+NoonianKitTests.swift in Sources */,
 				3BE4911C1DD16F970041D3F1 /* InstallTests.swift in Sources */,
+				3BE4912F1DD17B370041D3F1 /* NoonianKitErrorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

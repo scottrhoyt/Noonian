@@ -11,7 +11,7 @@ XCTMain([
     testCase(EnvironmentTests.allTests),
     testCase(StringNoonianKitTests.allTests),
 
-    // MARK: Android specifiv
+    // MARK: Android specific
     testCase(BuildTests.allTests),
     testCase(InitCommandTests.allTests),
     testCase(NoonianConfigurationTests.allTests),
@@ -19,5 +19,6 @@ XCTMain([
     testCase(PackageTests.allTests),
     testCase(InstallTests.allTests),
     testCase(SDKPathBuilderTests.allTests),
+    testCase(NoonianKitErrorTests.allTests),
 ])
 #endif
