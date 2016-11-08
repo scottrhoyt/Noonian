@@ -46,8 +46,7 @@ public struct Init: AndroidCommand {
     func copyingExampleConfig(projectPath: String) -> ShellCommand {
         let command = "cp"
         let arguments = [
-            // TODO: might want to extract install location to somewhere more reasonable
-            ShellArgument("/usr/local/share/noonian/example.noonian.yml"),
+            ShellArgument(NoonianConfiguration.examplePath),
             ShellArgument(projectPath.pathByAdding(component: NoonianConfiguration.defaultFileName)),
         ]
 

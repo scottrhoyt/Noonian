@@ -21,6 +21,8 @@ enum ConfigurationKeys: String {
 struct NoonianConfiguration {
     static let defaultAppName = "App"
     static let defaultFileName = ".noonian.yml"
+    static let examplePath = "/usr/local/share/noonian/example.noonian.yml"
+
     private let configs: [String: Any]
 
     init(configFile: String? = nil) throws {
