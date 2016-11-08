@@ -1,5 +1,5 @@
 //
-//  NoonianKitError.swift
+//  UtilityError.swift
 //  Noonian
 //
 //  Created by Scott Hoyt on 11/3/16.
@@ -18,7 +18,7 @@ extension NSError: HasExplanation {
     }
 }
 
-public enum NoonianKitError: HasExplanation, Error {
+public enum UtilityError: HasExplanation, Error {
     case taskFailed(taskName: String, command: String)
     case configurationParsing
     case cannotConfigure(item: String, with: Any)

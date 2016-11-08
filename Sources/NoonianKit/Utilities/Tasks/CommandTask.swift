@@ -30,7 +30,7 @@ public struct CommandTask: ConfigurableItem, Equatable {
         } else if let arrayCommands = configuration as? [String] {
             commands += arrayCommands
         } else {
-            throw NoonianKitError.cannotConfigure(item: name, with: configuration)
+            throw UtilityError.cannotConfigure(item: name, with: configuration)
         }
 
         self.init(name: name, commands: commands)
