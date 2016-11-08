@@ -62,6 +62,12 @@ class NoonianConfigurationTests: XCTestCase {
     func testAppName() {
         XCTAssertEqual(configuration.appName(), "app")
     }
+
+    func testConfiguredValue() {
+        let task1: CommandTask? = try? configuration.configuredValue(for: "before_test")
+        let task2 = CommandTask(name: "before_test", commands: ["a", "b"])
+        XCTAssertEqual(task1, task2)
+    }
 }
 
 #if os(Linux)

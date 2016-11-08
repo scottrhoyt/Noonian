@@ -44,13 +44,12 @@ extension AndroidCommand {
     }
 
     func execute(commands: [ShellCommand], configuration: NoonianConfiguration) throws {
-        let beforeTaskKey = "before_" + verb
-        let afterTaskKey = "after_" + verb
+        let tasks: [CommandTask?] = [
+            try? configuration.configuredValue(for: ConfigurationKeys.beforeTask.rawValue + verb),
+            CommandTask(name: verb, commands: commands),
+            try? configuration.configuredValue(for: ConfigurationKeys.afterTask.rawValue + verb),
+        ]
 
-        // TODO: Maybe put these in configuration
-        let beforeTask = try? CommandTask(name: beforeTaskKey, configuration: configuration.value(for: beforeTaskKey))
-        let afterTask = try? CommandTask(name: afterTaskKey, configuration: configuration.value(for: afterTaskKey))
-
-        try [beforeTask, CommandTask(name: verb, commands: commands), afterTask].flatMap { $0 }.forEach(execute)
+        try tasks.flatMap { $0 }.forEach(execute)
     }
 }

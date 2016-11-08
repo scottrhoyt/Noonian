@@ -12,6 +12,10 @@ enum ConfigurationKeys: String {
     case buildTools = "build_tools"
     case target = "target"
     case appName = "app_name"
+
+    // prefixes
+    case beforeTask = "before_"
+    case afterTask = "after_"
 }
 
 //protocol AnyConfigurable {
@@ -52,5 +56,10 @@ struct NoonianConfiguration {
         }
 
         throw NoonianKitError.cannotReadConfiguration(key: key, type: T.self)
+    }
+
+    func configuredValue<T: ConfigurableItem>(for key: String) throws -> T {
+        let config: Any = try value(for: key)
+        return try T(name: key, configuration: config)
     }
 }
