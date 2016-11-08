@@ -78,6 +78,7 @@ class NoonianConfigurationTests: XCTestCase {
             ("testMissingValueThrows", testMissingValueThrows),
             ("testThrowsIfNoConfigurationFile", testThrowsIfNoConfigurationFile),
             ("testAppName", testAppName),
+            ("testConfiguredValue", testConfiguredValue),
         ]
     }
 #endif
