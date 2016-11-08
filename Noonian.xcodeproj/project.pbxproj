@@ -39,7 +39,6 @@
 		3BE490EB1DD16F120041D3F1 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490CF1DD16F120041D3F1 /* Build.swift */; };
 		3BE490EC1DD16F120041D3F1 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D01DD16F120041D3F1 /* Init.swift */; };
 		3BE490ED1DD16F120041D3F1 /* Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D11DD16F120041D3F1 /* Install.swift */; };
-		3BE490EE1DD16F120041D3F1 /* OptionsProtocol+Noonian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D21DD16F120041D3F1 /* OptionsProtocol+Noonian.swift */; };
 		3BE490EF1DD16F120041D3F1 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D31DD16F120041D3F1 /* Package.swift */; };
 		3BE490F01DD16F120041D3F1 /* EnvironmentKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */; };
 		3BE490F11DD16F120041D3F1 /* NoonianConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */; };
@@ -155,7 +154,6 @@
 		3BE490CF1DD16F120041D3F1 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		3BE490D01DD16F120041D3F1 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
 		3BE490D11DD16F120041D3F1 /* Install.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Install.swift; sourceTree = "<group>"; };
-		3BE490D21DD16F120041D3F1 /* OptionsProtocol+Noonian.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OptionsProtocol+Noonian.swift"; sourceTree = "<group>"; };
 		3BE490D31DD16F120041D3F1 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3BE490D51DD16F120041D3F1 /* EnvironmentKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentKeys.swift; sourceTree = "<group>"; };
 		3BE490D61DD16F120041D3F1 /* NoonianConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoonianConfiguration.swift; sourceTree = "<group>"; };
@@ -315,7 +313,6 @@
 				3BE490CF1DD16F120041D3F1 /* Build.swift */,
 				3BE490D01DD16F120041D3F1 /* Init.swift */,
 				3BE490D11DD16F120041D3F1 /* Install.swift */,
-				3BE490D21DD16F120041D3F1 /* OptionsProtocol+Noonian.swift */,
 				3BE490D31DD16F120041D3F1 /* Package.swift */,
 			);
 			path = Commands;
@@ -685,7 +682,6 @@
 				3BE490EA1DD16F120041D3F1 /* AndroidCommand.swift in Sources */,
 				3BE490ED1DD16F120041D3F1 /* Install.swift in Sources */,
 				3BE490F71DD16F120041D3F1 /* Logger.swift in Sources */,
-				3BE490EE1DD16F120041D3F1 /* OptionsProtocol+Noonian.swift in Sources */,
 				3BE490FE1DD16F120041D3F1 /* Yaml+NoonianKit.swift in Sources */,
 				3BE490F11DD16F120041D3F1 /* NoonianConfiguration.swift in Sources */,
 			);
