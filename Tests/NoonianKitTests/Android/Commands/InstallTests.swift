@@ -20,7 +20,7 @@ class InstallTests: XCTestCase {
 
     func testCommandForInstall() {
         let command = install.install(adbTool: "adb", appName: appName)
-        let expected = "adb install bin/app.apk"
+        let expected = "adb install -r bin/app.apk"
         XCTAssertEqual(expected, command.join())
     }
 }
