@@ -32,6 +32,7 @@ public struct Install: AndroidCommand {
     func install(adbTool: String, appName: String) -> ShellCommand {
         let arguments = [
             ShellArgument("install"),
+            ShellArgument("-r"),
             ShellArgument("bin/\(appName).apk"),
         ]
 
